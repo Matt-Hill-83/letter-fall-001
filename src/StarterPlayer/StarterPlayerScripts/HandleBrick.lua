@@ -7,23 +7,31 @@ local CS = game:GetService("CollectionService")
 
 local module = {buffer = 0}
 
-function isWordComplete(props) end
 function isDesiredLetter(letter, clickedLetter)
     local textLabel = Utils.getFirstDescendantByName(clickedLetter, "BlockChar")
                           .Text
     return letter.found ~= true and letter.char == textLabel
 end
 
+function isWordComplete(wordLetters)
+
+    for i, word in ipairs(wordLetters) do
+        if not word.found then
+            -- 
+            return false
+        end
+    end
+    return true
+end
+
 function module.handleBrick(props)
     local player = props.player
     local clickedLetter = props.letterBlock
-
     local wordLetters = LetterFall.getWordLetters()
 
     for i, letter in ipairs(wordLetters) do
-        print('letter' .. ' - start');
+        print('letter' .. ' - start----------------');
         print(letter);
-        print('letter' .. ' - end');
         if isDesiredLetter(letter, clickedLetter) then
             letter.found = true
 
@@ -33,7 +41,10 @@ function module.handleBrick(props)
             })
 
             clickedLetter:Destroy()
-            -- break out of for loop
+            local wordComplete = isWordComplete(wordLetters)
+            print('wordComplete' .. ' - start');
+            print(wordComplete);
+            print('wordComplete' .. ' - end');
             break
         end
 
