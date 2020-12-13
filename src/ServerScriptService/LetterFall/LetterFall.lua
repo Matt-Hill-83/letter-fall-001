@@ -14,14 +14,18 @@ function colorLetterText(props)
     local letterBlock = props.letterBlock
 
     local textLabels = Utils.getDescendantsByName(letterBlock, "BlockChar")
-    print('textLabels' .. ' - start');
-    print(textLabels);
-    print('textLabels' .. ' - end');
     for i, label in ipairs(textLabels) do
-        -- label.Text = letter
-        label.TextColor3 = Color3.new(255, 0, 191)
+        label.TextColor3 = color or Color3.new(255, 0, 191)
 
     end
+end
+
+function applyLetterText(props)
+    local char = props.char
+    local letterBlock = props.letterBlock
+
+    local textLabels = Utils.getDescendantsByName(letterBlock, "BlockChar")
+    for i, label in ipairs(textLabels) do label.Text = char end
 end
 
 function anchorLetters()
@@ -120,15 +124,12 @@ function initLetterRack(props)
             newLetter.CFrame = newLetter.CFrame *
                                    CFrame.new(Vector3.new(0, y, 0))
 
-            local textLabels =
-                Utils.getDescendantsByName(newLetter, "BlockChar")
-            for i, label in ipairs(textLabels) do label.Text = char end
+            applyLetterText({letterBlock = newLetter, char = char})
             table.insert(newLetters, newLetter)
         end
         letterTool:Destroy()
     end
     columnBaseTemplate:Destroy()
-    -- initWord()
 end
 
 function initWord(props)
@@ -157,12 +158,12 @@ function initWord(props)
 
         CS:AddTag(newLetter, Constants.tagNames.WordLetter)
 
-        local textLabels = Utils.getDescendantsByName(newLetter, "BlockChar")
-        for i, label in ipairs(textLabels) do
-            label.Text = letter
-            label.TextColor3 = Color3.new(117, 85, 255)
+        applyLetterText({letterBlock = newLetter, char = letter})
+        colorLetterText({
+            letterBlock = newLetter,
+            color = Color3.new(117, 85, 255)
+        })
 
-        end
         table.insert(module.wordLetters,
                      {char = letter, found = false, instance = newLetter})
     end

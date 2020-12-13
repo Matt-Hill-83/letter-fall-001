@@ -22,19 +22,11 @@ function module.handleBrick(props)
         print(letter.char);
         if letter.found ~= true and letter.char == textLabel then
             letter.found = true
-            print("fouhd")
-            print("fouhd")
-            print("fouhd")
-            print("fouhd")
-            print("fouhd")
 
-            local textLabels = Utils.getDescendantsByName(letter.instance,
-                                                          "BlockChar")
-
-            LetterFall.colorLetterText({letterBlock = letter.instance})
-            -- for i, label in ipairs(textLabels) do
-            --     label.TextColor3 = Color3.new(255, 0, 191)
-            -- end
+            LetterFall.colorLetterText({
+                letterBlock = letter.instance,
+                color = Color3.new(255, 0, 191)
+            })
 
             clickedLetter:Destroy()
         end
