@@ -47,7 +47,7 @@ function setVisibility()
 end
 function module.configGame()
     -- setVisibility()
-    -- configPlayers()
+    configPlayers()
 end
 
 return module
