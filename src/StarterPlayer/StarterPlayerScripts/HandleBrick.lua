@@ -7,20 +7,24 @@ local CS = game:GetService("CollectionService")
 
 local module = {buffer = 0}
 
+function isWordComplete(props) end
+function isDesiredLetter(letter, clickedLetter)
+    local textLabel = Utils.getFirstDescendantByName(clickedLetter, "BlockChar")
+                          .Text
+    return letter.found ~= true and letter.char == textLabel
+end
+
 function module.handleBrick(props)
     local player = props.player
     local clickedLetter = props.letterBlock
 
-    -- local wordLetters = CS:GetTagged(Constants.tagNames.WordLetter)
-
     local wordLetters = LetterFall.getWordLetters()
 
-    local textLabel = Utils.getFirstDescendantByName(clickedLetter, "BlockChar")
-                          .Text
-
     for i, letter in ipairs(wordLetters) do
-        print(letter.char);
-        if letter.found ~= true and letter.char == textLabel then
+        print('letter' .. ' - start');
+        print(letter);
+        print('letter' .. ' - end');
+        if isDesiredLetter(letter, clickedLetter) then
             letter.found = true
 
             LetterFall.colorLetterText({
@@ -29,6 +33,8 @@ function module.handleBrick(props)
             })
 
             clickedLetter:Destroy()
+            -- break out of for loop
+            break
         end
 
     end
