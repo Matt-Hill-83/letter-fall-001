@@ -31,15 +31,23 @@ function applyLetterText(props)
     for i, label in ipairs(textLabels) do label.Text = char end
 end
 
+function createBalls(props)
+    local ball = CS:GetTagged("FluidBall")
+    if ball[1] then
+        for count = 1, 500 do
+            local newBall = ball[1]:Clone()
+            newBall.Parent = workspace
+        end
+    end
+
+end
+
 function anchorLetters()
     local letterFolder = getLetterFolder()
     local newLetters =
         Utils.getDescendantsByNameMatch(letterFolder, "newLetter")
 
-    for i, letter in ipairs(newLetters) do
-        print(letter.Name);
-        letter.Anchored = true
-    end
+    for i, letter in ipairs(newLetters) do letter.Anchored = true end
 end
 
 function getWordLetters() return module.wordLetters end
@@ -78,7 +86,7 @@ function initLetterRack(props)
                                                             "LetterFallFolder")
     local letterFolder = getLetterFolder()
 
-    local numRow = 6
+    local numRow = 10
     local numCol = 8
     local letters = {'C', 'A', 'T'}
 
@@ -86,14 +94,29 @@ function initLetterRack(props)
         'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
         'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
     }
+    local lettersFromWords = {}
+    for wordIndex, word in ipairs(module.words) do
+        for letterIndex, letter in ipairs(word) do
+            table.insert(lettersFromWords, letter)
+            table.insert(lettersFromWords, letter)
+            table.insert(lettersFromWords, letter)
+            table.insert(lettersFromWords, letter)
+            table.insert(lettersFromWords, letter)
+            -- 
+        end
+    end
 
-    function genRandom(min, max) return min + math.random() * (max - min) end
+    function genRandom(min, max)
+        local rand = min + math.random() * (max - min)
+        return math.ceil(rand)
+        -- 
+    end
 
     local columnBaseTemplate = Utils.getFirstDescendantByName(letterFallFolder,
                                                               "ColumnBase")
 
     local newLetters = {}
-    local spacingFactor = 1.05
+    local spacingFactor = 1.08
     for colIndex = 1, numCol do
         local newColumnBase = columnBaseTemplate:Clone()
         newColumnBase.Parent = letterFolder
@@ -111,8 +134,10 @@ function initLetterRack(props)
                                                           "LetterTool")
 
         for rowIndex = 1, numRow do
-            local char = letters[(colIndex % #letters) + 1]
-            local test = genRandom(1, 26)
+            -- local char = letters[(colIndex % #letters) + 1]
+            local test = genRandom(1, #lettersFromWords)
+            local char = lettersFromWords[test]
+
             local newLetter = letterTool:Clone()
             newLetter.Parent = newColumnBase
 
@@ -140,16 +165,12 @@ function initWord(props)
                                                             "LetterFallFolder")
     local wordFolder = getWordFolder()
     local word = module.words[module.lastWordIndex]
-    -- module.lastWordIndex = module.lastWordIndex + 1
 
     for i, letter in ipairs(module.wordLetters) do
         if letter.instance then letter.instance:Destroy() end
         module.wordLetters[i] = nil
     end
     Utils.clearTable(module.wordLetters)
-    print('module.wordLetters' .. ' - start');
-    print(module.wordLetters);
-    print('module.wordLetters' .. ' - end');
 
     function genRandom(min, max) return min + math.random() * (max - min) end
 
@@ -182,8 +203,6 @@ function initWord(props)
         table.insert(module.wordLetters,
                      {char = letter, found = false, instance = newLetter})
     end
-    -- letterBlock:Destroy()
-
 end
 
 module.initLetterRack = initLetterRack
@@ -193,5 +212,6 @@ module.getLetterFolder = getLetterFolder
 module.getWordFolder = getWordFolder
 module.getWordLetters = getWordLetters
 module.colorLetterText = colorLetterText
+module.createBalls = createBalls
 
 return module
