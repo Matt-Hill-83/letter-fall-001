@@ -1,16 +1,4 @@
-local module = {
-    buffer = 0,
-    -- singleScene = true,
-    singleScene = false,
-    -- 
-    entered = {value = false},
-    baseWallHeight = 16,
-    walkSpeed = 30,
-    -- walkSpeed = 16,
-    questWallHeight = 24,
-    sceneHeight = 50
-    -- 
-}
+local module = {walkSpeed = 30}
 
 module.tagNames = {WordLetter = "WordLetter", LetterBlock = "LetterBlock"}
 

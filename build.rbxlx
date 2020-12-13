@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-38.6390648</X>
-					<Y>25.1700516</Y>
-					<Z>11.9411297</Z>
-					<R00>0.0978203714</R00>
-					<R01>0.282664448</R01>
-					<R02>-0.95421803</R02>
-					<R10>-0</R10>
-					<R11>0.958816528</R11>
-					<R12>0.284026593</R12>
-					<R20>0.995204151</R20>
-					<R21>-0.0277835876</R21>
-					<R22>0.0937917754</R22>
+					<X>-15.6172943</X>
+					<Y>15.4686575</Y>
+					<Z>0.778215408</Z>
+					<R00>0.153226718</R00>
+					<R01>0.270740956</R01>
+					<R02>-0.950379312</R02>
+					<R10>3.72529074e-09</R10>
+					<R11>0.961736441</R11>
+					<R12>0.273976326</R12>
+					<R20>0.988191068</R20>
+					<R21>-0.0419804975</R21>
+					<R22>0.147363722</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>18.6150513</X>
-					<Y>8.12814903</Y>
-					<Z>6.31352139</Z>
+					<X>17.6460991</X>
+					<Y>5.87945271</Y>
+					<Z>-4.37953281</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -9883,7 +9883,7 @@ clickDetector.MouseClick:Connect(onClicked)]]></ProtectedString>
 									<token name="BottomSurfaceInput">0</token>
 									<CoordinateFrame name="CFrame">
 										<X>17.1150513</X>
-										<Y>5.12814903</Y>
+										<Y>2.62814903</Y>
 										<Z>-1.18647766</Z>
 										<R00>0.999999285</R00>
 										<R01>9.37035348e-14</R01>
@@ -10582,6 +10582,83 @@ clickDetector.MouseClick:Connect(onClicked)]]></ProtectedString>
 							</Item>
 						</Item>
 					</Item>
+					<Item class="Part" referent="RBX2c6e9dd5ad7a49d9aa9d4577ff80407d">
+						<Properties>
+							<bool name="Anchored">true</bool>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<float name="BackParamA">-0.5</float>
+							<float name="BackParamB">0.5</float>
+							<token name="BackSurface">0</token>
+							<token name="BackSurfaceInput">0</token>
+							<float name="BottomParamA">-0.5</float>
+							<float name="BottomParamB">0.5</float>
+							<token name="BottomSurface">0</token>
+							<token name="BottomSurfaceInput">0</token>
+							<CoordinateFrame name="CFrame">
+								<X>16.4798946</X>
+								<Y>5.04601288</Y>
+								<Z>-4.37976742</Z>
+								<R00>0.999997139</R00>
+								<R01>1.01644535e-19</R01>
+								<R02>-6.59202399e-17</R02>
+								<R10>-9.93205197e-20</R10>
+								<R11>0.999997139</R11>
+								<R12>-1.11022302e-16</R12>
+								<R20>6.5920445e-17</R20>
+								<R21>1.1102262e-16</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<bool name="CanCollide">false</bool>
+							<bool name="CastShadow">true</bool>
+							<int name="CollisionGroupId">0</int>
+							<Color3uint8 name="Color3uint8">4294967040</Color3uint8>
+							<PhysicalProperties name="CustomPhysicalProperties">
+								<CustomPhysics>false</CustomPhysics>
+							</PhysicalProperties>
+							<float name="FrontParamA">-0.5</float>
+							<float name="FrontParamB">0.5</float>
+							<token name="FrontSurface">0</token>
+							<token name="FrontSurfaceInput">0</token>
+							<float name="LeftParamA">-0.5</float>
+							<float name="LeftParamB">0.5</float>
+							<token name="LeftSurface">0</token>
+							<token name="LeftSurfaceInput">0</token>
+							<bool name="Locked">false</bool>
+							<bool name="Massless">false</bool>
+							<token name="Material">256</token>
+							<string name="Name">LetterPositioner</string>
+							<float name="Reflectance">0</float>
+							<float name="RightParamA">-0.5</float>
+							<float name="RightParamB">0.5</float>
+							<token name="RightSurface">0</token>
+							<token name="RightSurfaceInput">0</token>
+							<int name="RootPriority">0</int>
+							<Vector3 name="RotVelocity">
+								<X>0</X>
+								<Y>0</Y>
+								<Z>0</Z>
+							</Vector3>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags">VHJhbnNwYXJlbnQ=</BinaryString>
+							<float name="TopParamA">-0.5</float>
+							<float name="TopParamB">0.5</float>
+							<token name="TopSurface">0</token>
+							<token name="TopSurfaceInput">0</token>
+							<float name="Transparency">0</float>
+							<Vector3 name="Velocity">
+								<X>0</X>
+								<Y>0</Y>
+								<Z>0</Z>
+							</Vector3>
+							<token name="formFactorRaw">1</token>
+							<token name="shape">1</token>
+							<Vector3 name="size">
+								<X>2</X>
+								<Y>2</Y>
+								<Z>2</Z>
+							</Vector3>
+						</Properties>
+					</Item>
 				</Item>
 				<Item class="Model" referent="RBX90f488b03b964f8a88bc92ef4bdd772c">
 					<Properties>
@@ -11142,28 +11219,6 @@ clickDetector.MouseClick:Connect(onClicked)]]></ProtectedString>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="ModuleScript" referent="RBXb79bc08c18724e8294df0222ce96169a">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">-- Demos</string>
-					<string name="ScriptGuid">{086dacff-987b-4a90-a578-737e9609594e}</string>
-					<ProtectedString name="Source"></ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-				<Item class="ModuleScript" referent="RBX234ff128ed5b4c41bf5b95da0d2a75fd">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">bs</string>
-						<string name="ScriptGuid">{9db894e5-b89e-4df2-ad4a-8ea5d5ed20cc}</string>
-						<ProtectedString name="Source">--- test</ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-			</Item>
 		</Item>
 	</Item>
 	<Item class="TweenService" referent="RBXdcb8438f56d04ada9b938f69f6c52e0a">
@@ -11397,672 +11452,13 @@ clickDetector.MouseClick:Connect(onClicked)]]></ProtectedString>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="ModuleScript" referent="RBX30cdce8a600c4477b18a74de90913003">
+			<Item class="Folder" referent="RBX153a826985134254884c25f44d91d533">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
-					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">StarterPlayerScripts</string>
-					<string name="ScriptGuid">{c2c76472-e814-4bdb-945d-75e23a4814cb}</string>
-					<ProtectedString name="Source"><![CDATA[---test
--- zzzzz
-]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="ModuleScript" referent="RBX587aba4bb4374a9caad26e19fde5e8be">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">RSUtils</string>
-						<string name="ScriptGuid">{4d5bd6e3-46d2-477d-9809-73faaf518b25}</string>
-						<ProtectedString name="Source"><![CDATA[-- local StarterPlayer = game:GetService("StarterPlayer")
--- local Constants = require(StarterPlayer.Source.StarterPlayerScripts.RSConstants)
--- local module = {}
--- local collectionService = game:GetService("CollectionService")
--- -- 
--- -- 
--- function module.setPropsByTag(props)
---     local tag = props.tag
---     local theProps = props.props
---     local items = collectionService:GetTagged(tag)
---     for i, item in ipairs(items) do
---         mergeTables(item, theProps)
---         -- 
---     end
--- end
--- function getFirstDescendantByName(parent, name)
---     local model = parent:GetDescendants()
---     for i = 1, #model do
---         if model[i].Name == name then
---             return model[i]
---             -- 
---         end
---     end
--- end
--- function getDescendantsByName(parent, name)
---     local items = parent:GetDescendants()
---     local output = {}
---     for i, item in ipairs(items) do
---         if item.Name == name then
---             table.insert(output, item)
---             -- 
---         end
---     end
---     return output
--- end
--- function module.getDescendantsByType(parent, type)
---     local items = parent:GetDescendants()
---     local output = {}
---     for i, item in pairs(items) do
---         if item:IsA(type) then
---             table.insert(output, item)
---             -- 
---         end
---     end
---     return output
--- end
--- -- 
--- -- 
--- function hideItem(part, hide)
---     local transparency = hide and 1 or 0
---     local visible = not hide
---     local enabled = not hide
---     if part:IsA("BasePart") then part.Transparency = transparency end
---     if part:IsA("Decal") then part.Transparency = transparency end
---     if part:IsA("ScrollingFrame") then part.Visible = visible end
---     if part:IsA("TextLabel") then part.Visible = visible end
---     if part:IsA("TextButton") then part.Visible = visible end
---     if part:IsA("SurfaceGui") then part.Enabled = enabled end
--- end
--- function setChildrenProps(parent, props)
---     if parent:IsA("BasePart") then mergeTables(parent, props) end
---     local children = parent:GetDescendants()
---     for i, item in ipairs(children) do
---         if item:IsA("BasePart") then mergeTables(item, props) end
---     end
--- end
--- function hideItemAndChildren(props)
---     local parent = props.item
---     local hide = props.hide
---     hideItem(parent, hide)
---     local children = parent:GetDescendants()
---     for i, item in ipairs(children) do hideItem(item, hide) end
--- end
--- function sizeWalls(props)
---     local parent = props.item
---     local height = props.height
---     local children = parent:GetDescendants()
---     for i, item in ipairs(children) do
---         if item:isA("Part") then item.CanCollide = false end
---     end
---     for i, item in ipairs(children) do
---         if item:isA("Part") then
---             local posY = item.Position.Y - item.Size.Y / 2
---             local newPosY = posY + (height / 2)
---             item.Size = Vector3.new(item.Size.X, height, item.Size.Z)
---             item.Position = Vector3.new(item.Position.X, newPosY,
---                                         item.Position.Z)
---         end
---     end
---     for i, item in ipairs(children) do
---         if item:isA("Part") then
---             item.CanCollide = true
---             item.Anchored = true
---         end
---     end
--- end
--- function sizeWalls2(props)
---     local items = props.items
---     local height = props.height
---     -- local children = parent:GetDescendants()
---     for i, item in ipairs(items) do
---         if item:isA("Part") then item.CanCollide = false end
---     end
---     for i, item in ipairs(items) do
---         if item:isA("Part") then
---             local posY = item.Position.Y - item.Size.Y / 2
---             local newPosY = posY + (height / 2)
---             item.Size = Vector3.new(item.Size.X, height, item.Size.Z)
---             item.Position = Vector3.new(item.Position.X, newPosY,
---                                         item.Position.Z)
---         end
---     end
---     for i, item in ipairs(items) do
---         if item:isA("Part") then
---             item.CanCollide = true
---             item.Anchored = true
---         end
---     end
--- end
--- function module.hideItemAndChildrenByName(props)
---     local name = props.name
---     local hide = props.hide
---     local myStuff = workspace:FindFirstChild("MyStuff")
---     local item = getFirstDescendantByName(myStuff, name)
---     hideItemAndChildren({item = item, hide = hide})
--- end
--- function module.setWallHeightByList(props)
---     local items = props.items
---     local height = props.height
---     sizeWalls2({items = items, height = height})
--- end
--- function module.setWallHeightbyParentModelName(props)
---     local name = props.name
---     local height = props.height
---     local myStuff = workspace:FindFirstChild("MyStuff")
---     -- local item = getFirstDescendantByName(myStuff, name)
---     local items = getDescendantsByName(myStuff, name)
---     for i, item in ipairs(items) do
---         sizeWalls({item = item, height = height})
---         -- 
---     end
--- end
--- function module.setItemAndChildrenPropsByName(myProps)
---     local name = myProps.name
---     local props = myProps.props
---     local myStuff = workspace:FindFirstChild("MyStuff")
---     local item = getFirstDescendantByName(myStuff, name)
---     setChildrenProps(item, props)
--- end
--- function module.setItemAndChildrenPropsByInst(myProps)
---     local item = myProps.item
---     local props = myProps.props
---     setChildrenProps(item, props)
--- end
--- function module.getOrCreateFolder(props)
---     local name = props.name
---     local parent = props.parent
---     local runtimeQuestsFolder = getFirstDescendantByName(parent, name)
---     if not runtimeQuestsFolder then
---         runtimeQuestsFolder = Instance.new("Folder", parent)
---         runtimeQuestsFolder.Name = name
---         runtimeQuestsFolder = getFirstDescendantByName(parent, name)
---     end
---     return runtimeQuestsFolder
--- end
--- function module.reportPlayerLocation()
---     local Players = game:GetService("Players")
---     Players.PlayerAdded:Connect(function(player)
---         player.CharacterAdded:Connect(function(character)
---             local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
---             while humanoidRootPart do
---                 local test2 = workspace.CurrentCamera.CFrame.Position
---                 print(test2);
---                 print(player.Name, "is at", tostring(humanoidRootPart.Position))
---                 wait(4)
---             end
---         end)
---     end)
--- end
--- function module.getDecalIdFromName(props)
---     local name = props.name
---     if (Constants.characters[name] and Constants.characters[name]["decalId"]) then
---         return Constants.characters[name]["decalId"]
---     else
---         if (name ~= "blank" and name ~= "empty" and name ~= "") then
---             print("----------------- decalId not found: ------------" .. name)
---         end
---         return '5999465084'
---     end
--- end
--- function module.getDisplayNameFromName(props)
---     local name = props.name
---     if (Constants.characters[name] and Constants.characters[name]["displayName"]) then
---         return Constants.characters[name]["displayName"]
---     else
---         print("---------------------- name not found: ------------" .. name)
---         return name
---     end
--- end
--- function module.deleteChildrenByName(props)
---     local parent = props.parent
---     local childName = props.childName
---     local children = parent:GetDescendants()
---     for i, item in pairs(children) do
---         if item.Name == childName then
---             item:Destroy()
---             --
---         end
---     end
--- end
--- function getFromMyStuff(name)
---     local myStuff = workspace:FindFirstChild("MyStuff")
---     return getFirstDescendantByName(myStuff, name)
--- end
--- function module.getFromTemplates(name)
---     local myStuff = workspace:FindFirstChild("MyStuff")
---     local myTemplates = myStuff:FindFirstChild("MyTemplates")
---     return getFirstDescendantByName(myTemplates, name)
--- end
--- function module.unAttachAllChildParts(parent)
---     local items = parent:GetDescendants()
---     local output = {}
---     for i = 1, #items do
---         if items[i]:IsA('Part') then
---             local item = items[i]
---             if item.Anchored == true then table.insert(output, item) end
---             --
---         end
---     end
---     return output
--- end
--- function module.getDescendantsByNameMatch(parent, name)
---     local descendants = parent:GetDescendants()
---     local output = {}
---     for i = 1, #descendants do
---         local child = descendants[i]
---         local match = string.match(child.Name, name)
---         if match then
---             table.insert(output, child)
---             -- 
---         end
---     end
---     return output
--- end
--- function addcfv3(a, b)
---     local x, y, z, m11, m12, m13, m21, m22, m23, m31, m32, m33 = a:components()
---     return CFrame.new(x + b.x, y + b.y, z + b.z, m11, m12, m13, m21, m22, m23,
---                       m31, m32, m33);
--- end
--- function cloneModel(props)
---     local model = props.model
---     local position = props.position
---     local suffix = props.suffix
---     local modelClone = model:Clone()
---     modelClone.Parent = model.Parent
---     modelClone.Name = model.Name .. (suffix or "-Clone")
---     if (position) then
---         modelClone:SetPrimaryPartCFrame(position)
---         -- 
---     end
---     return modelClone
--- end
--- local function getNames(tab, name, res, lev)
---     res = res or {[tab] = "ROOT"}
---     local pls = {}
---     lev = lev or 0
---     for k, v in pairs(tab) do
---         if type(v) == "table" and not res[v] then
---             local n = name .. "." .. tostring(k)
---             res[v] = n
---             pls[v] = n
---         end
---     end
---     for k, v in pairs(pls) do
---         getNames(k, v, res)
---         pls[k] = lev
---     end
---     return res, pls
--- end
--- function tableToString(tab, a, b, c, d)
---     a, b = a or 0, b or {[tab] = true}
---     local name = b[tab]
---     local white = ("\t"):rep(a + 1)
---     if not c then c, d = getNames(tab, "ROOT") end
---     local res = {"{"}
---     for k, v in pairs(tab) do
---         local value
---         if type(v) == "table" then
---             if d[v] == a and not b[v] then
---                 b[v] = true
---                 value = tableToString(v, a + 1, b, c, d)
---             else
---                 value = c[v]
---             end
---         elseif type(v) == "string" then
---             value = '"' .. v:gsub("\n", "\\n"):gsub("\t", "\\t") .. '"'
---         else
---             value = tostring(v)
---         end
---         table.insert(res, white .. tostring(k) .. " = " .. value)
---     end
---     white = white:sub(2)
---     table.insert(res, white .. "}")
---     return table.concat(res, "\n")
--- end
--- local test = {
---     str = "Result:\n\t- Unknown",
---     number = 12345,
---     child = {a = "b"},
---     cyclic = {}
--- }
--- test.child.cyclic = test.cyclic
--- test.another = test.child
--- function mergeTables(t1, t2) for k, v in pairs(t2) do t1[k] = v end end
--- addPadding = function(props)
---     local parent = props.parent
---     local paddingPct = props.paddingPct
---     local UIPadding = Instance.new("UIPadding", parent)
---     UIPadding.PaddingBottom = UDim.new(paddingPct, 0)
---     UIPadding.PaddingTop = UDim.new(paddingPct, 0)
---     UIPadding.PaddingLeft = UDim.new(paddingPct, 0)
---     UIPadding.PaddingRight = UDim.new(paddingPct, 0)
--- end
--- setMaterialPebble = function(part)
---     part.Material = Enum.Material.Pebble
---     part.BrickColor = BrickColor.new("Institutional white")
--- end
--- module.addcfv3 = addcfv3
--- module.addPadding = addPadding
--- module.cloneModel = cloneModel
--- module.getFirstDescendantByName = getFirstDescendantByName
--- module.getFromMyStuff = getFromMyStuff
--- module.setMaterialPebble = setMaterialPebble
--- module.tableToString = tableToString
--- module.hideItemAndChildren = hideItemAndChildren
--- module.mergeTables = mergeTables
--- module.getDescendantsByName = getDescendantsByName
--- return module
-]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-				<Item class="ModuleScript" referent="RBXbf99fd5964a54e8fa8d6a465c176a11b">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">RSConstants</string>
-						<string name="ScriptGuid">{19dadd8f-eaa5-409d-ba01-3fe4cc9b7610}</string>
-						<ProtectedString name="Source"><![CDATA[-- local module = {
---     buffer = 0,
---     -- singleScene = true,
---     singleScene = false,
---     -- 
---     entered = {value = false},
---     baseWallHeight = 16,
---     walkSpeed = 16,
---     questWallHeight = 24,
---     sceneHeight = 50
---     -- 
--- }
--- module.dialogColors = {
---     Color3.fromRGB(253, 158, 240), Color3.fromRGB(225, 253, 158),
---     Color3.fromRGB(253, 228, 158), Color3.fromRGB(158, 253, 179),
---     Color3.fromRGB(158, 215, 253)
--- }
--- local islandLength = 36
--- -- local bridgeLength = 31.1
--- -- local bridgeLength = 34
--- local bridgeBaseLength = 30
--- -- local bridgeBaseLength = 96
--- local bridgeOverlap = 2
--- local bridgeLength = bridgeBaseLength - 2 * bridgeOverlap
--- module.islandLength = islandLength
--- module.bridgeLength = bridgeLength
--- module.totalIslandLength = islandLength + bridgeLength
--- module.buttonLabels = {PrevPage = "Prev Page", NextPage = "Next Page"}
--- local raven = {
---     displayName = "Raven",
---     decalId = '5897424121',
---     backgroundColorIdx = 1
--- }
--- local britta = {
---     displayName = "Britta",
---     decalId = '5897433108',
---     backgroundColorIdx = 2
--- }
--- local mitzy02 = {
---     displayName = "Mitzy Meow",
---     decalId = '5976876671',
---     backgroundColorIdx = 2
--- }
--- local vulcan = {
---     displayName = "Vulcan",
---     decalId = '5999464799',
---     backgroundColorIdx = 1
--- }
--- module.characters = {
---     raven05 = raven,
---     raven04 = raven,
---     raven = raven,
---     britta = britta,
---     britta01 = britta,
---     britta04 = britta,
---     fancyDudeFromFrance01 = {
---         displayName = "fancyDudeFromFrance01",
---         decalId = '5991276655',
---         backgroundColorIdx = 1
---     },
---     goat01 = {
---         displayName = "Goat",
---         decalId = '6063417478',
---         backgroundColorIdx = 1
---     },
---     robby01 = {
---         displayName = "Robby",
---         decalId = '5991273473',
---         backgroundColorIdx = 1
---     },
---     waterfall = {
---         displayName = "Waterfall",
---         decalId = '5991339525',
---         backgroundColorIdx = 1
---     },
---     cave = {
---         displayName = "Cave",
---         decalId = '5991342911',
---         backgroundColorIdx = 1
---     },
---     hill = {
---         displayName = "Hill",
---         decalId = '5991342052',
---         backgroundColorIdx = 1
---     },
---     lake = {
---         displayName = "Lake",
---         decalId = '5991341377',
---         backgroundColorIdx = 1
---     },
---     log = {displayName = "Log", decalId = '5991341326', backgroundColorIdx = 1},
---     pond = {
---         displayName = "Pond",
---         decalId = '5991340703',
---         backgroundColorIdx = 1
---     },
---     pool = {
---         displayName = "Pool",
---         decalId = '5991340615',
---         backgroundColorIdx = 1
---     },
---     swamp = {
---         displayName = "Swamp",
---         decalId = '5991343667',
---         backgroundColorIdx = 1
---     },
---     bees = {
---         displayName = "Bees",
---         decalId = '5991343806',
---         backgroundColorIdx = 1
---     },
---     cap = {displayName = "Cap", decalId = '5991343197', backgroundColorIdx = 1},
---     castle = {
---         displayName = "Castle",
---         decalId = '5991343060',
---         backgroundColorIdx = 1
---     },
---     chick01 = {
---         displayName = "Chick",
---         decalId = '6060376973',
---         backgroundColorIdx = 1
---     },
---     coop = {
---         displayName = "Coop",
---         decalId = '5991342867',
---         backgroundColorIdx = 1
---     },
---     cow01 = {
---         displayName = "Cow",
---         decalId = '6060376567',
---         backgroundColorIdx = 1
---     },
---     girl09 = {
---         displayName = "Girl",
---         decalId = '5991275978',
---         backgroundColorIdx = 1
---     },
---     lucky = {
---         displayName = "Lucky",
---         decalId = '5977954909',
---         backgroundColorIdx = 3
---     },
---     lucky01 = {
---         displayName = "Lucky",
---         decalId = '5977954909',
---         backgroundColorIdx = 3
---     },
---     mat = {displayName = "Mat", decalId = '5991341059', backgroundColorIdx = 1},
---     mop = {displayName = "Mop", decalId = '5991340991', backgroundColorIdx = 1},
---     pan = {displayName = "Pan", decalId = '5991340855', backgroundColorIdx = 1},
---     slide = {
---         displayName = "Slide",
---         decalId = '5991340411',
---         backgroundColorIdx = 1
---     },
---     swing = {
---         displayName = "Swing",
---         decalId = '5991340158',
---         backgroundColorIdx = 1
---     },
---     stump = {
---         displayName = "Stump",
---         decalId = '5991340320',
---         backgroundColorIdx = 1
---     },
---     bog = {displayName = "Bog", decalId = '5991343667', backgroundColorIdx = 1},
---     home = {
---         displayName = "Home",
---         decalId = '5991341898',
---         backgroundColorIdx = 1
---     },
---     bee = {displayName = "Bee", decalId = '5999465084', backgroundColorIdx = 1},
---     elf = {displayName = "Elf", decalId = '5991266909', backgroundColorIdx = 4},
---     bun = {displayName = "Bun", decalId = '5991343501', backgroundColorIdx = 1},
---     dog01 = {
---         displayName = "Dog",
---         decalId = '5999464941',
---         backgroundColorIdx = 1
---     },
---     dennisTheMenace = {
---         displayName = "Dennis the Menace",
---         decalId = '5999464873',
---         backgroundColorIdx = 1
---     },
---     katieKooper01 = {
---         displayName = "Katie Kooper",
---         decalId = '5991267836',
---         backgroundColorIdx = 1
---     },
---     troll01 = {
---         displayName = "Troll01",
---         decalId = '5999464489',
---         backgroundColorIdx = 1
---     },
---     troll02 = {
---         displayName = "Troll02",
---         decalId = '5999464489',
---         backgroundColorIdx = 3
---     },
---     rori = {
---         displayName = "Rori",
---         decalId = '5991267444',
---         backgroundColorIdx = 4
---     },
---     vulcan = vulcan,
---     vulcan01 = vulcan,
---     -- 
---     -- 
---     -- 
---     luke01 = {
---         displayName = "Luke",
---         decalId = '5998961085',
---         backgroundColorIdx = 2
---     },
---     hudson01 = {
---         displayName = "Hudson",
---         decalId = '5998961874',
---         backgroundColorIdx = 4
---     },
---     trollKing01 = {
---         displayName = "Troll King",
---         decalId = '5897428591',
---         backgroundColorIdx = 3
---     },
---     trollKing = {
---         displayName = "Troll King",
---         decalId = '5897428591',
---         backgroundColorIdx = 3
---     },
---     freckle = {
---         displayName = "Freckle",
---         decalId = '5897430768',
---         backgroundColorIdx = 3
---     },
---     missyMeow01 = {
---         displayName = "Missy Meow",
---         decalId = '5898504226',
---         backgroundColorIdx = 1
---     },
---     mitzyMeow01 = mitzy02,
---     mitzy02 = mitzy02,
---     kat = {displayName = "Kat", decalId = '5977951764', backgroundColorIdx = 3},
---     liz2 = {displayName = "Liz", decalId = '5981806423', backgroundColorIdx = 2}
--- }
--- return module
-]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-				<Item class="ModuleScript" referent="RBX662f1c6f1cb049aa941a3f616db46dec">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">HandleBrick</string>
-						<string name="ScriptGuid">{dcc3de11-882f-4a10-97b0-71ead4b655d5}</string>
-						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
-local LetterFall = require(Sss.Source.LetterFall.LetterFall)
-local Utils = require(Sss.Source.Utils.U001GeneralUtils)
-local Constants = require(Sss.Source.Constants.Constants)
-
-local CS = game:GetService("CollectionService")
-
-local module = {buffer = 0}
-
-function module.handleBrick(props)
-    local player = props.player
-    local clickedLetter = props.letterBlock
-
-    -- local wordLetters = CS:GetTagged(Constants.tagNames.WordLetter)
-
-    local wordLetters = LetterFall.getWordLetters()
-
-    local textLabel = Utils.getFirstDescendantByName(clickedLetter, "BlockChar")
-                          .Text
-
-    for i, letter in ipairs(wordLetters) do
-        print(letter.char);
-        if letter.found ~= true and letter.char == textLabel then
-            letter.found = true
-
-            LetterFall.colorLetterText({
-                letterBlock = letter.instance,
-                color = Color3.new(255, 0, 191)
-            })
-
-            clickedLetter:Destroy()
-        end
-
-    end
-
-end
-
-return module
-]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
 			</Item>
 		</Item>
 	</Item>
@@ -12107,28 +11503,6 @@ return module
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="ModuleScript" referent="RBX8e12e06f525e4dcea917d1da29866757">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">-- Demos</string>
-					<string name="ScriptGuid">{e694e16f-14b7-4226-bfe9-6e6bdea0ca55}</string>
-					<ProtectedString name="Source"></ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-				<Item class="ModuleScript" referent="RBXc2d77ff02dff44f89a11fee59fda71c8">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">bs</string>
-						<string name="ScriptGuid">{ef2e4678-d8fe-4912-acba-a428aefc786c}</string>
-						<ProtectedString name="Source">--- test</ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-			</Item>
 		</Item>
 		<Item class="ScreenGui" referent="RBX58b0b1804988472792bda010ceadfcad">
 			<Properties>
@@ -13502,111 +12876,6 @@ return module
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="ModuleScript" referent="RBXc49035902f9d48d793440992537a4ad8">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">AddRemoteObjects</string>
-					<string name="ScriptGuid">{f1cc327e-acb6-41a5-98aa-1bd0cc4b2383}</string>
-					<ProtectedString name="Source"><![CDATA[
-]]></ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-				<Item class="ModuleScript" referent="RBXc28227c0f7af41c9bc5c8717dbbaa895">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">AddToBase</string>
-						<string name="ScriptGuid">{5b0290ad-cf36-4af9-807c-0f88e0f4c6d8}</string>
-						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
-local module = {}
-
-local Utils = require(Sss.Source.Utils.U001GeneralUtils)
--- local Constants = require(Sss.Source.Constants.Constants)
-local ConfigGame = require(Sss.Source.AddRemoteObjects.ConfigGame)
-local LetterFall = require(Sss.Source.LetterFall.LetterFall)
-
-function addRemoteObjects()
-    ConfigGame.configGame()
-    LetterFall.initLetterRack()
-    LetterFall.initWord()
-    -- LetterFall.anchorLetters()
-
-    -- 
-end
-
-module.addRemoteObjects = addRemoteObjects
-return module
-
-]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-				<Item class="ModuleScript" referent="RBXc2c7c9534db947329b3833cef6374812">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">ConfigGame</string>
-						<string name="ScriptGuid">{b1f17e4c-b2f3-450a-bf5c-e3d011b6e429}</string>
-						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
-local Utils = require(Sss.Source.Utils.U001GeneralUtils)
-
-local CS = game:GetService("CollectionService")
-
-local module = {}
-function configPlayers()
-    local Players = game:GetService("Players")
-    Players.RespawnTime = 0
-
-    local function onCharacterAdded(character)
-        character:WaitForChild("Humanoid").WalkSpeed = 30
-    end
-
-    local function onPlayerAdded(player)
-        player.CharacterAdded:Connect(onCharacterAdded)
-    end
-
-    Players.PlayerAdded:Connect(onPlayerAdded)
-
-end
-
-function setVisibility()
-    Utils.setPropsByTag({tag = "Transparent", props = {Transparency = 1}})
-end
-
-function module.configGame()
-    setVisibility()
-    configPlayers()
-end
-
-return module
-]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-			</Item>
-			<Item class="ModuleScript" referent="RBX3cd467b8cd41417faf4d1c12b8e3ebff">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">test</string>
-					<string name="ScriptGuid">{a540e4ea-ce31-4ee2-9003-ac993a092b81}</string>
-					<ProtectedString name="Source"><![CDATA[local module = {}
-
-function module.func001()
-    -- 
-end
-
-return module
-
-]]></ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-			</Item>
 			<Item class="ModuleScript" referent="RBX0e9c500d4ebf440a9f3a12551ff0991d">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -13625,376 +12894,11 @@ return module
 						<string name="Name">U001GeneralUtils</string>
 						<string name="ScriptGuid">{883537c5-0ce6-4add-8f0d-8388164becff}</string>
 						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
-local Utils2 = require(Sss.MyUtils001)
-return Utils2
-]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-				<Item class="ModuleScript" referent="RBXd75fda56ca8c48d8a5fe5995fd63d53f">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">U002InstanceUtils</string>
-						<string name="ScriptGuid">{99a9a030-773f-43b1-ad5d-4356e3ca9b11}</string>
-						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
-local Constants = require(Sss.Source.Constants.Constants)
-local Utils = require(Sss.Source.Utils.U001GeneralUtils)
-
-local module = {}
-
-deleteInstanceByNameStub = function(props)
-    local nameStub = props.nameStub
-    local parent = props.parent
-    local children = parent:GetChildren()
-
-    for _, item in pairs(children) do
-        local match = string.match(item.Name, nameStub)
-
-        if item:IsA('Model') and match then
-            item:Destroy()
-            --
-        end
-    end
-end
-
-module.deleteInstanceByNameStub = deleteInstanceByNameStub
-
-function module.teleportAll(props)
-    local destination = props.destination
-    local location = Utils.getFirstDescendantByName(workspace, destination)
-
-    for _, plr in pairs(game:GetService("Players"):GetPlayers()) do
-        if plr.Character then
-            plr.Character.HumanoidRootPart.CFrame = location.CFrame
-        end
-    end
-end
-
-return module
-]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-				<Item class="ModuleScript" referent="RBX8231c818eab4445ebdccdccabbf50569">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">U003PartsUtils</string>
-						<string name="ScriptGuid">{f30b496a-ce38-4724-a215-5faf822a9dd4}</string>
-						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
-local Constants = require(Sss.Source.Constants.Constants)
-local module = {}
-
-function module.getCenterPositionForRightOffset(props)
-    local parent = props.parent
-    local child = props.child
-
-    local newVal = parent.Position.X - (child.Size.X + parent.Size.X) / 2
-    return Vector3.new(newVal, child.Position.Y, child.Position.Z)
-end
-
-function module.getCenterPositionForRightFront(props)
-    local parent = props.parent
-    local child = props.child
-
-    local newVal = parent.Position.Z - (child.Size.Z + parent.Size.Z) / 2
-    return Vector3.new(child.Position.X, child.Position.Y, newVal)
-end
-
-return module
-]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-			</Item>
-			<Item class="ModuleScript" referent="RBX8ba23f7f367c48ac80519a64b8066c3a">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">LetterFall</string>
-					<string name="ScriptGuid">{ff72def0-58ca-46fb-8a0f-93d495eb366e}</string>
-					<ProtectedString name="Source"><![CDATA[
-]]></ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-				<Item class="ModuleScript" referent="RBXfdd77426809c483dbabcccc0df86f7f8">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">LetterFall</string>
-						<string name="ScriptGuid">{6202f763-066b-46d2-8931-9cd3ee05a97d}</string>
-						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
-local Utils = require(Sss.Source.Utils.U001GeneralUtils)
-local Constants = require(Sss.Source.Constants.Constants)
-local CS = game:GetService("CollectionService")
-
-local module = {
-    wordLetters = {},
-    words = {{'C', 'A', 'T'}, {'B', 'A', 'T'}},
-    lastWordIndex = 0
-}
-
-function colorLetterText(props)
-    local color = props.color
-    local letterBlock = props.letterBlock
-
-    local textLabels = Utils.getDescendantsByName(letterBlock, "BlockChar")
-    for i, label in ipairs(textLabels) do
-        label.TextColor3 = color or Color3.new(255, 0, 191)
-
-    end
-end
-
-function applyLetterText(props)
-    local char = props.char
-    local letterBlock = props.letterBlock
-
-    local textLabels = Utils.getDescendantsByName(letterBlock, "BlockChar")
-    for i, label in ipairs(textLabels) do label.Text = char end
-end
-
-function anchorLetters()
-    local letterFolder = getLetterFolder()
-    local newLetters =
-        Utils.getDescendantsByNameMatch(letterFolder, "newLetter")
-
-    for i, letter in ipairs(newLetters) do
-        print(letter.Name);
-        letter.Anchored = true
-    end
-end
-
-function getWordLetters() return module.wordLetters end
-
-function getLetterFolder()
-    local letterFallFolder = Utils.getFirstDescendantByName(workspace,
-                                                            "LetterFallFolder")
-    local runtimeFolder = Utils.getOrCreateFolder(
-                              {
-            name = "RuntimeFolder",
-            parent = letterFallFolder
-        })
-
-    local letterFolder = Utils.getOrCreateFolder(
-                             {name = "LetterFolder", parent = runtimeFolder})
-    return letterFolder
-end
-
-function getWordFolder()
-    local letterFallFolder = Utils.getFirstDescendantByName(workspace,
-                                                            "LetterFallFolder")
-    local runtimeFolder = Utils.getOrCreateFolder(
-                              {
-            name = "RuntimeFolder",
-            parent = letterFallFolder
-        })
-
-    return (Utils.getOrCreateFolder({
-        name = "WordFolder",
-        parent = runtimeFolder
-    }))
-end
-
-function initLetterRack(props)
-
-    local letterFallFolder = Utils.getFirstDescendantByName(workspace,
-                                                            "LetterFallFolder")
-    local letterFolder = getLetterFolder()
-
-    local numRow = 6
-    local numCol = 8
-    local letters = {'C', 'A', 'T'}
-
-    local allLetters = {
-        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
-        'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
-    }
-
-    function genRandom(min, max) return min + math.random() * (max - min) end
-
-    local columnBaseTemplate = Utils.getFirstDescendantByName(letterFallFolder,
-                                                              "ColumnBase")
-
-    local newLetters = {}
-    local spacingFactor = 1.05
-    for colIndex = 1, numCol do
-        local newColumnBase = columnBaseTemplate:Clone()
-        newColumnBase.Parent = letterFolder
-        newColumnBase.Name = "columnBase-" .. colIndex
-
-        local columnAttachment = Utils.getFirstDescendantByName(newColumnBase,
-                                                                "Att-ColumnBase")
-        columnAttachment.Name = columnAttachment.Name .. "-C" .. colIndex
-
-        local z = newColumnBase.Size.Z * (colIndex - 1) * spacingFactor
-        newColumnBase.CFrame = newColumnBase.CFrame *
-                                   CFrame.new(Vector3.new(0, 0, z))
-
-        local letterTool = Utils.getFirstDescendantByName(newColumnBase,
-                                                          "LetterTool")
-
-        for rowIndex = 1, numRow do
-            local char = letters[(colIndex % #letters) + 1]
-            local test = genRandom(1, 26)
-            local newLetter = letterTool:Clone()
-            newLetter.Parent = newColumnBase
-
-            local letterAttachment = Utils.getFirstDescendantByName(newLetter,
-                                                                    "Att-Handle")
-            newLetter.Name = "newLetter-" .. char
-            CS:AddTag(newLetter, Constants.tagNames.LetterBlock)
-            letterAttachment.Name = letterAttachment.Name .. "-R" .. rowIndex ..
-                                        "-C" .. colIndex
-
-            local y = newLetter.Size.Y * (rowIndex - 1) * spacingFactor
-            newLetter.CFrame = newLetter.CFrame *
-                                   CFrame.new(Vector3.new(0, y, 0))
-
-            applyLetterText({letterBlock = newLetter, char = char})
-            table.insert(newLetters, newLetter)
-        end
-        letterTool:Destroy()
-    end
-    columnBaseTemplate:Destroy()
-end
-
-function initWord(props)
-    local letterFallFolder = Utils.getFirstDescendantByName(workspace,
-                                                            "LetterFallFolder")
-    local wordFolder = getWordFolder()
-    local word = module.words[module.lastWordIndex + 1]
-    module.lastWordIndex = module.lastWordIndex + 1
-
-    function genRandom(min, max) return min + math.random() * (max - min) end
-
-    local letterRack = Utils.getFirstDescendantByName(letterFallFolder,
-                                                      "WordBox")
-
-    local letterBlock =
-        Utils.getFirstDescendantByName(letterRack, "LetterBlock")
-
-    local spacingFactor = 1.05
-
-    for letterIndex, letter in ipairs(word) do
-        local newLetter = letterBlock:Clone()
-        newLetter.Parent = wordFolder
-        newLetter.Name = "wordLetter-" .. letterIndex
-        local z = newLetter.Size.Z * (letterIndex - 1) * spacingFactor
-        newLetter.CFrame = newLetter.CFrame * CFrame.new(Vector3.new(0, 0, z))
-
-        CS:AddTag(newLetter, Constants.tagNames.WordLetter)
-
-        applyLetterText({letterBlock = newLetter, char = letter})
-        colorLetterText({
-            letterBlock = newLetter,
-            color = Color3.new(117, 85, 255)
-        })
-
-        table.insert(module.wordLetters,
-                     {char = letter, found = false, instance = newLetter})
-    end
-    letterBlock:Destroy()
-
-end
-
-module.initLetterRack = initLetterRack
-module.initWord = initWord
-module.anchorLetters = anchorLetters
-module.getLetterFolder = getLetterFolder
-module.getWordFolder = getWordFolder
-module.getWordLetters = getWordLetters
-module.colorLetterText = colorLetterText
-
-return module
-]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-			</Item>
-			<Item class="ModuleScript" referent="RBXf89f338533ae4f2e95ee5c1dee0fc4a2">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">Constants</string>
-					<string name="ScriptGuid">{3a202c0e-88aa-40cc-84f4-3386293e2680}</string>
-					<ProtectedString name="Source"><![CDATA[
-]]></ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-				<Item class="ModuleScript" referent="RBXf4b0942f48be4cdc907707f98482a3bd">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">Constants</string>
-						<string name="ScriptGuid">{d0788963-a49c-441a-9144-b80fc3bd16b1}</string>
-						<ProtectedString name="Source"><![CDATA[local module = {
-    buffer = 0,
-    -- singleScene = true,
-    singleScene = false,
-    -- 
-    entered = {value = false},
-    baseWallHeight = 16,
-    walkSpeed = 30,
-    -- walkSpeed = 16,
-    questWallHeight = 24,
-    sceneHeight = 50
-    -- 
-}
-
-module.tagNames = {WordLetter = "WordLetter", LetterBlock = "LetterBlock"}
-
-module.dialogColors = {
-    Color3.fromRGB(253, 158, 240), Color3.fromRGB(225, 253, 158),
-    Color3.fromRGB(253, 228, 158), Color3.fromRGB(158, 253, 179),
-    Color3.fromRGB(158, 215, 253)
-}
-
-return module
-]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-			</Item>
-		</Item>
-		<Item class="Script" referent="RBXf3f6af24ae8e4a3c882de8fbb82176aa">
-			<Properties>
-				<BinaryString name="AttributesSerialize"></BinaryString>
-				<bool name="Disabled">false</bool>
-				<Content name="LinkedSource"><null></null></Content>
-				<string name="Name">BindFreezeCamera1</string>
-				<string name="ScriptGuid">{afe0d0c8-c6cb-4e5a-98c7-920b22808587}</string>
-				<ProtectedString name="Source"><![CDATA[print("--------------------------------BindFreezeCameraRE")
-
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local Players = game:GetService("Players")
-
-local remoteEvent = ReplicatedStorage:WaitForChild("FreezeCameraRE")
-
-]]></ProtectedString>
-				<int64 name="SourceAssetId">-1</int64>
-				<BinaryString name="Tags"></BinaryString>
-			</Properties>
-		</Item>
-		<Item class="ModuleScript" referent="RBX7ef6621c29614379bfad1b45172060b6">
-			<Properties>
-				<BinaryString name="AttributesSerialize"></BinaryString>
-				<Content name="LinkedSource"><null></null></Content>
-				<string name="Name">MyUtils001</string>
-				<string name="ScriptGuid">{8945b18f-e8bf-4548-b94c-e8180d0af6d3}</string>
-				<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
 local Constants = require(Sss.Source.Constants.Constants)
 local module = {}
 local collectionService = game:GetService("CollectionService")
--- 
--- 
+
+local function clearTable(tbl) for key in pairs(tbl) do tbl[key] = nil end end
 
 function module.setPropsByTag(props)
     local tag = props.tag
@@ -14390,6 +13294,489 @@ module.tableToString = tableToString
 module.hideItemAndChildren = hideItemAndChildren
 module.mergeTables = mergeTables
 module.getDescendantsByName = getDescendantsByName
+module.clearTable = clearTable
+
+return module
+]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+			</Item>
+			<Item class="ModuleScript" referent="RBXf89f338533ae4f2e95ee5c1dee0fc4a2">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">Constants</string>
+					<string name="ScriptGuid">{3a202c0e-88aa-40cc-84f4-3386293e2680}</string>
+					<ProtectedString name="Source"><![CDATA[
+]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+				<Item class="ModuleScript" referent="RBXf4b0942f48be4cdc907707f98482a3bd">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">Constants</string>
+						<string name="ScriptGuid">{d0788963-a49c-441a-9144-b80fc3bd16b1}</string>
+						<ProtectedString name="Source"><![CDATA[local module = {
+    buffer = 0,
+    -- singleScene = true,
+    singleScene = false,
+    -- 
+    entered = {value = false},
+    baseWallHeight = 16,
+    walkSpeed = 30,
+    -- walkSpeed = 16,
+    questWallHeight = 24,
+    sceneHeight = 50
+    -- 
+}
+
+module.tagNames = {WordLetter = "WordLetter", LetterBlock = "LetterBlock"}
+
+module.dialogColors = {
+    Color3.fromRGB(253, 158, 240), Color3.fromRGB(225, 253, 158),
+    Color3.fromRGB(253, 228, 158), Color3.fromRGB(158, 253, 179),
+    Color3.fromRGB(158, 215, 253)
+}
+
+return module
+]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+			</Item>
+		</Item>
+		<Item class="Script" referent="RBXf3f6af24ae8e4a3c882de8fbb82176aa">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<bool name="Disabled">false</bool>
+				<Content name="LinkedSource"><null></null></Content>
+				<string name="Name">BindFreezeCamera1</string>
+				<string name="ScriptGuid">{afe0d0c8-c6cb-4e5a-98c7-920b22808587}</string>
+				<ProtectedString name="Source"><![CDATA[print("--------------------------------BindFreezeCameraRE")
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Players = game:GetService("Players")
+
+local remoteEvent = ReplicatedStorage:WaitForChild("FreezeCameraRE")
+
+]]></ProtectedString>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+			</Properties>
+		</Item>
+		<Item class="ModuleScript" referent="RBX7ef6621c29614379bfad1b45172060b6">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<Content name="LinkedSource"><null></null></Content>
+				<string name="Name">MyUtils001</string>
+				<string name="ScriptGuid">{8945b18f-e8bf-4548-b94c-e8180d0af6d3}</string>
+				<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
+local Constants = require(Sss.Source.Constants.Constants)
+local module = {}
+local collectionService = game:GetService("CollectionService")
+
+local function clearTable(tbl) for key in pairs(tbl) do tbl[key] = nil end end
+
+function module.setPropsByTag(props)
+	local tag = props.tag
+	local theProps = props.props
+
+	local items = collectionService:GetTagged(tag)
+
+	for i, item in ipairs(items) do
+		mergeTables(item, theProps)
+		-- 
+	end
+
+end
+
+function getFirstDescendantByName(parent, name)
+	local model = parent:GetDescendants()
+	for i = 1, #model do
+		if model[i].Name == name then
+			return model[i]
+			-- 
+		end
+	end
+end
+
+function getDescendantsByName(parent, name)
+	local items = parent:GetDescendants()
+
+	local output = {}
+	for i, item in ipairs(items) do
+		if item.Name == name then
+			table.insert(output, item)
+			-- 
+		end
+	end
+	return output
+end
+
+function module.getDescendantsByType(parent, type)
+	local items = parent:GetDescendants()
+	local output = {}
+
+	for i, item in pairs(items) do
+		if item:IsA(type) then
+			table.insert(output, item)
+			-- 
+		end
+	end
+	return output
+end
+
+function module.getDescendantsByNameMatch(parent, name)
+	local descendants = parent:GetDescendants()
+	local output = {}
+	for i = 1, #descendants do
+		local child = descendants[i]
+		local match = string.match(child.Name, name)
+		if match then
+			table.insert(output, child)
+			-- 
+		end
+	end
+	return output
+end
+
+-- 
+-- 
+
+function hideItem(part, hide)
+	local transparency = hide and 1 or 0
+	local visible = not hide
+	local enabled = not hide
+
+	if part:IsA("BasePart") then part.Transparency = transparency end
+	if part:IsA("Decal") then part.Transparency = transparency end
+
+	if part:IsA("ScrollingFrame") then part.Visible = visible end
+	if part:IsA("TextLabel") then part.Visible = visible end
+	if part:IsA("TextButton") then part.Visible = visible end
+
+	if part:IsA("SurfaceGui") then part.Enabled = enabled end
+end
+
+function setChildrenProps(parent, props)
+	if parent:IsA("BasePart") then mergeTables(parent, props) end
+
+	local children = parent:GetDescendants()
+	for i, item in ipairs(children) do
+		if item:IsA("BasePart") then mergeTables(item, props) end
+	end
+end
+
+function hideItemAndChildren(props)
+	local parent = props.item
+	local hide = props.hide
+
+	hideItem(parent, hide)
+	local children = parent:GetDescendants()
+	for i, item in ipairs(children) do hideItem(item, hide) end
+end
+
+function sizeWalls(props)
+	local parent = props.item
+	local height = props.height
+
+	local children = parent:GetDescendants()
+	for i, item in ipairs(children) do
+		if item:isA("Part") then item.CanCollide = false end
+	end
+	for i, item in ipairs(children) do
+		if item:isA("Part") then
+			local posY = item.Position.Y - item.Size.Y / 2
+			local newPosY = posY + (height / 2)
+			item.Size = Vector3.new(item.Size.X, height, item.Size.Z)
+			item.Position = Vector3.new(item.Position.X, newPosY,
+				item.Position.Z)
+
+		end
+	end
+	for i, item in ipairs(children) do
+		if item:isA("Part") then
+
+			item.CanCollide = true
+			item.Anchored = true
+		end
+	end
+end
+
+function sizeWalls2(props)
+	local items = props.items
+	local height = props.height
+
+	-- local children = parent:GetDescendants()
+	for i, item in ipairs(items) do
+		if item:isA("Part") then item.CanCollide = false end
+	end
+	for i, item in ipairs(items) do
+		if item:isA("Part") then
+			local posY = item.Position.Y - item.Size.Y / 2
+			local newPosY = posY + (height / 2)
+			item.Size = Vector3.new(item.Size.X, height, item.Size.Z)
+			item.Position = Vector3.new(item.Position.X, newPosY,
+				item.Position.Z)
+
+		end
+	end
+	for i, item in ipairs(items) do
+		if item:isA("Part") then
+
+			item.CanCollide = true
+			item.Anchored = true
+		end
+	end
+end
+
+function module.hideItemAndChildrenByName(props)
+	local name = props.name
+	local hide = props.hide
+
+	local myStuff = workspace:FindFirstChild("MyStuff")
+	local item = getFirstDescendantByName(myStuff, name)
+	hideItemAndChildren({item = item, hide = hide})
+end
+
+function module.setWallHeightByList(props)
+	local items = props.items
+	local height = props.height
+
+	sizeWalls2({items = items, height = height})
+
+end
+
+function module.setWallHeightbyParentModelName(props)
+	local name = props.name
+	local height = props.height
+
+	local myStuff = workspace:FindFirstChild("MyStuff")
+	-- local item = getFirstDescendantByName(myStuff, name)
+	local items = getDescendantsByName(myStuff, name)
+
+	for i, item in ipairs(items) do
+		sizeWalls({item = item, height = height})
+		-- 
+	end
+end
+
+function module.setItemAndChildrenPropsByName(myProps)
+	local name = myProps.name
+	local props = myProps.props
+
+	local myStuff = workspace:FindFirstChild("MyStuff")
+	local item = getFirstDescendantByName(myStuff, name)
+	setChildrenProps(item, props)
+end
+
+function module.setItemAndChildrenPropsByInst(myProps)
+	local item = myProps.item
+	local props = myProps.props
+
+	setChildrenProps(item, props)
+end
+
+function module.getOrCreateFolder(props)
+	local name = props.name
+	local parent = props.parent
+
+	local runtimeQuestsFolder = getFirstDescendantByName(parent, name)
+
+	if not runtimeQuestsFolder then
+		runtimeQuestsFolder = Instance.new("Folder", parent)
+		runtimeQuestsFolder.Name = name
+		runtimeQuestsFolder = getFirstDescendantByName(parent, name)
+	end
+
+	return runtimeQuestsFolder
+end
+
+function module.reportPlayerLocation()
+	local Players = game:GetService("Players")
+	Players.PlayerAdded:Connect(function(player)
+		player.CharacterAdded:Connect(function(character)
+			local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+			while humanoidRootPart do
+				local test2 = workspace.CurrentCamera.CFrame.Position
+				print(test2);
+				print(player.Name, "is at", tostring(humanoidRootPart.Position))
+				wait(4)
+			end
+		end)
+	end)
+end
+
+function module.getDecalIdFromName(props)
+	local name = props.name
+	if (Constants.characters[name] and Constants.characters[name]["decalId"]) then
+		return Constants.characters[name]["decalId"]
+	else
+
+		if (name ~= "blank" and name ~= "empty" and name ~= "") then
+			print("----------------- decalId not found: ------------" .. name)
+		end
+		return '5999465084'
+	end
+end
+
+function module.getDisplayNameFromName(props)
+	local name = props.name
+	if (Constants.characters[name] and Constants.characters[name]["displayName"]) then
+		return Constants.characters[name]["displayName"]
+	else
+		print("---------------------- name not found: ------------" .. name)
+		return name
+	end
+end
+
+function module.deleteChildrenByName(props)
+	local parent = props.parent
+	local childName = props.childName
+	local children = parent:GetDescendants()
+	for i, item in pairs(children) do
+		if item.Name == childName then
+			item:Destroy()
+			--
+		end
+	end
+end
+
+function getFromMyStuff(name)
+	local myStuff = workspace:FindFirstChild("MyStuff")
+	return getFirstDescendantByName(myStuff, name)
+end
+
+function module.getFromTemplates(name)
+	local myStuff = workspace:FindFirstChild("MyStuff")
+	local myTemplates = myStuff:FindFirstChild("MyTemplates")
+	return getFirstDescendantByName(myTemplates, name)
+end
+
+function module.unAttachAllChildParts(parent)
+	local items = parent:GetDescendants()
+	local output = {}
+	for i = 1, #items do
+		if items[i]:IsA('Part') then
+			local item = items[i]
+			if item.Anchored == true then table.insert(output, item) end
+			--
+		end
+
+	end
+	return output
+end
+
+function addcfv3(a, b)
+	local x, y, z, m11, m12, m13, m21, m22, m23, m31, m32, m33 = a:components()
+	return CFrame.new(x + b.x, y + b.y, z + b.z, m11, m12, m13, m21, m22, m23,
+		m31, m32, m33);
+end
+
+function cloneModel(props)
+	local model = props.model
+	local position = props.position
+	local suffix = props.suffix
+
+	local modelClone = model:Clone()
+	modelClone.Parent = model.Parent
+	modelClone.Name = model.Name .. (suffix or "-Clone")
+	if (position) then
+		modelClone:SetPrimaryPartCFrame(position)
+		-- 
+	end
+	return modelClone
+end
+
+local function getNames(tab, name, res, lev)
+	res = res or {[tab] = "ROOT"}
+	local pls = {}
+	lev = lev or 0
+	for k, v in pairs(tab) do
+		if type(v) == "table" and not res[v] then
+			local n = name .. "." .. tostring(k)
+			res[v] = n
+			pls[v] = n
+		end
+	end
+	for k, v in pairs(pls) do
+		getNames(k, v, res)
+		pls[k] = lev
+	end
+	return res, pls
+end
+
+function tableToString(tab, a, b, c, d)
+	a, b = a or 0, b or {[tab] = true}
+	local name = b[tab]
+	local white = ("\t"):rep(a + 1)
+	if not c then c, d = getNames(tab, "ROOT") end
+	local res = {"{"}
+	for k, v in pairs(tab) do
+		local value
+		if type(v) == "table" then
+			if d[v] == a and not b[v] then
+				b[v] = true
+				value = tableToString(v, a + 1, b, c, d)
+			else
+				value = c[v]
+			end
+		elseif type(v) == "string" then
+			value = '"' .. v:gsub("\n", "\\n"):gsub("\t", "\\t") .. '"'
+		else
+			value = tostring(v)
+		end
+		table.insert(res, white .. tostring(k) .. " = " .. value)
+	end
+	white = white:sub(2)
+	table.insert(res, white .. "}")
+	return table.concat(res, "\n")
+end
+
+local test = {
+	str = "Result:\n\t- Unknown",
+	number = 12345,
+	child = {a = "b"},
+	cyclic = {}
+}
+test.child.cyclic = test.cyclic
+test.another = test.child
+
+function mergeTables(t1, t2) for k, v in pairs(t2) do t1[k] = v end end
+
+addPadding = function(props)
+	local parent = props.parent
+	local paddingPct = props.paddingPct
+
+	local UIPadding = Instance.new("UIPadding", parent)
+
+	UIPadding.PaddingBottom = UDim.new(paddingPct, 0)
+	UIPadding.PaddingTop = UDim.new(paddingPct, 0)
+	UIPadding.PaddingLeft = UDim.new(paddingPct, 0)
+	UIPadding.PaddingRight = UDim.new(paddingPct, 0)
+end
+
+setMaterialPebble = function(part)
+	part.Material = Enum.Material.Pebble
+	part.BrickColor = BrickColor.new("Institutional white")
+end
+
+module.addcfv3 = addcfv3
+module.addPadding = addPadding
+module.cloneModel = cloneModel
+module.getFirstDescendantByName = getFirstDescendantByName
+module.getFromMyStuff = getFromMyStuff
+module.setMaterialPebble = setMaterialPebble
+module.tableToString = tableToString
+module.hideItemAndChildren = hideItemAndChildren
+module.mergeTables = mergeTables
+module.getDescendantsByName = getDescendantsByName
+module.clearTable = clearTable
 
 return module
 ]]></ProtectedString>
@@ -14404,7 +13791,7 @@ return module
 					<Content name="PackageIdSerialize"><url>rbxassetid://6082109834</url></Content>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
-					<int64 name="VersionIdSerialize">4</int64>
+					<int64 name="VersionIdSerialize">5</int64>
 				</Properties>
 			</Item>
 		</Item>
@@ -14427,28 +13814,6 @@ return module
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="ModuleScript" referent="RBXc5d08ebeb7cc4491bc49619aef32140b">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">-- Demos</string>
-					<string name="ScriptGuid">{a1dfbdce-4ce7-482f-9366-3163ce7b52b3}</string>
-					<ProtectedString name="Source"></ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-				<Item class="ModuleScript" referent="RBXef650a33627345e3ac97371b505c7af4">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">bs</string>
-						<string name="ScriptGuid">{172fa98e-e7a8-468c-b32f-7b42d39a9967}</string>
-						<ProtectedString name="Source">--- test</ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-			</Item>
 		</Item>
 		<Item class="Folder" referent="RBXe7518efc749344309762f6b3daded4ce">
 			<Properties>

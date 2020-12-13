@@ -5,8 +5,11 @@ local CS = game:GetService("CollectionService")
 
 local module = {
     wordLetters = {},
-    words = {{'C', 'A', 'T'}, {'B', 'A', 'T'}},
-    lastWordIndex = 0
+    words = {
+        {'C', 'A', 'T'}, {'B', 'A', 'T'}, {'F', 'A', 'T'}, {'H', 'A', 'T'},
+        {'M', 'A', 'T'}, {'P', 'A', 'T'}, {'R', 'A', 'T'}, {'S', 'A', 'T'}
+    },
+    lastWordIndex = 1
 }
 
 function colorLetterText(props)
@@ -71,7 +74,6 @@ function getWordFolder()
 end
 
 function initLetterRack(props)
-
     local letterFallFolder = Utils.getFirstDescendantByName(workspace,
                                                             "LetterFallFolder")
     local letterFolder = getLetterFolder()
@@ -137,8 +139,17 @@ function initWord(props)
     local letterFallFolder = Utils.getFirstDescendantByName(workspace,
                                                             "LetterFallFolder")
     local wordFolder = getWordFolder()
-    local word = module.words[module.lastWordIndex + 1]
-    module.lastWordIndex = module.lastWordIndex + 1
+    local word = module.words[module.lastWordIndex]
+    -- module.lastWordIndex = module.lastWordIndex + 1
+
+    for i, letter in ipairs(module.wordLetters) do
+        if letter.instance then letter.instance:Destroy() end
+        module.wordLetters[i] = nil
+    end
+    Utils.clearTable(module.wordLetters)
+    print('module.wordLetters' .. ' - start');
+    print(module.wordLetters);
+    print('module.wordLetters' .. ' - end');
 
     function genRandom(min, max) return min + math.random() * (max - min) end
 
@@ -147,6 +158,8 @@ function initWord(props)
 
     local letterBlock =
         Utils.getFirstDescendantByName(letterRack, "LetterBlock")
+    local letterPositioner = Utils.getFirstDescendantByName(letterRack,
+                                                            "LetterPositioner")
 
     local spacingFactor = 1.05
 
@@ -155,7 +168,8 @@ function initWord(props)
         newLetter.Parent = wordFolder
         newLetter.Name = "wordLetter-" .. letterIndex
         local z = newLetter.Size.Z * (letterIndex - 1) * spacingFactor
-        newLetter.CFrame = newLetter.CFrame * CFrame.new(Vector3.new(0, 0, z))
+        newLetter.CFrame = letterPositioner.CFrame *
+                               CFrame.new(Vector3.new(0, 0, z))
 
         CS:AddTag(newLetter, Constants.tagNames.WordLetter)
 
@@ -168,7 +182,7 @@ function initWord(props)
         table.insert(module.wordLetters,
                      {char = letter, found = false, instance = newLetter})
     end
-    letterBlock:Destroy()
+    -- letterBlock:Destroy()
 
 end
 

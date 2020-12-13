@@ -42,9 +42,12 @@ function module.handleBrick(props)
 
             clickedLetter:Destroy()
             local wordComplete = isWordComplete(wordLetters)
-            print('wordComplete' .. ' - start');
-            print(wordComplete);
-            print('wordComplete' .. ' - end');
+            if wordComplete then
+                LetterFall.lastWordIndex = LetterFall.lastWordIndex + 1
+                LetterFall.initWord()
+                print('wordComplete' .. ' ------------------------ start');
+                print(wordComplete);
+            end
             break
         end
 
