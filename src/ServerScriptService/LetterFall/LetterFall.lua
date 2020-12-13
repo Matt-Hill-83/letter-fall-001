@@ -9,6 +9,21 @@ local module = {
     lastWordIndex = 0
 }
 
+function colorLetterText(props)
+    local color = props.color
+    local letterBlock = props.letterBlock
+
+    local textLabels = Utils.getDescendantsByName(letterBlock, "BlockChar")
+    print('textLabels' .. ' - start');
+    print(textLabels);
+    print('textLabels' .. ' - end');
+    for i, label in ipairs(textLabels) do
+        -- label.Text = letter
+        label.TextColor3 = Color3.new(255, 0, 191)
+
+    end
+end
+
 function anchorLetters()
     local letterFolder = getLetterFolder()
     local newLetters =
@@ -122,7 +137,6 @@ function initWord(props)
     local wordFolder = getWordFolder()
     local word = module.words[module.lastWordIndex + 1]
     module.lastWordIndex = module.lastWordIndex + 1
-    -- local word = {'C', 'A', 'T'}
 
     function genRandom(min, max) return min + math.random() * (max - min) end
 
@@ -147,9 +161,10 @@ function initWord(props)
         for i, label in ipairs(textLabels) do
             label.Text = letter
             label.TextColor3 = Color3.new(117, 85, 255)
+
         end
         table.insert(module.wordLetters,
-                     {char = letter, found = false, letter = newLetter})
+                     {char = letter, found = false, instance = newLetter})
     end
     letterBlock:Destroy()
 
@@ -161,5 +176,6 @@ module.anchorLetters = anchorLetters
 module.getLetterFolder = getLetterFolder
 module.getWordFolder = getWordFolder
 module.getWordLetters = getWordLetters
+module.colorLetterText = colorLetterText
 
 return module

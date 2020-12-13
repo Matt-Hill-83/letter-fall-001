@@ -14,15 +14,9 @@ function module.handleBrick(props)
     -- local wordLetters = CS:GetTagged(Constants.tagNames.WordLetter)
 
     local wordLetters = LetterFall.getWordLetters()
-    print('wordLetters' .. ' - start');
-    print(wordLetters);
-    print('wordLetters' .. ' - end');
 
     local textLabel = Utils.getFirstDescendantByName(clickedLetter, "BlockChar")
                           .Text
-    print('textLabel' .. ' - start');
-    print(textLabel);
-    print('textLabel' .. ' - end');
 
     for i, letter in ipairs(wordLetters) do
         print(letter.char);
@@ -33,6 +27,15 @@ function module.handleBrick(props)
             print("fouhd")
             print("fouhd")
             print("fouhd")
+
+            local textLabels = Utils.getDescendantsByName(letter.instance,
+                                                          "BlockChar")
+
+            LetterFall.colorLetterText({letterBlock = letter.instance})
+            -- for i, label in ipairs(textLabels) do
+            --     label.TextColor3 = Color3.new(255, 0, 191)
+            -- end
+
             clickedLetter:Destroy()
         end
 
