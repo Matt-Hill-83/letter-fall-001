@@ -54,6 +54,20 @@ function module.getDescendantsByType(parent, type)
     return output
 end
 
+function module.getDescendantsByNameMatch(parent, name)
+    local descendants = parent:GetDescendants()
+    local output = {}
+    for i = 1, #descendants do
+        local child = descendants[i]
+        local match = string.match(child.Name, name)
+        if match then
+            table.insert(output, child)
+            -- 
+        end
+    end
+    return output
+end
+
 -- 
 -- 
 
@@ -277,20 +291,6 @@ function module.unAttachAllChildParts(parent)
             --
         end
 
-    end
-    return output
-end
-
-function module.getDescendantsByNameMatch(parent, name)
-    local descendants = parent:GetDescendants()
-    local output = {}
-    for i = 1, #descendants do
-        local child = descendants[i]
-        local match = string.match(child.Name, name)
-        if match then
-            table.insert(output, child)
-            -- 
-        end
     end
     return output
 end

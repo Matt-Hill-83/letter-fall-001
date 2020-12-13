@@ -8,7 +8,9 @@ local LetterFall = require(Sss.Source.LetterFall.LetterFall)
 
 function addRemoteObjects()
     ConfigGame.configGame()
-    LetterFall.initLetterFall()
+    LetterFall.initLetterRack()
+    LetterFall.initWord()
+    -- LetterFall.anchorLetters()
 
     -- 
 end
