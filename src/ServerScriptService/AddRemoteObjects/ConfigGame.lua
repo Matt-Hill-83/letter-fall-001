@@ -21,32 +21,14 @@ function configPlayers()
 end
 
 function setVisibility()
-    local testLabBase = Utils.getFirstDescendantByName(workspace, "TestLabBase")
-    testLabBase:Destroy()
-
-    local taggedPartsTransparent = collectionService:GetTagged("Transparent")
-
-    for i, item in ipairs(taggedPartsTransparent) do
-        Utils.setItemAndChildrenPropsByInst(
-            {
-                item = item,
-                props = {Transparency = 1, CanCollide = false, Anchored = true}
-            })
-    end
-
-    local itemsToHideAtRuntine = {'QuestsOrigin', 'TerrainBase'}
-    for i, item in ipairs(itemsToHideAtRuntine) do
-        Utils.hideItemAndChildrenByName({name = item, hide = true})
-    end
-
-    Utils.setItemAndChildrenPropsByName({
-        name = "DockWalls",
-        props = {Transparency = 1}
-    })
+    -- local taggedPartsTransparent = collectionService:GetTagged("Transparent")
+    -- for i, item in ipairs(taggedPartsTransparent) do
+    Utils.setPropsByTag({tag = "Transparent", props = {Transparency = 1}})
+    -- end
 
 end
 function module.configGame()
-    -- setVisibility()
+    setVisibility()
     configPlayers()
 end
 

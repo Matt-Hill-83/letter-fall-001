@@ -6679,7 +6679,7 @@ remoteCode.addRemoteObjects()
 								<Z>0</Z>
 							</Vector3>
 							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
+							<BinaryString name="Tags">VHJhbnNwYXJlbnQ=</BinaryString>
 							<float name="TopParamA">-0.5</float>
 							<float name="TopParamB">0.5</float>
 							<token name="TopSurface">0</token>
@@ -7445,7 +7445,7 @@ end
 
 clickDetector.MouseClick:Connect(onClicked)]]></ProtectedString>
 										<int64 name="SourceAssetId">-1</int64>
-										<BinaryString name="Tags"></BinaryString>
+										<BinaryString name="Tags">VHJhbnNwYXJlbnQ=</BinaryString>
 									</Properties>
 								</Item>
 							</Item>
@@ -12044,13 +12044,7 @@ function module.handleBrick(props)
     local player = props.player
     local letterBlock = props.letterBlock
 
-    print('letterBlock' .. ' - start');
-    print(letterBlock);
-    print('letterBlock' .. ' - end');
-
-    print('player' .. ' - start');
-    print(player);
-    print('player' .. ' - end');
+    letterBlock:Destroy()
 
 end
 
@@ -14887,7 +14881,7 @@ local remoteEvent = ReplicatedStorage:WaitForChild("FreezeCameraRE")
 						<string name="Name">Visible</string>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
-						<bool name="Value">false</bool>
+						<bool name="Value">true</bool>
 					</Properties>
 				</Item>
 			</Item>
