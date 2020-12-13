@@ -1,7 +1,7 @@
 local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 
-local collectionService = game:GetService("CollectionService")
+local CS = game:GetService("CollectionService")
 
 local module = {}
 function configPlayers()
@@ -21,12 +21,9 @@ function configPlayers()
 end
 
 function setVisibility()
-    -- local taggedPartsTransparent = collectionService:GetTagged("Transparent")
-    -- for i, item in ipairs(taggedPartsTransparent) do
     Utils.setPropsByTag({tag = "Transparent", props = {Transparency = 1}})
-    -- end
-
 end
+
 function module.configGame()
     setVisibility()
     configPlayers()
