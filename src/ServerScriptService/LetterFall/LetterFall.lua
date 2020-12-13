@@ -3,6 +3,12 @@ local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Constants = require(Sss.Source.Constants.Constants)
 local CS = game:GetService("CollectionService")
 
+-- local Utils2 = require(Sss.MyUtils001)
+-- print('Utils2' .. ' - start');
+-- print(Utils2);
+-- print(Utils2.getFirstDescendantByName);
+-- print('Utils' .. ' - end');
+
 local module = {
     wordLetters = {},
     words = {{'C', 'A', 'T'}, {'B', 'A', 'T'}},
@@ -71,6 +77,7 @@ function getWordFolder()
 end
 
 function initLetterRack(props)
+
     local letterFallFolder = Utils.getFirstDescendantByName(workspace,
                                                             "LetterFallFolder")
     local letterFolder = getLetterFolder()
