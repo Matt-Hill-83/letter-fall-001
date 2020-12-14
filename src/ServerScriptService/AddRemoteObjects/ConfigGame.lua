@@ -21,7 +21,7 @@ function configPlayers()
 end
 
 function setVisibility()
-    Utils.setPropsByTag({tag = "Transparent", props = {Transparency = 1}})
+    -- Utils.setPropsByTag({tag = "Transparent", props = {Transparency = 1}})
 end
 
 function module.configGame()

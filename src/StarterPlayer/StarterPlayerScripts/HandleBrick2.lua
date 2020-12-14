@@ -33,6 +33,7 @@ function handleBrick(player, clickedLetter)
 
     local part = CS:GetTagged("BallPitBottom")
     if part[1] then part[1]:Destroy() end
+    -- LetterFall.anchorLetters()
 
     for i, letter in ipairs(wordLetters) do
         if isDesiredLetter(letter, clickedLetter) then

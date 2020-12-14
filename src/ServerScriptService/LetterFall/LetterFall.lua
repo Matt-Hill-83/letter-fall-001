@@ -34,10 +34,10 @@ end
 function createBalls(props)
     local ball = CS:GetTagged("FluidBall")
     if ball[1] then
-        for count = 1, 500 do
-            local newBall = ball[1]:Clone()
-            newBall.Parent = workspace
-        end
+        -- for count = 1, 10 do
+        --     local newBall = ball[1]:Clone()
+        --     newBall.Parent = workspace
+        -- end
     end
 end
 
@@ -125,9 +125,9 @@ function initLetterRack(props)
                                                                 "Att-ColumnBase")
         columnAttachment.Name = columnAttachment.Name .. "-C" .. colIndex
 
-        local z = newColumnBase.Size.Z * (colIndex - 1) * spacingFactor
+        local z = newColumnBase.Size.Z * (colIndex - 0) * spacingFactor
         newColumnBase.CFrame = newColumnBase.CFrame *
-                                   CFrame.new(Vector3.new(0, 0, z))
+                                   CFrame.new(Vector3.new(-z, 0, 0))
 
         local letterTool = Utils.getFirstDescendantByName(newColumnBase,
                                                           "LetterTool")
@@ -147,7 +147,7 @@ function initLetterRack(props)
             letterAttachment.Name = letterAttachment.Name .. "-R" .. rowIndex ..
                                         "-C" .. colIndex
 
-            local y = newLetter.Size.Y * (rowIndex - 1) * spacingFactor
+            local y = newLetter.Size.Y * (rowIndex - 0) * spacingFactor
             newLetter.CFrame = newLetter.CFrame *
                                    CFrame.new(Vector3.new(0, y, 0))
 
