@@ -34,10 +34,10 @@ end
 function createBalls(props)
     local ball = CS:GetTagged("FluidBall")
     if ball[1] then
-        -- for count = 1, 10 do
-        --     local newBall = ball[1]:Clone()
-        --     newBall.Parent = workspace
-        -- end
+        for count = 1, 200 do
+            local newBall = ball[1]:Clone()
+            newBall.Parent = workspace
+        end
     end
 end
 
@@ -85,7 +85,7 @@ function initLetterRack(props)
                                                             "LetterFallFolder")
     local letterFolder = getLetterFolder()
 
-    local numRow = 10
+    local numRow = 8
     local numCol = 8
     local letters = {'C', 'A', 'T'}
 
@@ -125,7 +125,13 @@ function initLetterRack(props)
                                                                 "Att-ColumnBase")
         columnAttachment.Name = columnAttachment.Name .. "-C" .. colIndex
 
-        local z = newColumnBase.Size.Z * (colIndex - 0) * spacingFactor
+        local z = newColumnBase.Size.Z * (colIndex - 1) * spacingFactor
+        local letterPositioner = CS:GetTagged("RackLetterBlockPositioner")
+
+        if letterPositioner and letterPositioner[1] then
+            -- newColumnBase.CFrame = letterPositioner.CFrame *
+            --                            CFrame.new(Vector3.new(-z, 0, 0))
+        end
         newColumnBase.CFrame = newColumnBase.CFrame *
                                    CFrame.new(Vector3.new(-z, 0, 0))
 
@@ -147,7 +153,7 @@ function initLetterRack(props)
             letterAttachment.Name = letterAttachment.Name .. "-R" .. rowIndex ..
                                         "-C" .. colIndex
 
-            local y = newLetter.Size.Y * (rowIndex - 0) * spacingFactor
+            local y = newLetter.Size.Y * (rowIndex - 1) * spacingFactor
             newLetter.CFrame = newLetter.CFrame *
                                    CFrame.new(Vector3.new(0, y, 0))
 
@@ -173,12 +179,10 @@ function initWord(props)
 
     function genRandom(min, max) return min + math.random() * (max - min) end
 
-    local letterRack = Utils.getFirstDescendantByName(letterFallFolder,
-                                                      "WordBox")
+    local wordBox = Utils.getFirstDescendantByName(letterFallFolder, "WordBox")
 
-    local letterBlock =
-        Utils.getFirstDescendantByName(letterRack, "LetterBlock")
-    local letterPositioner = Utils.getFirstDescendantByName(letterRack,
+    local letterBlock = Utils.getFirstDescendantByName(wordBox, "LetterBlock")
+    local letterPositioner = Utils.getFirstDescendantByName(wordBox,
                                                             "LetterPositioner")
 
     local spacingFactor = 1.05
