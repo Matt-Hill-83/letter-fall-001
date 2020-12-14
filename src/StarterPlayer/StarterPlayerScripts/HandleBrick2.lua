@@ -12,6 +12,10 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local remoteEvent = ReplicatedStorage:WaitForChild("RemoteEventTest")
 
 function isDesiredLetter(letter, clickedLetter)
+
+    print('clickedLetter-------------------------->>>' .. ' - start');
+    print(clickedLetter);
+    print('clickedLetter' .. ' - end');
     local textLabel = Utils.getFirstDescendantByName(clickedLetter, "BlockChar")
                           .Text
     return letter.found ~= true and letter.char == textLabel
@@ -28,9 +32,13 @@ function isWordComplete(wordLetters)
     return true
 end
 
-function handleBrick(props)
-    local player = props.player
-    local clickedLetter = props.letterBlock
+function handleBrick(player, clickedLetter)
+    print('handleBrick')
+    print('handleBrick')
+    print('handleBrick')
+    print('handleBrick')
+    -- local player = props.player
+    -- local clickedLetter = letterBlock
     local wordLetters = LetterFall.getWordLetters()
 
     print('clickedLetter' .. ' - start');
@@ -66,6 +74,10 @@ end
 -- Create a new part
 local function onCreatePart(player)
     print(player.Name .. " fired the remote event")
+    print(player.Name .. " fired the remote event")
+    print(player.Name .. " fired the remote event")
+    print(player.Name .. " fired the remote event")
+    print(player.Name .. " fired the remote event")
     -- local newPart = Instance.new("Part")
     -- newPart.BrickColor = partColor
     -- newPart.Position = partPos
@@ -76,8 +88,8 @@ print('remoteEvent' .. ' - start');
 print(remoteEvent);
 print('remoteEvent' .. ' - end');
 -- Call "onCreatePart()" when the client fires the remote event
--- remoteEvent.OnServerEvent:Connect(handleBrick)
-remoteEvent.OnServerEvent:Connect(onCreatePart)
+remoteEvent.OnServerEvent:Connect(handleBrick)
+-- remoteEvent.OnServerEvent:Connect(onCreatePart)
 
 module.onCreatePart = onCreatePart
 return module
