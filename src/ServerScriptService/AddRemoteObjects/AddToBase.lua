@@ -14,6 +14,7 @@ function addRemoteObjects()
     ConfigGame.configGame()
     LetterFall.initLetterRack()
     LetterFall.initWord()
+    LetterFall.createBalls()
     -- LetterFall.anchorLetters()
 
     -- 

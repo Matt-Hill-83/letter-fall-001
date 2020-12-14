@@ -34,12 +34,11 @@ end
 function createBalls(props)
     local ball = CS:GetTagged("FluidBall")
     if ball[1] then
-        for count = 1, 500 do
+        for count = 1, 50 do
             local newBall = ball[1]:Clone()
             newBall.Parent = workspace
         end
     end
-
 end
 
 function anchorLetters()

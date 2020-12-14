@@ -12,10 +12,6 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local remoteEvent = ReplicatedStorage:WaitForChild("RemoteEventTest")
 
 function isDesiredLetter(letter, clickedLetter)
-
-    print('clickedLetter-------------------------->>>' .. ' - start');
-    print(clickedLetter);
-    print('clickedLetter' .. ' - end');
     local textLabel = Utils.getFirstDescendantByName(clickedLetter, "BlockChar")
                           .Text
     return letter.found ~= true and letter.char == textLabel
@@ -33,21 +29,12 @@ function isWordComplete(wordLetters)
 end
 
 function handleBrick(player, clickedLetter)
-    print('handleBrick')
-    print('handleBrick')
-    print('handleBrick')
-    print('handleBrick')
-    -- local player = props.player
-    -- local clickedLetter = letterBlock
     local wordLetters = LetterFall.getWordLetters()
 
-    print('clickedLetter' .. ' - start');
-    print(clickedLetter);
-    print('clickedLetter' .. ' - end');
+    local part = CS:GetTagged("BallPitBottom")
+    if part[1] then part[1]:Destroy() end
 
     for i, letter in ipairs(wordLetters) do
-        print('letter' .. ' - start----------------');
-        print(letter);
         if isDesiredLetter(letter, clickedLetter) then
             letter.found = true
 
@@ -61,8 +48,6 @@ function handleBrick(player, clickedLetter)
             if wordComplete then
                 LetterFall.lastWordIndex = LetterFall.lastWordIndex + 1
                 LetterFall.initWord()
-                print('wordComplete' .. ' ------------------------ start');
-                print(wordComplete);
             end
             break
         end
@@ -71,25 +56,6 @@ function handleBrick(player, clickedLetter)
 
 end
 
--- Create a new part
-local function onCreatePart(player)
-    print(player.Name .. " fired the remote event")
-    print(player.Name .. " fired the remote event")
-    print(player.Name .. " fired the remote event")
-    print(player.Name .. " fired the remote event")
-    print(player.Name .. " fired the remote event")
-    -- local newPart = Instance.new("Part")
-    -- newPart.BrickColor = partColor
-    -- newPart.Position = partPos
-    -- newPart.Parent = workspace
-end
-
-print('remoteEvent' .. ' - start');
-print(remoteEvent);
-print('remoteEvent' .. ' - end');
--- Call "onCreatePart()" when the client fires the remote event
 remoteEvent.OnServerEvent:Connect(handleBrick)
--- remoteEvent.OnServerEvent:Connect(onCreatePart)
 
-module.onCreatePart = onCreatePart
 return module
