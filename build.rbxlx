@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>5.02563286</X>
-					<Y>10.6937122</Y>
-					<Z>12.3610821</Z>
-					<R00>0.689788043</R00>
-					<R01>0.0681260228</R01>
-					<R02>-0.720799088</R02>
-					<R10>-0</R10>
-					<R11>0.995563269</R11>
-					<R12>0.094095245</R12>
-					<R20>0.724011362</R20>
-					<R21>-0.0649057776</R21>
-					<R22>0.686727643</R22>
+					<X>-58.8023529</X>
+					<Y>29.9902573</Y>
+					<Z>37.4808769</Z>
+					<R00>0.43857789</R00>
+					<R01>0.214361265</R01>
+					<R02>-0.872753441</R02>
+					<R10>7.45058237e-09</R10>
+					<R11>0.971136272</R11>
+					<R12>0.238525495</R12>
+					<R20>0.898693323</R20>
+					<R21>-0.104612015</R21>
+					<R22>0.425918788</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -5450,7 +5450,7 @@ remoteCode.addRemoteObjects()
 							<token name="BottomSurface">0</token>
 							<token name="BottomSurfaceInput">0</token>
 							<CoordinateFrame name="CFrame">
-								<X>7.24908924</X>
+								<X>-8.25091076</X>
 								<Y>3.31271386</Y>
 								<Z>0.959364831</Z>
 								<R00>-1.31128445e-06</R00>
@@ -5605,7 +5605,7 @@ remoteCode.addRemoteObjects()
 							<token name="BottomSurface">0</token>
 							<token name="BottomSurfaceInput">0</token>
 							<CoordinateFrame name="CFrame">
-								<X>9.24832916</X>
+								<X>-6.25167084</X>
 								<Y>3.31258035</Y>
 								<Z>10.4593716</Z>
 								<R00>-1.31128445e-06</R00>
@@ -5760,7 +5760,7 @@ remoteCode.addRemoteObjects()
 							<token name="BottomSurface">0</token>
 							<token name="BottomSurfaceInput">0</token>
 							<CoordinateFrame name="CFrame">
-								<X>9.24969673</X>
+								<X>-6.25030327</X>
 								<Y>3.31271386</Y>
 								<Z>-8.54054356</Z>
 								<R00>-1.31128445e-06</R00>
@@ -5915,7 +5915,7 @@ remoteCode.addRemoteObjects()
 							<token name="BottomSurface">0</token>
 							<token name="BottomSurfaceInput">0</token>
 							<CoordinateFrame name="CFrame">
-								<X>9.24919796</X>
+								<X>-6.25080204</X>
 								<Y>2.81261563</Y>
 								<Z>-0.540536642</Z>
 								<R00>-1.31130901e-06</R00>
@@ -5991,7 +5991,7 @@ remoteCode.addRemoteObjects()
 								<token name="BottomSurface">0</token>
 								<token name="BottomSurfaceInput">0</token>
 								<CoordinateFrame name="CFrame">
-									<X>10.2488241</X>
+									<X>-5.25117588</X>
 									<Y>3.43772912</Y>
 									<Z>-0.540748954</Z>
 									<R00>1.71262855e-05</R00>
@@ -6148,7 +6148,7 @@ remoteCode.addRemoteObjects()
 							<token name="BottomSurface">0</token>
 							<token name="BottomSurfaceInput">0</token>
 							<CoordinateFrame name="CFrame">
-								<X>8.7490778</X>
+								<X>-6.7509222</X>
 								<Y>1.81366205</Y>
 								<Z>0.959458351</Z>
 								<R00>-1.31130901e-06</R00>
@@ -6225,7 +6225,7 @@ remoteCode.addRemoteObjects()
 							<token name="BottomSurface">0</token>
 							<token name="BottomSurfaceInput">0</token>
 							<CoordinateFrame name="CFrame">
-								<X>9.24857616</X>
+								<X>-6.25142431</X>
 								<Y>2.81239796</Y>
 								<Z>8.45943737</Z>
 								<R00>-1.31128445e-06</R00>
@@ -6301,7 +6301,7 @@ remoteCode.addRemoteObjects()
 								<token name="BottomSurface">0</token>
 								<token name="BottomSurfaceInput">0</token>
 								<CoordinateFrame name="CFrame">
-									<X>10.2481947</X>
+									<X>-5.25180578</X>
 									<Y>3.43751144</Y>
 									<Z>8.45928574</Z>
 									<R00>1.71261672e-05</R00>
@@ -6536,7 +6536,7 @@ remoteCode.addRemoteObjects()
 							<token name="BottomSurface">0</token>
 							<token name="BottomSurfaceInput">0</token>
 							<CoordinateFrame name="CFrame">
-								<X>9.24882412</X>
+								<X>-6.25117588</X>
 								<Y>2.81247044</Y>
 								<Z>5.45944595</Z>
 								<R00>-1.31131628e-06</R00>
@@ -6612,7 +6612,7 @@ remoteCode.addRemoteObjects()
 								<token name="BottomSurface">0</token>
 								<token name="BottomSurfaceInput">0</token>
 								<CoordinateFrame name="CFrame">
-									<X>10.2484503</X>
+									<X>-5.25154972</X>
 									<Y>3.43758392</Y>
 									<Z>5.4592948</Z>
 									<R00>1.71262764e-05</R00>
@@ -6847,7 +6847,7 @@ remoteCode.addRemoteObjects()
 							<token name="BottomSurface">0</token>
 							<token name="BottomSurfaceInput">0</token>
 							<CoordinateFrame name="CFrame">
-								<X>9.24895</X>
+								<X>-6.25105</X>
 								<Y>2.81254292</Y>
 								<Z>2.45945454</Z>
 								<R00>-1.31129173e-06</R00>
@@ -6923,7 +6923,7 @@ remoteCode.addRemoteObjects()
 								<token name="BottomSurface">0</token>
 								<token name="BottomSurfaceInput">0</token>
 								<CoordinateFrame name="CFrame">
-									<X>10.2485685</X>
+									<X>-5.25143147</X>
 									<Y>3.4376564</Y>
 									<Z>2.45930338</Z>
 									<R00>1.71261599e-05</R00>
@@ -7197,7 +7197,7 @@ remoteCode.addRemoteObjects()
 							<token name="BottomSurface">0</token>
 							<token name="BottomSurfaceInput">0</token>
 							<CoordinateFrame name="CFrame">
-								<X>9.24932384</X>
+								<X>-6.25067616</X>
 								<Y>2.81269169</Y>
 								<Z>-3.5405283</Z>
 								<R00>-1.31131628e-06</R00>
@@ -7273,7 +7273,7 @@ remoteCode.addRemoteObjects()
 								<token name="BottomSurface">0</token>
 								<token name="BottomSurfaceInput">0</token>
 								<CoordinateFrame name="CFrame">
-									<X>10.24895</X>
+									<X>-5.25105</X>
 									<Y>3.43780518</Y>
 									<Z>-3.54067969</Z>
 									<R00>1.71262764e-05</R00>
@@ -7508,7 +7508,7 @@ remoteCode.addRemoteObjects()
 							<token name="BottomSurface">0</token>
 							<token name="BottomSurfaceInput">0</token>
 							<CoordinateFrame name="CFrame">
-								<X>9.2495718</X>
+								<X>-6.25042772</X>
 								<Y>2.81276417</Y>
 								<Z>-6.5404892</Z>
 								<R00>-1.31129173e-06</R00>
@@ -7584,7 +7584,7 @@ remoteCode.addRemoteObjects()
 								<token name="BottomSurface">0</token>
 								<token name="BottomSurfaceInput">0</token>
 								<CoordinateFrame name="CFrame">
-									<X>10.2491903</X>
+									<X>-5.25080919</X>
 									<Y>3.43787766</Y>
 									<Z>-6.54064035</Z>
 									<R00>1.71261599e-05</R00>
@@ -9439,84 +9439,6 @@ remoteCode.addRemoteObjects()
 								<string name="Name">Weld</string>
 								<Ref name="Part0">RBX99c32a44f2e24188bfc1972278f4486e</Ref>
 								<Ref name="Part1">RBXad5ea781ed814e6fb9339e65f3a6d83b</Ref>
-								<int64 name="SourceAssetId">-1</int64>
-								<BinaryString name="Tags"></BinaryString>
-							</Properties>
-						</Item>
-						<Item class="Weld" referent="RBX186ea54cd3cb45a7a0c89180bdf6c655">
-							<Properties>
-								<BinaryString name="AttributesSerialize"></BinaryString>
-								<CoordinateFrame name="C0">
-									<X>-4.61634445</X>
-									<Y>0</Y>
-									<Z>4.76837158e-07</Z>
-									<R00>-1.29406024e-31</R00>
-									<R01>-7.300765e-43</R01>
-									<R02>-1</R02>
-									<R10>-4.54746353e-12</R10>
-									<R11>1</R11>
-									<R12>0</R12>
-									<R20>1</R20>
-									<R21>4.54746353e-12</R21>
-									<R22>-1.29406035e-31</R22>
-								</CoordinateFrame>
-								<CoordinateFrame name="C1">
-									<X>5.75007868</X>
-									<Y>-0.526720405</Y>
-									<Z>-4.39627647</Z>
-									<R00>-0.999996901</R00>
-									<R01>-2.38741318e-12</R01>
-									<R02>6.70777984e-32</R02>
-									<R10>6.25436463e-32</R10>
-									<R11>1.89902776e-21</R11>
-									<R12>0.999997139</R12>
-									<R20>-2.16003842e-12</R20>
-									<R21>0.999993086</R21>
-									<R22>-1.89903624e-21</R22>
-								</CoordinateFrame>
-								<bool name="Enabled">true</bool>
-								<string name="Name">Weld</string>
-								<Ref name="Part0">RBX99c32a44f2e24188bfc1972278f4486e</Ref>
-								<Ref name="Part1">RBX28691ccd3624417093ec868f1834fef3</Ref>
-								<int64 name="SourceAssetId">-1</int64>
-								<BinaryString name="Tags"></BinaryString>
-							</Properties>
-						</Item>
-						<Item class="Weld" referent="RBXfc2548ea5dfa4105911331d11cc40446">
-							<Properties>
-								<BinaryString name="AttributesSerialize"></BinaryString>
-								<CoordinateFrame name="C0">
-									<X>-4.61634445</X>
-									<Y>0</Y>
-									<Z>4.76837158e-07</Z>
-									<R00>-1.29406024e-31</R00>
-									<R01>-7.300765e-43</R01>
-									<R02>-1</R02>
-									<R10>-4.54746353e-12</R10>
-									<R11>1</R11>
-									<R12>0</R12>
-									<R20>1</R20>
-									<R21>4.54746353e-12</R21>
-									<R22>-1.29406035e-31</R22>
-								</CoordinateFrame>
-								<CoordinateFrame name="C1">
-									<X>4.22625399</X>
-									<Y>-0.518473864</Y>
-									<Z>1.05104828</Z>
-									<R00>-1</R00>
-									<R01>1.31131219e-06</R01>
-									<R02>6.63938765e-11</R02>
-									<R10>6.63964925e-11</R10>
-									<R11>1.99542693e-09</R11>
-									<R12>1</R12>
-									<R20>1.31131219e-06</R20>
-									<R21>1</R21>
-									<R22>-1.99542693e-09</R22>
-								</CoordinateFrame>
-								<bool name="Enabled">true</bool>
-								<string name="Name">Weld</string>
-								<Ref name="Part0">RBX99c32a44f2e24188bfc1972278f4486e</Ref>
-								<Ref name="Part1">RBXe6deafd9ab944a82b3cad9cfc163970c</Ref>
 								<int64 name="SourceAssetId">-1</int64>
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
@@ -12293,7 +12215,7 @@ remoteCode.addRemoteObjects()
 				<token name="BottomSurface">0</token>
 				<token name="BottomSurfaceInput">0</token>
 				<CoordinateFrame name="CFrame">
-					<X>3.30174446</X>
+					<X>-14.6982555</X>
 					<Y>1.82192421</Y>
 					<Z>-0.564381361</Z>
 					<R00>1.13686648e-13</R00>
@@ -14572,7 +14494,7 @@ end
 function createBalls(props)
     local ball = CS:GetTagged("FluidBall")
     if ball[1] then
-        for count = 1, 50 do
+        for count = 1, 500 do
             local newBall = ball[1]:Clone()
             newBall.Parent = workspace
         end
