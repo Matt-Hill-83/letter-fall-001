@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-15.6172943</X>
-					<Y>15.4686575</Y>
-					<Z>0.778215408</Z>
-					<R00>0.153226718</R00>
-					<R01>0.270740956</R01>
-					<R02>-0.950379312</R02>
-					<R10>3.72529074e-09</R10>
-					<R11>0.961736441</R11>
-					<R12>0.273976326</R12>
-					<R20>0.988191068</R20>
-					<R21>-0.0419804975</R21>
-					<R22>0.147363722</R22>
+					<X>3.90768719</X>
+					<Y>32.4944267</Y>
+					<Z>13.7296171</Z>
+					<R00>0.79668206</R00>
+					<R01>0.459593683</R01>
+					<R02>-0.392519295</R02>
+					<R10>1.49011612e-08</R10>
+					<R11>0.649437785</R11>
+					<R12>0.760414779</R12>
+					<R20>0.604398668</R20>
+					<R21>-0.605808794</R21>
+					<R22>0.517395377</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -5498,7 +5498,7 @@ remoteCode.addRemoteObjects()
 							<float name="TopParamB">0.5</float>
 							<token name="TopSurface">0</token>
 							<token name="TopSurfaceInput">0</token>
-							<float name="Transparency">1</float>
+							<float name="Transparency">0.5</float>
 							<Vector3 name="Velocity">
 								<X>0</X>
 								<Y>0</Y>
@@ -5575,7 +5575,7 @@ remoteCode.addRemoteObjects()
 							<float name="TopParamB">0.5</float>
 							<token name="TopSurface">0</token>
 							<token name="TopSurfaceInput">0</token>
-							<float name="Transparency">1</float>
+							<float name="Transparency">0.5</float>
 							<Vector3 name="Velocity">
 								<X>0</X>
 								<Y>0</Y>
@@ -5693,7 +5693,7 @@ remoteCode.addRemoteObjects()
 							<float name="TopParamB">0.5</float>
 							<token name="TopSurface">0</token>
 							<token name="TopSurfaceInput">0</token>
-							<float name="Transparency">1</float>
+							<float name="Transparency">0.5</float>
 							<Vector3 name="Velocity">
 								<X>0</X>
 								<Y>0</Y>
@@ -5811,7 +5811,7 @@ remoteCode.addRemoteObjects()
 							<float name="TopParamB">0.5</float>
 							<token name="TopSurface">0</token>
 							<token name="TopSurfaceInput">0</token>
-							<float name="Transparency">0</float>
+							<float name="Transparency">0.5</float>
 							<Vector3 name="Velocity">
 								<X>0</X>
 								<Y>0</Y>
@@ -6028,7 +6028,7 @@ remoteCode.addRemoteObjects()
 									<Z>0</Z>
 								</Vector3>
 								<int64 name="SourceAssetId">-1</int64>
-								<BinaryString name="Tags"></BinaryString>
+								<BinaryString name="Tags">TGV0dGVyQmxvY2tJblJhY2s=</BinaryString>
 								<float name="TopParamA">-0.5</float>
 								<float name="TopParamB">0.5</float>
 								<token name="TopSurface">0</token>
@@ -6681,14 +6681,14 @@ remoteCode.addRemoteObjects()
 										<Content name="LinkedSource"><null></null></Content>
 										<string name="Name">HandleClick</string>
 										<string name="ScriptGuid">{45602495-4995-4922-a4c9-feaf62796726}</string>
-										<ProtectedString name="Source"><![CDATA[local remoteCode = require(game.StarterPlayer.Source.StarterPlayerScripts.HandleBrick)
-local clickDetector = script.Parent
+										<ProtectedString name="Source"><![CDATA[--local remoteCode = require(game.StarterPlayer.Source.StarterPlayerScripts.HandleBrick)
+--local clickDetector = script.Parent
 
-function onClicked(player)
-	remoteCode.handleBrick({player = player, letterBlock = clickDetector.Parent})
-end
+--function onClicked(player)
+--	remoteCode.handleBrick({player = player, letterBlock = clickDetector.Parent})
+--end
 
-clickDetector.MouseClick:Connect(onClicked)]]></ProtectedString>
+--clickDetector.MouseClick:Connect(onClicked)]]></ProtectedString>
 										<int64 name="SourceAssetId">-1</int64>
 										<BinaryString name="Tags"></BinaryString>
 									</Properties>
@@ -6743,6 +6743,83 @@ clickDetector.MouseClick:Connect(onClicked)]]></ProtectedString>
 								</Properties>
 							</Item>
 						</Item>
+					</Item>
+					<Item class="Part" referent="RBX9d6380f783194794ac7fb33e779cac5c">
+						<Properties>
+							<bool name="Anchored">true</bool>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<float name="BackParamA">-0.5</float>
+							<float name="BackParamB">0.5</float>
+							<token name="BackSurface">0</token>
+							<token name="BackSurfaceInput">0</token>
+							<float name="BottomParamA">-0.5</float>
+							<float name="BottomParamB">0.5</float>
+							<token name="BottomSurface">0</token>
+							<token name="BottomSurfaceInput">0</token>
+							<CoordinateFrame name="CFrame">
+								<X>17.580349</X>
+								<Y>15.0426102</Y>
+								<Z>-0.998231888</Z>
+								<R00>0.999992132</R00>
+								<R01>-4.01048039e-09</R01>
+								<R02>-1.1046933e-06</R02>
+								<R10>4.01218481e-09</R10>
+								<R11>0.999997854</R11>
+								<R12>-2.80711981e-10</R12>
+								<R20>1.10469261e-06</R20>
+								<R21>2.80709123e-10</R21>
+								<R22>0.999994755</R22>
+							</CoordinateFrame>
+							<bool name="CanCollide">true</bool>
+							<bool name="CastShadow">true</bool>
+							<int name="CollisionGroupId">0</int>
+							<Color3uint8 name="Color3uint8">4294928076</Color3uint8>
+							<PhysicalProperties name="CustomPhysicalProperties">
+								<CustomPhysics>false</CustomPhysics>
+							</PhysicalProperties>
+							<float name="FrontParamA">-0.5</float>
+							<float name="FrontParamB">0.5</float>
+							<token name="FrontSurface">0</token>
+							<token name="FrontSurfaceInput">0</token>
+							<float name="LeftParamA">-0.5</float>
+							<float name="LeftParamB">0.5</float>
+							<token name="LeftSurface">0</token>
+							<token name="LeftSurfaceInput">0</token>
+							<bool name="Locked">false</bool>
+							<bool name="Massless">false</bool>
+							<token name="Material">528</token>
+							<string name="Name">InvisibleWall</string>
+							<float name="Reflectance">0</float>
+							<float name="RightParamA">-0.5</float>
+							<float name="RightParamB">0.5</float>
+							<token name="RightSurface">0</token>
+							<token name="RightSurfaceInput">0</token>
+							<int name="RootPriority">0</int>
+							<Vector3 name="RotVelocity">
+								<X>0</X>
+								<Y>0</Y>
+								<Z>0</Z>
+							</Vector3>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags">SWdub3JlQ2xpY2s=</BinaryString>
+							<float name="TopParamA">-0.5</float>
+							<float name="TopParamB">0.5</float>
+							<token name="TopSurface">0</token>
+							<token name="TopSurfaceInput">0</token>
+							<float name="Transparency">0.899999976</float>
+							<Vector3 name="Velocity">
+								<X>0</X>
+								<Y>0</Y>
+								<Z>0</Z>
+							</Vector3>
+							<token name="formFactorRaw">1</token>
+							<token name="shape">1</token>
+							<Vector3 name="size">
+								<X>0.5</X>
+								<Y>15.5</Y>
+								<Z>19.5</Z>
+							</Vector3>
+						</Properties>
 					</Item>
 				</Item>
 				<Item class="Model" referent="RBXab71f612ef13488d81da0e29b1a931be">
@@ -11375,6 +11452,90 @@ clickDetector.MouseClick:Connect(onClicked)]]></ProtectedString>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 			</Item>
+			<Item class="LocalScript" referent="RBXf0ec0120ec274e91be8385cf8ed1dd33">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<bool name="Disabled">false</bool>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">IgnoreClick</string>
+					<string name="ScriptGuid">{417ab455-8ffc-49bd-a18f-d0cd7e728f6b}</string>
+					<ProtectedString name="Source"><![CDATA[print("SPS - local ----------------------------")
+
+local CS = game:GetService("CollectionService")
+local UserInputService = game:GetService("UserInputService")
+local mouse = game.Players.LocalPlayer:GetMouse()
+
+local MAX_RAY_LENGTH = 5000
+
+local function onInputBegan(input, gameProcessed)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 then
+		
+		local raycastParams = RaycastParams.new()
+		raycastParams.FilterType = Enum.RaycastFilterType.Blacklist
+		raycastParams.FilterDescendantsInstances = CS:GetTagged("IgnoreClick")
+		raycastParams.IgnoreWater = true
+
+		local raycastResult = workspace:Raycast(mouse.UnitRay.Origin,  mouse.UnitRay.Direction*MAX_RAY_LENGTH, raycastParams)
+		
+		if raycastResult then
+			local hitObject = raycastResult.Instance
+				print("Object/terrain hit:", hitObject:GetFullName())
+			if CS:HasTag(hitObject, "LetterBlockInRack") then
+				print(hitObject:GetFullName() .. " is deadly")
+			end
+			
+			
+			
+			
+		else
+			print("Nothing was hit!")
+		end
+	end
+end
+
+UserInputService.InputBegan:Connect(onInputBegan)
+
+
+
+--works
+--works
+--works
+--works
+
+
+--local function onInputBegan(input, gameProcessed)
+--	if input.UserInputType == Enum.UserInputType.MouseButton1 then
+--		local test = getMouseTargetIgnoreNonCanCollide()
+--		print('test')
+--		print(test)
+--	end
+--end
+
+--UserInputService.InputBegan:Connect(onInputBegan)
+
+--function getMouseRay( rayLength )
+--	local rayLength = rayLength or 1
+--	return Ray.new(mouse.UnitRay.Origin, mouse.UnitRay.Direction * rayLength)
+--end
+
+--function getMouseTargetWithIgnoreList( ignorelist )
+--	return game.Workspace:FindPartOnRayWithIgnoreList( getMouseRay(MAX_RAY_LENGTH), ignorelist )
+--end
+
+--function getNonCanCollideParts()
+--	return CS:GetTagged("IgnoreClick")
+--end
+
+--function getMouseTargetIgnoreNonCanCollide( )
+--	return getMouseTargetWithIgnoreList( getNonCanCollideParts() )
+--end
+
+
+]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
 		</Item>
 		<Item class="StarterCharacterScripts" referent="RBX9d1385455bc54ea4a381848f0c02cb4d">
 			<Properties>
@@ -11383,46 +11544,6 @@ clickDetector.MouseClick:Connect(onClicked)]]></ProtectedString>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="BoolValue" referent="RBX364da72c8bb54b94937fd01a58f71363">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<string name="Name">currentlyTeleporting</string>
-					<int64 name="SourceAssetId">4778278500</int64>
-					<BinaryString name="Tags"></BinaryString>
-					<bool name="Value">false</bool>
-				</Properties>
-			</Item>
-			<Item class="LocalScript" referent="RBXf97b741373bf4b5f8dd3e97f7dd6da16">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<bool name="Disabled">false</bool>
-					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">LocalScript</string>
-					<string name="ScriptGuid">{08eb1132-1b9c-457f-b127-100d2224d4c6}</string>
-					<ProtectedString name="Source"><![CDATA[print("----- Starter Character Script -----")
-
-
-
-
-
--------------------------
--------------------------
--------------------------
---local character = script.Parent
---local humanoid = character:WaitForChild("Humanoid")
-
---function onSeated(isSeated, seat)
---	if isSeated then
---		print("I'm now sitting on: " .. seat.Name .. "!")
---	else
---		print("I'm not sitting on anything")
---	end
---end
---humanoid.Seated:Connect(onSeated)]]></ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-			</Item>
 		</Item>
 		<Item class="ModuleScript" referent="RBXa4ef5e853f9f4c91b47d6dbcc2aa7d3b">
 			<Properties>
@@ -11511,262 +11632,6 @@ function module.handleBrick(props)
 end
 
 return module
-]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-				<Item class="ModuleScript" referent="RBXcacd16227f8c4c5fa2022d912e18607f">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">RSConstants</string>
-						<string name="ScriptGuid">{afe9aa7d-37c4-4185-ab6f-f2639f1b5f99}</string>
-						<ProtectedString name="Source"><![CDATA[-- local module = {
---     buffer = 0,
---     -- singleScene = true,
---     singleScene = false,
---     -- 
---     entered = {value = false},
---     baseWallHeight = 16,
---     walkSpeed = 16,
---     questWallHeight = 24,
---     sceneHeight = 50
---     -- 
--- }
--- module.dialogColors = {
---     Color3.fromRGB(253, 158, 240), Color3.fromRGB(225, 253, 158),
---     Color3.fromRGB(253, 228, 158), Color3.fromRGB(158, 253, 179),
---     Color3.fromRGB(158, 215, 253)
--- }
--- local islandLength = 36
--- -- local bridgeLength = 31.1
--- -- local bridgeLength = 34
--- local bridgeBaseLength = 30
--- -- local bridgeBaseLength = 96
--- local bridgeOverlap = 2
--- local bridgeLength = bridgeBaseLength - 2 * bridgeOverlap
--- module.islandLength = islandLength
--- module.bridgeLength = bridgeLength
--- module.totalIslandLength = islandLength + bridgeLength
--- module.buttonLabels = {PrevPage = "Prev Page", NextPage = "Next Page"}
--- local raven = {
---     displayName = "Raven",
---     decalId = '5897424121',
---     backgroundColorIdx = 1
--- }
--- local britta = {
---     displayName = "Britta",
---     decalId = '5897433108',
---     backgroundColorIdx = 2
--- }
--- local mitzy02 = {
---     displayName = "Mitzy Meow",
---     decalId = '5976876671',
---     backgroundColorIdx = 2
--- }
--- local vulcan = {
---     displayName = "Vulcan",
---     decalId = '5999464799',
---     backgroundColorIdx = 1
--- }
--- module.characters = {
---     raven05 = raven,
---     raven04 = raven,
---     raven = raven,
---     britta = britta,
---     britta01 = britta,
---     britta04 = britta,
---     fancyDudeFromFrance01 = {
---         displayName = "fancyDudeFromFrance01",
---         decalId = '5991276655',
---         backgroundColorIdx = 1
---     },
---     goat01 = {
---         displayName = "Goat",
---         decalId = '6063417478',
---         backgroundColorIdx = 1
---     },
---     robby01 = {
---         displayName = "Robby",
---         decalId = '5991273473',
---         backgroundColorIdx = 1
---     },
---     waterfall = {
---         displayName = "Waterfall",
---         decalId = '5991339525',
---         backgroundColorIdx = 1
---     },
---     cave = {
---         displayName = "Cave",
---         decalId = '5991342911',
---         backgroundColorIdx = 1
---     },
---     hill = {
---         displayName = "Hill",
---         decalId = '5991342052',
---         backgroundColorIdx = 1
---     },
---     lake = {
---         displayName = "Lake",
---         decalId = '5991341377',
---         backgroundColorIdx = 1
---     },
---     log = {displayName = "Log", decalId = '5991341326', backgroundColorIdx = 1},
---     pond = {
---         displayName = "Pond",
---         decalId = '5991340703',
---         backgroundColorIdx = 1
---     },
---     pool = {
---         displayName = "Pool",
---         decalId = '5991340615',
---         backgroundColorIdx = 1
---     },
---     swamp = {
---         displayName = "Swamp",
---         decalId = '5991343667',
---         backgroundColorIdx = 1
---     },
---     bees = {
---         displayName = "Bees",
---         decalId = '5991343806',
---         backgroundColorIdx = 1
---     },
---     cap = {displayName = "Cap", decalId = '5991343197', backgroundColorIdx = 1},
---     castle = {
---         displayName = "Castle",
---         decalId = '5991343060',
---         backgroundColorIdx = 1
---     },
---     chick01 = {
---         displayName = "Chick",
---         decalId = '6060376973',
---         backgroundColorIdx = 1
---     },
---     coop = {
---         displayName = "Coop",
---         decalId = '5991342867',
---         backgroundColorIdx = 1
---     },
---     cow01 = {
---         displayName = "Cow",
---         decalId = '6060376567',
---         backgroundColorIdx = 1
---     },
---     girl09 = {
---         displayName = "Girl",
---         decalId = '5991275978',
---         backgroundColorIdx = 1
---     },
---     lucky = {
---         displayName = "Lucky",
---         decalId = '5977954909',
---         backgroundColorIdx = 3
---     },
---     lucky01 = {
---         displayName = "Lucky",
---         decalId = '5977954909',
---         backgroundColorIdx = 3
---     },
---     mat = {displayName = "Mat", decalId = '5991341059', backgroundColorIdx = 1},
---     mop = {displayName = "Mop", decalId = '5991340991', backgroundColorIdx = 1},
---     pan = {displayName = "Pan", decalId = '5991340855', backgroundColorIdx = 1},
---     slide = {
---         displayName = "Slide",
---         decalId = '5991340411',
---         backgroundColorIdx = 1
---     },
---     swing = {
---         displayName = "Swing",
---         decalId = '5991340158',
---         backgroundColorIdx = 1
---     },
---     stump = {
---         displayName = "Stump",
---         decalId = '5991340320',
---         backgroundColorIdx = 1
---     },
---     bog = {displayName = "Bog", decalId = '5991343667', backgroundColorIdx = 1},
---     home = {
---         displayName = "Home",
---         decalId = '5991341898',
---         backgroundColorIdx = 1
---     },
---     bee = {displayName = "Bee", decalId = '5999465084', backgroundColorIdx = 1},
---     elf = {displayName = "Elf", decalId = '5991266909', backgroundColorIdx = 4},
---     bun = {displayName = "Bun", decalId = '5991343501', backgroundColorIdx = 1},
---     dog01 = {
---         displayName = "Dog",
---         decalId = '5999464941',
---         backgroundColorIdx = 1
---     },
---     dennisTheMenace = {
---         displayName = "Dennis the Menace",
---         decalId = '5999464873',
---         backgroundColorIdx = 1
---     },
---     katieKooper01 = {
---         displayName = "Katie Kooper",
---         decalId = '5991267836',
---         backgroundColorIdx = 1
---     },
---     troll01 = {
---         displayName = "Troll01",
---         decalId = '5999464489',
---         backgroundColorIdx = 1
---     },
---     troll02 = {
---         displayName = "Troll02",
---         decalId = '5999464489',
---         backgroundColorIdx = 3
---     },
---     rori = {
---         displayName = "Rori",
---         decalId = '5991267444',
---         backgroundColorIdx = 4
---     },
---     vulcan = vulcan,
---     vulcan01 = vulcan,
---     -- 
---     -- 
---     -- 
---     luke01 = {
---         displayName = "Luke",
---         decalId = '5998961085',
---         backgroundColorIdx = 2
---     },
---     hudson01 = {
---         displayName = "Hudson",
---         decalId = '5998961874',
---         backgroundColorIdx = 4
---     },
---     trollKing01 = {
---         displayName = "Troll King",
---         decalId = '5897428591',
---         backgroundColorIdx = 3
---     },
---     trollKing = {
---         displayName = "Troll King",
---         decalId = '5897428591',
---         backgroundColorIdx = 3
---     },
---     freckle = {
---         displayName = "Freckle",
---         decalId = '5897430768',
---         backgroundColorIdx = 3
---     },
---     missyMeow01 = {
---         displayName = "Missy Meow",
---         decalId = '5898504226',
---         backgroundColorIdx = 1
---     },
---     mitzyMeow01 = mitzy02,
---     mitzy02 = mitzy02,
---     kat = {displayName = "Kat", decalId = '5977951764', backgroundColorIdx = 3},
---     liz2 = {displayName = "Liz", decalId = '5981806423', backgroundColorIdx = 2}
--- }
--- return module
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
@@ -13714,7 +13579,7 @@ local remoteEvent = ReplicatedStorage:WaitForChild("FreezeCameraRE")
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
 		</Item>
-		<Item class="ModuleScript" referent="RBX7ef6621c29614379bfad1b45172060b6">
+		<Item class="ModuleScript" referent="RBXe30fdec57b184938947f540478401950">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<Content name="LinkedSource"><null></null></Content>
@@ -14128,7 +13993,7 @@ return module
 				<int64 name="SourceAssetId">6082109834</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="PackageLink" referent="RBX729f3501bcf84d9e9ac1c5e40bc30c1b">
+			<Item class="PackageLink" referent="RBX04f0bca78e404b859b63ff60cd29b9fc">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<bool name="AutoUpdate">false</bool>
@@ -14136,7 +14001,7 @@ return module
 					<Content name="PackageIdSerialize"><url>rbxassetid://6082109834</url></Content>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
-					<int64 name="VersionIdSerialize">5</int64>
+					<int64 name="VersionIdSerialize">6</int64>
 				</Properties>
 			</Item>
 		</Item>
@@ -14318,6 +14183,48 @@ return module
 					</Properties>
 				</Item>
 			</Item>
+			<Item class="Folder" referent="RBX7bd183394bd840449bbbef6d1938d861">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<string name="Name">IgnoreClick</string>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+				<Item class="Color3Value" referent="RBXf724c74e79a04f7a932c1646edfa059c">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<string name="Name">Color</string>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<Color3 name="Value">
+							<R>0.141918987</R>
+							<G>0.549803913</G>
+							<B>0.232919171</B>
+						</Color3>
+					</Properties>
+				</Item>
+			</Item>
+			<Item class="Folder" referent="RBX804294ecee4c455da7fba2668dfec793">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<string name="Name">LetterBlockInRack</string>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+				<Item class="Color3Value" referent="RBX02cbfac1724d4ec4a092e75f79de01e9">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<string name="Name">Color</string>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<Color3 name="Value">
+							<R>0.11969132</R>
+							<G>0.857254922</G>
+							<B>0.218923032</B>
+						</Color3>
+					</Properties>
+				</Item>
+			</Item>
 		</Item>
 		<Item class="Folder" referent="RBX90e1ee6da16741608276cba9f57897da">
 			<Properties>
@@ -14343,26 +14250,6 @@ return module
 			<int64 name="SourceAssetId">-1</int64>
 			<BinaryString name="Tags"></BinaryString>
 		</Properties>
-		<Item class="ModuleScript" referent="2">
-			<Properties>
-				<BinaryString name="AttributesSerialize"></BinaryString>
-				<Content name="LinkedSource"><null></null></Content>
-				<string name="Name">Source</string>
-				<string name="ScriptGuid">{0b2f548e-44f3-415f-9d29-2ab8518148d9}</string>
-				<ProtectedString name="Source"><![CDATA[---test
-]]></ProtectedString>
-				<int64 name="SourceAssetId">-1</int64>
-				<BinaryString name="Tags"></BinaryString>
-			</Properties>
-		</Item>
-		<Item class="RemoteEvent" referent="RBX7e07d2f9935645a293cecc3bf5307a44">
-			<Properties>
-				<BinaryString name="AttributesSerialize"></BinaryString>
-				<string name="Name">buttonEvent</string>
-				<int64 name="SourceAssetId">-1</int64>
-				<BinaryString name="Tags"></BinaryString>
-			</Properties>
-		</Item>
 		<Item class="RemoteEvent" referent="RBXd8a27200040e4ea4aa5592423b03a386">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
@@ -14371,10 +14258,10 @@ return module
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
 		</Item>
-		<Item class="RemoteEvent" referent="RBX574ad48e6ebe43a7ad1733ca8d520d3f">
+		<Item class="RemoteEvent" referent="RBX84475569020b4ab297bfc44248cfa2ae">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
-				<string name="Name">RenderDialogRE</string>
+				<string name="Name">ClickBlockRE</string>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
