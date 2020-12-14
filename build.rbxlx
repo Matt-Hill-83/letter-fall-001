@@ -5285,6 +5285,7 @@ gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/]]></BinaryString>
 
 local remoteCode = require(game.ServerScriptService.Source.AddRemoteObjects.AddToBase)
 
+
 remoteCode.addRemoteObjects()
 
 ]]></ProtectedString>
@@ -11166,19 +11167,6 @@ remoteCode.addRemoteObjects()
 				</Vector3>
 			</Properties>
 		</Item>
-		<Item class="Script" referent="RBX33e4a906257147969fb7886ddc499a9c">
-			<Properties>
-				<BinaryString name="AttributesSerialize"></BinaryString>
-				<bool name="Disabled">false</bool>
-				<Content name="LinkedSource"><null></null></Content>
-				<string name="Name">Script</string>
-				<string name="ScriptGuid">{a8618053-759d-4d81-bf23-0ef7c6688b5c}</string>
-				<ProtectedString name="Source"><![CDATA[print("Hello world!")
-]]></ProtectedString>
-				<int64 name="SourceAssetId">-1</int64>
-				<BinaryString name="Tags"></BinaryString>
-			</Properties>
-		</Item>
 	</Item>
 	<Item class="SoundService" referent="RBX7845308c7ca3451eaa9eca1a685d0279">
 		<Properties>
@@ -11463,7 +11451,17 @@ remoteCode.addRemoteObjects()
 
 local CS = game:GetService("CollectionService")
 local UserInputService = game:GetService("UserInputService")
-local mouse = game.Players.LocalPlayer:GetMouse()
+local RS = game:GetService("ReplicatedStorage")
+local remoteEvent = RS:WaitForChild("ClickBlockRE")
+
+local remoteEvent2 = RS:WaitForChild("RemoteEventTest")
+
+
+
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+
+--local remoteCode = require(game.StarterPlayer.Source.StarterPlayerScripts.HandleBrick)
 
 local MAX_RAY_LENGTH = 5000
 
@@ -11479,12 +11477,14 @@ local function onInputBegan(input, gameProcessed)
 		
 		if raycastResult then
 			local hitObject = raycastResult.Instance
-				print("Object/terrain hit:", hitObject:GetFullName())
 			if CS:HasTag(hitObject, "LetterBlockInRack") then
-				print(hitObject:GetFullName() .. " is deadly")
+				print("--------------------------->>"  .. hitObject.Name)
+				remoteEvent2:FireServer()
+				
+				--remoteEvent:FireServer({player=player, letterBlock=hitObject})
+				
+				--remoteCode.handleBrick({player = player, letterBlock = hitObject})
 			end
-			
-			
 			
 			
 		else
@@ -11536,6 +11536,23 @@ UserInputService.InputBegan:Connect(onInputBegan)
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 			</Item>
+			<Item class="LocalScript" referent="RBX71a65a6080bf4bdaa21267aec9fd85ee">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<bool name="Disabled">false</bool>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">LocalScript</string>
+					<string name="ScriptGuid">{2c7543d5-2240-42bc-b4b9-3e8a04ef7f5c}</string>
+					<ProtectedString name="Source"><![CDATA[local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local remoteEvent = ReplicatedStorage:WaitForChild("RemoteEventTest")
+
+-- Fire the remote event
+remoteEvent:FireServer()]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
 		</Item>
 		<Item class="StarterCharacterScripts" referent="RBX9d1385455bc54ea4a381848f0c02cb4d">
 			<Properties>
@@ -11574,14 +11591,75 @@ UserInputService.InputBegan:Connect(onInputBegan)
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">HandleBrick</string>
 						<string name="ScriptGuid">{2fa2d5af-90db-423f-8818-5b6e39ee5b4d}</string>
-						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
+						<ProtectedString name="Source"><![CDATA[-- local Sss = game:GetService("ServerScriptService")
+-- local LetterFall = require(Sss.Source.LetterFall.LetterFall)
+-- local Utils = require(Sss.Source.Utils.U001GeneralUtils)
+-- local Constants = require(Sss.Source.Constants.Constants)
+-- local CS = game:GetService("CollectionService")
+-- local module = {buffer = 0}
+-- function isDesiredLetter(letter, clickedLetter)
+--     local textLabel = Utils.getFirstDescendantByName(clickedLetter, "BlockChar")
+--                           .Text
+--     return letter.found ~= true and letter.char == textLabel
+-- end
+-- function isWordComplete(wordLetters)
+--     for i, word in ipairs(wordLetters) do
+--         if not word.found then
+--             -- 
+--             return false
+--         end
+--     end
+--     return true
+-- end
+-- function module.handleBrick(props)
+--     local player = props.player
+--     local clickedLetter = props.letterBlock
+--     local wordLetters = LetterFall.getWordLetters()
+--     for i, letter in ipairs(wordLetters) do
+--         print('letter' .. ' - start----------------');
+--         print(letter);
+--         if isDesiredLetter(letter, clickedLetter) then
+--             letter.found = true
+--             LetterFall.colorLetterText({
+--                 letterBlock = letter.instance,
+--                 color = Color3.new(255, 0, 191)
+--             })
+--             clickedLetter:Destroy()
+--             local wordComplete = isWordComplete(wordLetters)
+--             if wordComplete then
+--                 LetterFall.lastWordIndex = LetterFall.lastWordIndex + 1
+--                 LetterFall.initWord()
+--                 print('wordComplete' .. ' ------------------------ start');
+--                 print(wordComplete);
+--             end
+--             break
+--         end
+--     end
+-- end
+-- return module
+]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="ModuleScript" referent="RBX410410a999004b9ea6bceaa8c0e4cec9">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">HandleBrick2</string>
+						<string name="ScriptGuid">{ba9e6008-7749-438a-99ea-9f170680b9c0}</string>
+						<ProtectedString name="Source"><![CDATA[local module = {}
+
+local Sss = game:GetService("ServerScriptService")
 local LetterFall = require(Sss.Source.LetterFall.LetterFall)
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Constants = require(Sss.Source.Constants.Constants)
 
 local CS = game:GetService("CollectionService")
 
-local module = {buffer = 0}
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+-- local remoteEvent = ReplicatedStorage:WaitForChild("ClickBlockRE")
+local remoteEvent = ReplicatedStorage:WaitForChild("RemoteEventTest")
 
 function isDesiredLetter(letter, clickedLetter)
     local textLabel = Utils.getFirstDescendantByName(clickedLetter, "BlockChar")
@@ -11600,10 +11678,14 @@ function isWordComplete(wordLetters)
     return true
 end
 
-function module.handleBrick(props)
+function handleBrick(props)
     local player = props.player
     local clickedLetter = props.letterBlock
     local wordLetters = LetterFall.getWordLetters()
+
+    print('clickedLetter' .. ' - start');
+    print(clickedLetter);
+    print('clickedLetter' .. ' - end');
 
     for i, letter in ipairs(wordLetters) do
         print('letter' .. ' - start----------------');
@@ -11631,6 +11713,23 @@ function module.handleBrick(props)
 
 end
 
+-- Create a new part
+local function onCreatePart(player)
+    print(player.Name .. " fired the remote event")
+    -- local newPart = Instance.new("Part")
+    -- newPart.BrickColor = partColor
+    -- newPart.Position = partPos
+    -- newPart.Parent = workspace
+end
+
+print('remoteEvent' .. ' - start');
+print(remoteEvent);
+print('remoteEvent' .. ' - end');
+-- Call "onCreatePart()" when the client fires the remote event
+-- remoteEvent.OnServerEvent:Connect(handleBrick)
+remoteEvent.OnServerEvent:Connect(onCreatePart)
+
+module.onCreatePart = onCreatePart
 return module
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
@@ -13231,13 +13330,17 @@ return module
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">AddToBase</string>
 						<string name="ScriptGuid">{3786848f-4581-453a-90e1-c276c862c897}</string>
-						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
+						<ProtectedString name="Source"><![CDATA[local SP = game:GetService("StarterPlayer")
+local Sss = game:GetService("ServerScriptService")
 local module = {}
 
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 -- local Constants = require(Sss.Source.Constants.Constants)
 local ConfigGame = require(Sss.Source.AddRemoteObjects.ConfigGame)
+local HandleBrick2 = require(SP.Source.StarterPlayerScripts.HandleBrick2)
 local LetterFall = require(Sss.Source.LetterFall.LetterFall)
+
+-- HandleBrick2.onCreatePart()
 
 function addRemoteObjects()
     ConfigGame.configGame()
@@ -13539,25 +13642,6 @@ return module
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-			</Item>
-			<Item class="ModuleScript" referent="RBX35cf69a6872445c7bede8d3b7c5a2a02">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">test</string>
-					<string name="ScriptGuid">{c571affc-6f03-480e-be45-52fda6dee3d5}</string>
-					<ProtectedString name="Source"><![CDATA[local module = {}
-
-function module.func001()
-    -- 
-end
-
-return module
-
-]]></ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
 			</Item>
 		</Item>
 		<Item class="Script" referent="RBXf3f6af24ae8e4a3c882de8fbb82176aa">
@@ -14005,6 +14089,51 @@ return module
 				</Properties>
 			</Item>
 		</Item>
+		<Item class="Script" referent="RBX8b17fe24407b409d93a463b5f1e52154">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<bool name="Disabled">false</bool>
+				<Content name="LinkedSource"><null></null></Content>
+				<string name="Name">BindClickBlock</string>
+				<string name="ScriptGuid">{2fcb2aec-bfd5-4b20-9dbf-0f872f6e4aca}</string>
+				<ProtectedString name="Source"><![CDATA[print("--------------------------------BindClickBlockRE")
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Players = game:GetService("Players")
+
+local remoteEvent = ReplicatedStorage:WaitForChild("FreezeCameraRE")
+
+]]></ProtectedString>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+			</Properties>
+		</Item>
+		<Item class="Script" referent="RBX45b36d9ab0a0482682485b64d9dc628c">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<bool name="Disabled">false</bool>
+				<Content name="LinkedSource"><null></null></Content>
+				<string name="Name">RETest</string>
+				<string name="ScriptGuid">{8479467a-7bbe-410f-a115-56e7d424dd72}</string>
+				<ProtectedString name="Source"><![CDATA[local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local remoteEvent = ReplicatedStorage:WaitForChild("RemoteEventTest")
+
+-- Create a new part
+local function onCreatePart(player, partColor, partPos)
+	print(player.Name .. " fired the remote event")
+	local newPart = Instance.new("Part")
+
+	newPart.Parent = workspace
+	newPart.Name = 'zzz'
+end
+
+-- Call "onCreatePart()" when the client fires the remote event
+remoteEvent.OnServerEvent:Connect(onCreatePart)]]></ProtectedString>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+			</Properties>
+		</Item>
 	</Item>
 	<Item class="ServerStorage" referent="RBX83b078fdc9c44d22ae0004e5583c750d">
 		<Properties>
@@ -14262,6 +14391,26 @@ return module
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<string name="Name">ClickBlockRE</string>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+			</Properties>
+		</Item>
+		<Item class="ModuleScript" referent="RBX07048535ed6e4865889fce584aca07ae">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<Content name="LinkedSource"><null></null></Content>
+				<string name="Name">Source</string>
+				<string name="ScriptGuid">{46cca10b-a981-46d1-a5aa-96d1ffe99a09}</string>
+				<ProtectedString name="Source"><![CDATA[---test
+]]></ProtectedString>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+			</Properties>
+		</Item>
+		<Item class="RemoteEvent" referent="RBX97896508a8844d05b44f37aaf52d2b83">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<string name="Name">RemoteEventTest</string>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
