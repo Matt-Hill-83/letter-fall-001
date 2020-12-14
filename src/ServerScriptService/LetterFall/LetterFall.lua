@@ -129,11 +129,11 @@ function initLetterRack(props)
         local letterPositioner = CS:GetTagged("RackLetterBlockPositioner")
 
         if letterPositioner and letterPositioner[1] then
-            -- newColumnBase.CFrame = letterPositioner.CFrame *
-            --                            CFrame.new(Vector3.new(-z, 0, 0))
+            newColumnBase.CFrame = letterPositioner[1].CFrame *
+                                       CFrame.new(Vector3.new(-z, 0, 0))
         end
-        newColumnBase.CFrame = newColumnBase.CFrame *
-                                   CFrame.new(Vector3.new(-z, 0, 0))
+        -- newColumnBase.CFrame = newColumnBase.CFrame *
+        --                            CFrame.new(Vector3.new(-z, 0, 0))
 
         local letterTool = Utils.getFirstDescendantByName(newColumnBase,
                                                           "LetterTool")
