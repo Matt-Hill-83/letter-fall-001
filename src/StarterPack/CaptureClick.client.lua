@@ -1,10 +1,12 @@
-local CS = game:GetService("CollectionService")
 local UserInputService = game:GetService("UserInputService")
+local CS = game:GetService("CollectionService")
 local RS = game:GetService("ReplicatedStorage")
 local remoteEvent2 = RS:WaitForChild("ClickBlockRE")
+
 local player = game.Players.LocalPlayer
 local mouse = player:GetMouse()
 local MAX_RAY_LENGTH = 5000
+
 local function onInputBegan(input, gameProcessed)
     if input.UserInputType == Enum.UserInputType.MouseButton1 then
         local raycastParams = RaycastParams.new()
