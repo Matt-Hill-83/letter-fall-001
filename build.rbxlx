@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-32.0541306</X>
-					<Y>83.5077972</Y>
-					<Z>4.54832268</Z>
-					<R00>0.0835765153</R00>
-					<R01>0.547044337</R01>
-					<R02>-0.832921088</R02>
-					<R10>-0</R10>
-					<R11>0.83584547</R11>
-					<R12>0.548964918</R12>
-					<R20>0.996501446</R20>
-					<R21>-0.0458805747</R21>
-					<R22>0.069857046</R22>
+					<X>2.08222198</X>
+					<Y>52.816906</Y>
+					<Z>1.58942997</Z>
+					<R00>0.0766175091</R00>
+					<R01>0.337684602</R01>
+					<R02>-0.938135922</R02>
+					<R10>1.86264537e-09</R10>
+					<R11>0.940901756</R11>
+					<R12>0.338680089</R12>
+					<R20>0.997060657</R20>
+					<R21>-0.0259488262</R21>
+					<R22>0.072089538</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>19.0332699</X>
-					<Y>49.8369102</Y>
-					<Z>0.263625145</Z>
+					<X>19.2500134</X>
+					<Y>46.6190948</Y>
+					<Z>0.270198822</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -6699,7 +6699,7 @@ remoteCode.addRemoteObjects()
 								<bool name="Locked">false</bool>
 								<bool name="Massless">false</bool>
 								<token name="Material">1568</token>
-								<string name="Name">O</string>
+								<string name="Name">B</string>
 								<float name="Reflectance">0</float>
 								<float name="RightParamA">-0.5</float>
 								<float name="RightParamB">0.5</float>
@@ -6717,7 +6717,7 @@ remoteCode.addRemoteObjects()
 								<float name="TopParamB">0.5</float>
 								<token name="TopSurface">0</token>
 								<token name="TopSurfaceInput">0</token>
-								<float name="Transparency">0</float>
+								<float name="Transparency">0.800000012</float>
 								<Vector3 name="Velocity">
 									<X>0</X>
 									<Y>0</Y>
@@ -7922,7 +7922,7 @@ remoteCode.addRemoteObjects()
 								<bool name="Locked">false</bool>
 								<bool name="Massless">false</bool>
 								<token name="Material">528</token>
-								<string name="Name">LetterTool</string>
+								<string name="Name">LetterTemplate</string>
 								<float name="Reflectance">0</float>
 								<float name="RightParamA">-0.5</float>
 								<float name="RightParamB">0.5</float>
@@ -13072,15 +13072,15 @@ function initLetterRack(props)
                                        CFrame.new(Vector3.new(-z, 0, 0))
         end
 
-        local letterTool = Utils.getFirstDescendantByName(newColumnBase,
-                                                          "LetterTool")
+        local letterTemplate = Utils.getFirstDescendantByName(newColumnBase,
+                                                              "LetterTemplate")
 
         for rowIndex = 1, numRow do
             -- local char = letters[(colIndex % #letters) + 1]
             local test = genRandom(1, #lettersFromWords)
             local char = lettersFromWords[test]
 
-            local newLetter = letterTool:Clone()
+            local newLetter = letterTemplate:Clone()
             newLetter.Parent = newColumnBase
 
             newLetter.Name = "newLetter-" .. char
@@ -13093,7 +13093,7 @@ function initLetterRack(props)
             applyLetterText({letterBlock = newLetter, char = char})
             table.insert(newLetters, newLetter)
         end
-        letterTool:Destroy()
+        letterTemplate:Destroy()
     end
     columnBaseTemplate:Destroy()
 end

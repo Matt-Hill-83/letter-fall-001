@@ -104,15 +104,15 @@ function initLetterRack(props)
                                        CFrame.new(Vector3.new(-z, 0, 0))
         end
 
-        local letterTool = Utils.getFirstDescendantByName(newColumnBase,
-                                                          "LetterTool")
+        local letterTemplate = Utils.getFirstDescendantByName(newColumnBase,
+                                                              "LetterTemplate")
 
         for rowIndex = 1, numRow do
             -- local char = letters[(colIndex % #letters) + 1]
             local test = genRandom(1, #lettersFromWords)
             local char = lettersFromWords[test]
 
-            local newLetter = letterTool:Clone()
+            local newLetter = letterTemplate:Clone()
             newLetter.Parent = newColumnBase
 
             newLetter.Name = "newLetter-" .. char
@@ -125,7 +125,7 @@ function initLetterRack(props)
             applyLetterText({letterBlock = newLetter, char = char})
             table.insert(newLetters, newLetter)
         end
-        letterTool:Destroy()
+        letterTemplate:Destroy()
     end
     columnBaseTemplate:Destroy()
 end
