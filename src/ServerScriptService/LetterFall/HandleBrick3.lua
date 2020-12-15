@@ -1,5 +1,4 @@
 local module = {}
--- trst
 local Sss = game:GetService("ServerScriptService")
 local LetterFall = require(Sss.Source.LetterFall.LetterFall)
 local TargetWord = require(Sss.Source.LetterFall.TargetWord)
@@ -8,7 +7,7 @@ local Utils = require(Sss.Source.LetterFall.Utils)
 local CS = game:GetService("CollectionService")
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local remoteEvent = ReplicatedStorage:WaitForChild("RemoteEventTest")
+local remoteEvent = ReplicatedStorage:WaitForChild("ClickBlockRE")
 
 function isDesiredLetter(letter, clickedLetter)
     local textLabel = Utils.getFirstDescendantByName(clickedLetter, "BlockChar")

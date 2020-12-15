@@ -9171,102 +9171,6 @@ remoteCode.initLetterFall()
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="LocalScript" referent="RBXfdd8c563078d4ad99e0ddc4f2415a1b1">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<bool name="Disabled">false</bool>
-					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">FreezeCamera</string>
-					<string name="ScriptGuid">{7b248aab-e582-4228-994a-24372ce22d28}</string>
-					<ProtectedString name="Source"><![CDATA[--print("Freeze Camera - local script")
-
---local ReplicatedStorage = game:GetService("ReplicatedStorage")
---local remoteEvent = ReplicatedStorage:WaitForChild("FreezeCameraRE")
-
---local StarterPlayer = game:GetService("StarterPlayer")
---local Texts = require(StarterPlayer.Source.Texts)
-
---local function onNotifyPlayer(cameraPath1, cameraPath2, freeze)
-
---	local player = game:GetService("Players").LocalPlayer
---	local playerGui = player.PlayerGui.SceneDialogGui
-	
---	local camera = workspace.CurrentCamera
---	if freeze then
---		playerGui.Enabled = true
---		local cameraOffset = Vector3.new(0, 0, 2)
-
---		if camera.CameraType ~= Enum.CameraType.Scriptable then
---			camera.CameraType = Enum.CameraType.Scriptable
---		end
-
---		camera.CFrame = CFrame.new(cameraPath1.Position + cameraOffset,
---			cameraPath2.Position)
---	else
---		playerGui.Enabled = false
---		camera.CameraType = Enum.CameraType.Custom
-		
---	end
---end
-
---remoteEvent.OnClientEvent:Connect(onNotifyPlayer)
-]]></ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-			</Item>
-			<Item class="LocalScript" referent="RBXf0ec0120ec274e91be8385cf8ed1dd33">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<bool name="Disabled">false</bool>
-					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">IgnoreClick</string>
-					<string name="ScriptGuid">{417ab455-8ffc-49bd-a18f-d0cd7e728f6b}</string>
-					<ProtectedString name="Source"><![CDATA[print("SPS - local ----------------------------")
-
-local CS = game:GetService("CollectionService")
-local UserInputService = game:GetService("UserInputService")
-local RS = game:GetService("ReplicatedStorage")
-local remoteEvent = RS:WaitForChild("ClickBlockRE")
-
-local remoteEvent2 = RS:WaitForChild("RemoteEventTest")
-local player = game.Players.LocalPlayer
-local mouse = player:GetMouse()
-
-local MAX_RAY_LENGTH = 5000
-
-local function onInputBegan(input, gameProcessed)
-	if input.UserInputType == Enum.UserInputType.MouseButton1 then
-		
-		local raycastParams = RaycastParams.new()
-		raycastParams.FilterType = Enum.RaycastFilterType.Blacklist
-		raycastParams.FilterDescendantsInstances = CS:GetTagged("IgnoreClick")
-		raycastParams.IgnoreWater = true
-
-		local raycastResult = workspace:Raycast(mouse.UnitRay.Origin,  mouse.UnitRay.Direction*MAX_RAY_LENGTH, raycastParams)
-
-		if raycastResult then
-			local hitObject = raycastResult.Instance
-
-			if CS:HasTag(hitObject, "LetterBlockInRack") then
-				print("--------------------------->>"  .. hitObject.Name)
-				remoteEvent2:FireServer(hitObject)
-			end
-			
-			
-		else
-			print("Nothing was hit!")
-		end
-	end
-end
-
-UserInputService.InputBegan:Connect(onInputBegan)
-
-]]></ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-			</Item>
 		</Item>
 		<Item class="StarterCharacterScripts" referent="RBX9d1385455bc54ea4a381848f0c02cb4d">
 			<Properties>
@@ -9299,76 +9203,88 @@ UserInputService.InputBegan:Connect(onInputBegan)
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="ModuleScript" referent="RBXf9169188eff34f6780f55cdf08a0bdd8">
+			</Item>
+			<Item class="Folder" referent="RBX9c6841a458e44e1c9f9fe3680e5a1b3a">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<string name="Name">StarterPlayerScripts2</string>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+				<Item class="ModuleScript" referent="RBXe40b23e4d97d437da20f735eac4cba96">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">HandleBrick3</string>
-						<string name="ScriptGuid">{7e426978-7631-4867-8fb6-314613c08ee9}</string>
-						<ProtectedString name="Source"><![CDATA[local module = {}
-
-local Sss = game:GetService("ServerScriptService")
-local LetterFall = require(Sss.Source.LetterFall.LetterFall)
-local TargetWord = require(Sss.Source.LetterFall.TargetWord)
-local Utils = require(Sss.Source.LetterFall.Utils)
-
-local CS = game:GetService("CollectionService")
-
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local remoteEvent = ReplicatedStorage:WaitForChild("RemoteEventTest")
-
-function isDesiredLetter(letter, clickedLetter)
-    local textLabel = Utils.getFirstDescendantByName(clickedLetter, "BlockChar")
-                          .Text
-    return letter.found ~= true and letter.char == textLabel
-end
-
-function isWordComplete(wordLetters)
-    for i, word in ipairs(wordLetters) do
-        if not word.found then
-            -- 
-            return false
-        end
-    end
-    return true
-end
-
-function module.initClickHandler(player, clickedLetter)
-    remoteEvent.OnServerEvent:Connect(handleBrick)
-end
-
-function handleBrick(player, clickedLetter)
-    local wordLetters = LetterFall.wordLetters
-
-    local part = CS:GetTagged("BallPitBottom")
-    if part[1] then part[1]:Destroy() end
-
-    for i, letter in ipairs(wordLetters) do
-        if isDesiredLetter(letter, clickedLetter) then
-            letter.found = true
-
-            LetterFall.colorLetterText({
-                letterBlock = letter.instance,
-                color = Color3.fromRGB(113, 17, 161)
-            })
-
-            clickedLetter:Destroy()
-            local wordComplete = isWordComplete(wordLetters)
-            if wordComplete then
-                LetterFall.lastWordIndex = LetterFall.lastWordIndex + 1
-                TargetWord.initWord()
-            end
-            break
-        end
-    end
-end
-
-return module
+						<string name="Name">test</string>
+						<string name="ScriptGuid">{0a1dc7de-ef17-47c0-8e0c-b94212c0517c}</string>
+						<ProtectedString name="Source"><![CDATA[---test
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
+			</Item>
+			<Item class="ModuleScript" referent="RBX6ddca0c28c454cf6995d5edc468f6c10">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">TEST</string>
+					<string name="ScriptGuid">{6cd819cf-6037-45d4-b38b-1d5b187b4097}</string>
+					<ProtectedString name="Source"></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
+			<Item class="ModuleScript" referent="RBX55464ca163af46999e35abb7e8cfda9a">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">CaptureClick</string>
+					<string name="ScriptGuid">{5a04577d-72c9-4778-843b-977660ec7a50}</string>
+					<ProtectedString name="Source"><![CDATA[local CS = game:GetService("CollectionService")
+local UserInputService = game:GetService("UserInputService")
+local RS = game:GetService("ReplicatedStorage")
+
+local remoteEvent2 = RS:WaitForChild("ClickBlockRE")
+
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+
+local MAX_RAY_LENGTH = 5000
+
+local function onInputBegan(input, gameProcessed)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+
+        local raycastParams = RaycastParams.new()
+        raycastParams.FilterType = Enum.RaycastFilterType.Blacklist
+        raycastParams.FilterDescendantsInstances = CS:GetTagged("IgnoreClick")
+        raycastParams.IgnoreWater = true
+
+        local raycastResult = workspace:Raycast(mouse.UnitRay.Origin,
+                                                mouse.UnitRay.Direction *
+                                                    MAX_RAY_LENGTH,
+                                                raycastParams)
+
+        if raycastResult then
+            local hitObject = raycastResult.Instance
+
+            if CS:HasTag(hitObject, "LetterBlockInRack") then
+                print("--------------------------->>" .. hitObject.Name)
+                remoteEvent2:FireServer(hitObject)
+            end
+
+        else
+            print("Nothing was hit!")
+        end
+    end
+end
+
+UserInputService.InputBegan:Connect(onInputBegan)
+
+]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
 			</Item>
 		</Item>
 	</Item>
@@ -9390,6 +9306,47 @@ return module
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
+			<Item class="LocalScript" referent="RBXff0e94d0916c4c649445aa3e94f41064">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<bool name="Disabled">false</bool>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">CaptureClick</string>
+					<string name="ScriptGuid">{d7f00109-e9da-45eb-999a-113629d27913}</string>
+					<ProtectedString name="Source"><![CDATA[local CS = game:GetService("CollectionService")
+local UserInputService = game:GetService("UserInputService")
+local RS = game:GetService("ReplicatedStorage")
+local remoteEvent2 = RS:WaitForChild("ClickBlockRE")
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+local MAX_RAY_LENGTH = 5000
+local function onInputBegan(input, gameProcessed)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        local raycastParams = RaycastParams.new()
+        raycastParams.FilterType = Enum.RaycastFilterType.Blacklist
+        raycastParams.FilterDescendantsInstances = CS:GetTagged("IgnoreClick")
+        raycastParams.IgnoreWater = true
+        local raycastResult = workspace:Raycast(mouse.UnitRay.Origin,
+                                                mouse.UnitRay.Direction *
+                                                    MAX_RAY_LENGTH,
+                                                raycastParams)
+        if raycastResult then
+            local hitObject = raycastResult.Instance
+            if CS:HasTag(hitObject, "LetterBlockInRack") then
+                print("--------------------------->>" .. hitObject.Name)
+                remoteEvent2:FireServer(hitObject)
+            end
+        else
+            print("Nothing was hit!")
+        end
+    end
+end
+UserInputService.InputBegan:Connect(onInputBegan)
+]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
 		</Item>
 	</Item>
 	<Item class="StarterGui" referent="RBXfad8e8a50fb044e28e00a92ffb65f759">
@@ -10797,25 +10754,6 @@ return module
 			<int64 name="SourceAssetId">-1</int64>
 			<BinaryString name="Tags"></BinaryString>
 		</Properties>
-		<Item class="Script" referent="RBXf3f6af24ae8e4a3c882de8fbb82176aa">
-			<Properties>
-				<BinaryString name="AttributesSerialize"></BinaryString>
-				<bool name="Disabled">false</bool>
-				<Content name="LinkedSource"><null></null></Content>
-				<string name="Name">BindFreezeCamera1</string>
-				<string name="ScriptGuid">{afe0d0c8-c6cb-4e5a-98c7-920b22808587}</string>
-				<ProtectedString name="Source"><![CDATA[print("--------------------------------BindFreezeCameraRE")
-
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local Players = game:GetService("Players")
-
-local remoteEvent = ReplicatedStorage:WaitForChild("FreezeCameraRE")
-
-]]></ProtectedString>
-				<int64 name="SourceAssetId">-1</int64>
-				<BinaryString name="Tags"></BinaryString>
-			</Properties>
-		</Item>
 		<Item class="ModuleScript" referent="11">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
@@ -11082,18 +11020,14 @@ local ConfigGame = require(Sss.Source.LetterFall.ConfigGame)
 local LetterFall = require(Sss.Source.LetterFall.LetterFall)
 local TargetWord = require(Sss.Source.LetterFall.TargetWord)
 local HandleBrick2 = require(Sss.Source.LetterFall.HandleBrick3)
-local BindEventHandlers = require(Sss.Source.LetterFall.BindEventHandlers)
 
 HandleBrick2.initClickHandler()
 
 function initLetterFall()
-    BindEventHandlers.bindClickBlock()
     ConfigGame.configGame()
     LetterFall.initLetterRack()
     TargetWord.initWord()
     -- LetterFall.createBalls()
-
-    -- 
 end
 
 module.initLetterFall = initLetterFall
@@ -11537,7 +11471,6 @@ return module
 						<string name="Name">HandleBrick3</string>
 						<string name="ScriptGuid">{94fa4d4a-6d7a-4750-af49-22198bebd73a}</string>
 						<ProtectedString name="Source"><![CDATA[local module = {}
--- trst
 local Sss = game:GetService("ServerScriptService")
 local LetterFall = require(Sss.Source.LetterFall.LetterFall)
 local TargetWord = require(Sss.Source.LetterFall.TargetWord)
@@ -11546,7 +11479,7 @@ local Utils = require(Sss.Source.LetterFall.Utils)
 local CS = game:GetService("CollectionService")
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local remoteEvent = ReplicatedStorage:WaitForChild("RemoteEventTest")
+local remoteEvent = ReplicatedStorage:WaitForChild("ClickBlockRE")
 
 function isDesiredLetter(letter, clickedLetter)
     local textLabel = Utils.getFirstDescendantByName(clickedLetter, "BlockChar")
@@ -11600,6 +11533,70 @@ return module
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
+				<Item class="ModuleScript" referent="RBXe13b0b7478954980af1c5a5366ff9e41">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">CaptureClick</string>
+						<string name="ScriptGuid">{b54c0f8f-455e-4e8e-ba26-5245e452ab3d}</string>
+						<ProtectedString name="Source"><![CDATA[-- local Sss = game:GetService("ServerScriptService")
+-- local CS = game:GetService("CollectionService")
+-- local UserInputService = game:GetService("UserInputService")
+-- local RS = game:GetService("ReplicatedStorage")
+-- local module = {}
+-- local remoteEvent = RS:WaitForChild("ClickBlockRE")
+-- local player = game.Players.LocalPlayer
+-- local mouse = player:GetMouse()
+-- local MAX_RAY_LENGTH = 5000
+-- local function onInputBegan(input, gameProcessed)
+--     if input.UserInputType == Enum.UserInputType.MouseButton1 then
+--         local raycastParams = RaycastParams.new()
+--         raycastParams.FilterType = Enum.RaycastFilterType.Blacklist
+--         raycastParams.FilterDescendantsInstances = CS:GetTagged("IgnoreClick")
+--         raycastParams.IgnoreWater = true
+--         local raycastResult = workspace:Raycast(mouse.UnitRay.Origin,
+--                                                 mouse.UnitRay.Direction *
+--                                                     MAX_RAY_LENGTH,
+--                                                 raycastParams)
+--         if raycastResult then
+--             local hitObject = raycastResult.Instance
+--             if CS:HasTag(hitObject, "LetterBlockInRack") then
+--                 print("--------------------------->>" .. hitObject.Name)
+--                 remoteEvent:FireServer(hitObject)
+--             end
+--         else
+--             print("Nothing was hit!")
+--         end
+--     end
+-- end
+-- UserInputService.InputBegan:Connect(onInputBegan)
+-- return module
+]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+			</Item>
+			<Item class="ModuleScript" referent="RBX5a55c4b9a40e47898352d54560269485">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">BindEventHandlers</string>
+					<string name="ScriptGuid">{f4fc2cf3-46af-45ed-82bc-884f611e9fff}</string>
+					<ProtectedString name="Source"><![CDATA[local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local module = {}
+function module.bindClickBlock(player)
+    local remoteEvent = ReplicatedStorage:WaitForChild("RemoteEventTest")
+    local function onCreatePart(player) end
+    remoteEvent.OnServerEvent:Connect(onCreatePart)
+end
+
+return module
+]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
 			</Item>
 		</Item>
 	</Item>
