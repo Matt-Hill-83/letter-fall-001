@@ -83,11 +83,13 @@ function initLetterRack(props)
     function genRandom(min, max)
         local rand = min + math.random() * (max - min)
         return math.ceil(rand)
-        -- 
     end
 
-    local columnBaseTemplate = Utils.getFirstDescendantByName(letterFallFolder,
-                                                              "ColumnBase")
+    -- local columnBaseTemplate = Utils.getFirstDescendantByName(letterFallFolder,
+    --                                                           "ColumnBase")
+
+    local columnBaseTemplates = CS:GetTagged("ColumnBaseTemplate")
+    local columnBaseTemplate = columnBaseTemplates[1]
 
     local newLetters = {}
     local spacingFactor = 1.08
@@ -125,9 +127,9 @@ function initLetterRack(props)
             applyLetterText({letterBlock = newLetter, char = char})
             table.insert(newLetters, newLetter)
         end
-        letterTemplate:Destroy()
+        -- letterTemplate:Destroy()
     end
-    columnBaseTemplate:Destroy()
+    -- columnBaseTemplate:Destroy()
 end
 
 module.colorLetterText = colorLetterText

@@ -7,7 +7,7 @@ local player = game.Players.LocalPlayer
 local mouse = player:GetMouse()
 local MAX_RAY_LENGTH = 5000
 
-local function onInputBegan(input, gameProcessed)
+local function onInputBegan(input)
     if input.UserInputType == Enum.UserInputType.MouseButton1 then
         local raycastParams = RaycastParams.new()
         raycastParams.FilterType = Enum.RaycastFilterType.Blacklist
