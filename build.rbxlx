@@ -9211,14 +9211,25 @@ remoteCode.initLetterFall()
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="LocalScript" referent="RBXf52662d7638a4872bd1c21cea33aba06">
+			<Item class="ModuleScript" referent="RBX28b98cc784824c65bc2b8039471787f2">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
-					<bool name="Disabled">false</bool>
 					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">LFCaptureClick</string>
-					<string name="ScriptGuid">{35dfdb07-7e20-4b7a-b79d-fedd009783ec}</string>
-					<ProtectedString name="Source"><![CDATA[local UserInputService = game:GetService("UserInputService")
+					<string name="Name">LetterFallStarterPack</string>
+					<string name="ScriptGuid"></string>
+					<ProtectedString name="Source"><![CDATA[---test
+]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+				<Item class="LocalScript" referent="RBX5731c4d070b24b33a8078c4265d679c3">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<bool name="Disabled">false</bool>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">LFCaptureClick</string>
+						<string name="ScriptGuid">{95f2e7db-7f0b-463f-bc53-3e1adeb1bbda}</string>
+						<ProtectedString name="Source"><![CDATA[local UserInputService = game:GetService("UserInputService")
 local CS = game:GetService("CollectionService")
 local RS = game:GetService("ReplicatedStorage")
 local remoteEvent2 = RS:WaitForChild("ClickBlockRE")
@@ -9250,9 +9261,10 @@ local function onInputBegan(input, gameProcessed)
 end
 UserInputService.InputBegan:Connect(onInputBegan)
 ]]></ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
 			</Item>
 		</Item>
 	</Item>
