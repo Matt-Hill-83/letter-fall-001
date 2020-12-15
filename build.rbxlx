@@ -11600,27 +11600,6 @@ return module
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ModuleScript" referent="RBXcdaee0f6bd7944f2b912ef4f92ae4a5a">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">BindEventHandlers</string>
-						<string name="ScriptGuid">{481fa239-05df-4167-8589-668dc15d5648}</string>
-						<ProtectedString name="Source"><![CDATA[local ReplicatedStorage = game:GetService("ReplicatedStorage")
-
-local module = {}
-function module.bindClickBlock()
-    local remoteEvent = ReplicatedStorage:WaitForChild("RemoteEventTest")
-    local function onCreatePart(player) end
-    remoteEvent.OnServerEvent:Connect(onCreatePart)
-end
-
-return module
-]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
 			</Item>
 		</Item>
 	</Item>
