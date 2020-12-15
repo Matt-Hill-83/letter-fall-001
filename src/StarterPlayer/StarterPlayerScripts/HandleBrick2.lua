@@ -34,9 +34,6 @@ end
 
 function handleBrick(player, clickedLetter)
     local wordLetters = LetterFall.wordLetters
-    print('wordLetters' .. ' - start');
-    print(wordLetters);
-    print('wordLetters' .. ' - end');
 
     local part = CS:GetTagged("BallPitBottom")
     if part[1] then part[1]:Destroy() end
