@@ -2,6 +2,7 @@ local module = {}
 
 local Sss = game:GetService("ServerScriptService")
 local LetterFall = require(Sss.Source.LetterFall.LetterFall)
+local TargetWord = require(Sss.Source.TargetWord.TargetWord)
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local Constants = require(Sss.Source.Constants.Constants)
 
@@ -27,12 +28,18 @@ function isWordComplete(wordLetters)
     return true
 end
 
+function module.initClickHandler(player, clickedLetter)
+    remoteEvent.OnServerEvent:Connect(handleBrick)
+end
+
 function handleBrick(player, clickedLetter)
     local wordLetters = LetterFall.getWordLetters()
+    print('wordLetters' .. ' - start');
+    print(wordLetters);
+    print('wordLetters' .. ' - end');
 
     local part = CS:GetTagged("BallPitBottom")
     if part[1] then part[1]:Destroy() end
-    -- LetterFall.anchorLetters()
 
     for i, letter in ipairs(wordLetters) do
         if isDesiredLetter(letter, clickedLetter) then
@@ -47,15 +54,11 @@ function handleBrick(player, clickedLetter)
             local wordComplete = isWordComplete(wordLetters)
             if wordComplete then
                 LetterFall.lastWordIndex = LetterFall.lastWordIndex + 1
-                LetterFall.initWord()
+                TargetWord.initWord()
             end
             break
         end
-
     end
-
 end
-
-remoteEvent.OnServerEvent:Connect(handleBrick)
 
 return module

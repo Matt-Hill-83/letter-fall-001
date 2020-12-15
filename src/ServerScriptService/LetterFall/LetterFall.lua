@@ -42,14 +42,6 @@ function createBalls(props)
     end
 end
 
-function anchorLetters()
-    local letterFolder = getLetterFolder()
-    local newLetters =
-        Utils.getDescendantsByNameMatch(letterFolder, "newLetter")
-
-    for i, letter in ipairs(newLetters) do letter.Anchored = true end
-end
-
 function getWordLetters() return module.wordLetters end
 
 function getLetterFolder()
@@ -88,7 +80,6 @@ function initLetterRack(props)
 
     local numRow = 18
     local numCol = 8
-    local letters = {'C', 'A', 'T'}
 
     local allLetters = {
         'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
@@ -156,56 +147,12 @@ function initLetterRack(props)
     columnBaseTemplate:Destroy()
 end
 
-function initWord(props)
-    local letterFallFolder = Utils.getFirstDescendantByName(workspace,
-                                                            "LetterFallFolder")
-    local wordFolder = getWordFolder()
-    local word = module.words[module.lastWordIndex]
-
-    for i, letter in ipairs(module.wordLetters) do
-        if letter.instance then letter.instance:Destroy() end
-        module.wordLetters[i] = nil
-    end
-    Utils.clearTable(module.wordLetters)
-
-    function genRandom(min, max) return min + math.random() * (max - min) end
-
-    local wordBox = Utils.getFirstDescendantByName(letterFallFolder, "WordBox")
-
-    local letterBlock = Utils.getFirstDescendantByName(wordBox, "LetterBlock")
-    local letterPositioner = Utils.getFirstDescendantByName(wordBox,
-                                                            "LetterPositioner")
-
-    local spacingFactor = 1.05
-
-    for letterIndex, letter in ipairs(word) do
-        local newLetter = letterBlock:Clone()
-        newLetter.Parent = wordFolder
-        newLetter.Name = "wordLetter-" .. letterIndex
-        local z = newLetter.Size.Z * (letterIndex - 1) * spacingFactor
-        newLetter.CFrame = letterPositioner.CFrame *
-                               CFrame.new(Vector3.new(0, 0, z))
-
-        CS:AddTag(newLetter, Constants.tagNames.WordLetter)
-
-        applyLetterText({letterBlock = newLetter, char = letter})
-        colorLetterText({
-            letterBlock = newLetter,
-            color = Color3.new(117, 85, 255)
-        })
-
-        table.insert(module.wordLetters,
-                     {char = letter, found = false, instance = newLetter})
-    end
-end
-
-module.initLetterRack = initLetterRack
-module.initWord = initWord
-module.anchorLetters = anchorLetters
 module.getLetterFolder = getLetterFolder
 module.getWordFolder = getWordFolder
 module.getWordLetters = getWordLetters
 module.colorLetterText = colorLetterText
 module.createBalls = createBalls
+module.initLetterRack = initLetterRack
+module.applyLetterText = applyLetterText
 
 return module
