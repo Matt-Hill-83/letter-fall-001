@@ -1,6 +1,5 @@
 local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
-local Constants = require(Sss.Source.Constants.Constants)
 local CS = game:GetService("CollectionService")
 local LetterFall = require(Sss.Source.LetterFall.LetterFall)
 
@@ -52,7 +51,7 @@ function initWord(props)
         newLetter.CFrame = letterPositioner.CFrame *
                                CFrame.new(Vector3.new(0, 0, z))
 
-        CS:AddTag(newLetter, Constants.tagNames.WordLetter)
+        CS:AddTag(newLetter, LetterFall.tagNames.WordLetter)
 
         LetterFall.applyLetterText({letterBlock = newLetter, char = letter})
         LetterFall.colorLetterText({

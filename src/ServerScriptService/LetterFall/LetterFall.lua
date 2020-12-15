@@ -1,6 +1,5 @@
 local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
-local Constants = require(Sss.Source.Constants.Constants)
 local CS = game:GetService("CollectionService")
 
 local module = {
@@ -9,7 +8,8 @@ local module = {
         {'C', 'A', 'T'}, {'B', 'A', 'T'}, {'H', 'A', 'T'}, {'M', 'A', 'T'},
         {'P', 'A', 'T'}, {'R', 'A', 'T'}, {'S', 'A', 'T'}
     },
-    lastWordIndex = 1
+    lastWordIndex = 1,
+    tagNames = {WordLetter = "WordLetter", LetterBlock = "LetterBlock"}
 }
 
 function colorLetterText(props)
@@ -116,7 +116,7 @@ function initLetterRack(props)
             newLetter.Parent = newColumnBase
 
             newLetter.Name = "newLetter-" .. char
-            CS:AddTag(newLetter, Constants.tagNames.LetterBlock)
+            CS:AddTag(newLetter, module.tagNames.LetterBlock)
 
             local y = newLetter.Size.Y * (rowIndex - 1) * spacingFactor
             newLetter.CFrame = newLetter.CFrame *

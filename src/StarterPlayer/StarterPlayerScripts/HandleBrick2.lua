@@ -4,7 +4,6 @@ local Sss = game:GetService("ServerScriptService")
 local LetterFall = require(Sss.Source.LetterFall.LetterFall)
 local TargetWord = require(Sss.Source.TargetWord.TargetWord)
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
-local Constants = require(Sss.Source.Constants.Constants)
 
 local CS = game:GetService("CollectionService")
 
@@ -18,7 +17,6 @@ function isDesiredLetter(letter, clickedLetter)
 end
 
 function isWordComplete(wordLetters)
-
     for i, word in ipairs(wordLetters) do
         if not word.found then
             -- 
