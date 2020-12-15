@@ -8862,7 +8862,7 @@ gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gF4=]]></BinaryS
 						<string name="ScriptGuid">{b240a0d6-584a-4ab9-9877-08ec6e7459f1}</string>
 						<ProtectedString name="Source"><![CDATA[print("Startup Script------------------------------------")
 local Sss = game:GetService("ServerScriptService")
-local remoteCode = require(Sss.Source.LetterFall.InitLetterFall)
+local remoteCode = require(Sss.Source.LetterFall_SSS.InitLetterFall)
 remoteCode.initLetterFall()
 
 ]]></ProtectedString>
@@ -9211,24 +9211,24 @@ remoteCode.initLetterFall()
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="ModuleScript" referent="RBX28b98cc784824c65bc2b8039471787f2">
+			<Item class="ModuleScript" referent="RBX9b06ea30f4994d03b144cd6822dac5a7">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">LetterFallStarterPack</string>
-					<string name="ScriptGuid"></string>
+					<string name="Name">LetterFall_StarterPack</string>
+					<string name="ScriptGuid">{0e0bd545-7724-49b8-b263-eca154ac1913}</string>
 					<ProtectedString name="Source"><![CDATA[---test
 ]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="LocalScript" referent="RBX5731c4d070b24b33a8078c4265d679c3">
+				<Item class="LocalScript" referent="RBXea59073a56e64d1fbdadd7164bd69c8a">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<bool name="Disabled">false</bool>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">LFCaptureClick</string>
-						<string name="ScriptGuid">{95f2e7db-7f0b-463f-bc53-3e1adeb1bbda}</string>
+						<string name="ScriptGuid">{46eeb199-8b9d-4602-b084-6fbcc2f239e9}</string>
 						<ProtectedString name="Source"><![CDATA[local UserInputService = game:GetService("UserInputService")
 local CS = game:GetService("CollectionService")
 local RS = game:GetService("ReplicatedStorage")
@@ -10684,25 +10684,169 @@ UserInputService.InputBegan:Connect(onInputBegan)
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="ModuleScript" referent="RBX71b348ba80974df89c106e207ddacf7d">
+			<Item class="ModuleScript" referent="RBX456bb437106e417498ad3e600c54734c">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">LetterFall</string>
-					<string name="ScriptGuid">{442d487b-5048-4bfb-80d8-ac2dc8976655}</string>
+					<string name="Name">LetterFall_SSS</string>
+					<string name="ScriptGuid">{53918aee-6cef-4c28-97d9-49360b9e94f7}</string>
 					<ProtectedString name="Source"><![CDATA[
 ]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="ModuleScript" referent="RBXc45249b23bf946fba547cffc01314e58">
+				<Item class="ModuleScript" referent="RBX12afafa417274479a912045c8009a657">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">ConfigGame</string>
+						<string name="ScriptGuid">{3df2e75d-331c-48fb-aca0-21ea566c4e58}</string>
+						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
+local Utils = require(Sss.Source.LetterFall_SSS.Utils)
+
+local CS = game:GetService("CollectionService")
+
+local module = {}
+function configPlayers()
+    local Players = game:GetService("Players")
+    Players.RespawnTime = 0
+
+    local function onCharacterAdded(character)
+        character:WaitForChild("Humanoid").WalkSpeed = 30
+    end
+
+    local function onPlayerAdded(player)
+        player.CharacterAdded:Connect(onCharacterAdded)
+    end
+
+    Players.PlayerAdded:Connect(onPlayerAdded)
+
+end
+
+function setVisibility()
+    Utils.setPropsByTag({tag = "Transparent", props = {Transparency = 1}})
+end
+
+function module.configGame()
+    setVisibility()
+    configPlayers()
+end
+
+return module
+]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="ModuleScript" referent="RBXf2206e5d442449309320cc2362f77086">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">HandleBrick3</string>
+						<string name="ScriptGuid">{8228c094-d1a5-43a7-89c3-4d76e4d3d6c6}</string>
+						<ProtectedString name="Source"><![CDATA[local module = {}
+local Sss = game:GetService("ServerScriptService")
+local LetterFall = require(Sss.Source.LetterFall_SSS.LetterFall)
+local TargetWord = require(Sss.Source.LetterFall_SSS.TargetWord)
+local Utils = require(Sss.Source.LetterFall_SSS.Utils)
+
+local CS = game:GetService("CollectionService")
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local remoteEvent = ReplicatedStorage:WaitForChild("ClickBlockRE")
+
+function isDesiredLetter(letter, clickedLetter)
+    local textLabel = Utils.getFirstDescendantByName(clickedLetter, "BlockChar")
+                          .Text
+    return letter.found ~= true and letter.char == textLabel
+end
+
+function isWordComplete(wordLetters)
+    for i, word in ipairs(wordLetters) do
+        if not word.found then
+            -- 
+            return false
+        end
+    end
+    return true
+end
+
+function module.initClickHandler(player, clickedLetter)
+    remoteEvent.OnServerEvent:Connect(handleBrick)
+end
+
+function handleBrick(player, clickedLetter)
+    local wordLetters = LetterFall.wordLetters
+
+    local part = CS:GetTagged("BallPitBottom")
+    if part[1] then part[1]:Destroy() end
+
+    for i, letter in ipairs(wordLetters) do
+        if isDesiredLetter(letter, clickedLetter) then
+            letter.found = true
+
+            LetterFall.colorLetterText({
+                letterBlock = letter.instance,
+                color = Color3.fromRGB(113, 17, 161)
+            })
+
+            clickedLetter:Destroy()
+            local wordComplete = isWordComplete(wordLetters)
+            if wordComplete then
+                LetterFall.lastWordIndex = LetterFall.lastWordIndex + 1
+                TargetWord.initWord()
+            end
+            break
+        end
+    end
+end
+
+return module
+]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="ModuleScript" referent="RBX435c6308012d4c22a654358dc382e112">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">InitLetterFall</string>
+						<string name="ScriptGuid">{cbba2f31-7080-43fe-a98e-06b14cd311e1}</string>
+						<ProtectedString name="Source"><![CDATA[local SP = game:GetService("StarterPlayer")
+local Sss = game:GetService("ServerScriptService")
+local module = {}
+
+local ConfigGame = require(Sss.Source.LetterFall_SSS.ConfigGame)
+local LetterFall = require(Sss.Source.LetterFall_SSS.LetterFall)
+local TargetWord = require(Sss.Source.LetterFall_SSS.TargetWord)
+local HandleBrick2 = require(Sss.Source.LetterFall_SSS.HandleBrick3)
+
+HandleBrick2.initClickHandler()
+
+function initLetterFall()
+    ConfigGame.configGame()
+    LetterFall.initLetterRack()
+    TargetWord.initWord()
+    -- LetterFall.createBalls()
+end
+
+module.initLetterFall = initLetterFall
+return module
+
+]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="ModuleScript" referent="RBX8e61b2ad5b564844a046b073fca45d56">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">LetterFall</string>
-						<string name="ScriptGuid">{6591d7fc-15aa-4ddd-9197-ae1478a7f775}</string>
+						<string name="ScriptGuid">{92960e3d-c59b-4c67-a54b-7ab0d30f4155}</string>
 						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
-local Utils = require(Sss.Source.LetterFall.Utils)
+local Utils = require(Sss.Source.LetterFall_SSS.Utils)
 local CS = game:GetService("CollectionService")
 
 local module = {
@@ -10844,16 +10988,16 @@ return module
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ModuleScript" referent="RBX162022b97f1f438abc5fbc18402016d3">
+				<Item class="ModuleScript" referent="RBXa716b474361543cba160409d362e5d90">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">TargetWord</string>
-						<string name="ScriptGuid">{7070cd9e-cd70-47a6-9fc3-271d225467e7}</string>
+						<string name="ScriptGuid">{3e2941dd-7e1a-4d6e-b24e-db369db3ab50}</string>
 						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
-local Utils = require(Sss.Source.LetterFall.Utils)
+local Utils = require(Sss.Source.LetterFall_SSS.Utils)
 local CS = game:GetService("CollectionService")
-local LetterFall = require(Sss.Source.LetterFall.LetterFall)
+local LetterFall = require(Sss.Source.LetterFall_SSS.LetterFall)
 
 local module = {}
 
@@ -10925,87 +11069,12 @@ return module
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ModuleScript" referent="RBX69fc08fb024e43ea8b3247ef3558c497">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">InitLetterFall</string>
-						<string name="ScriptGuid">{25fd8e88-8f42-4a85-8043-2f0f02706357}</string>
-						<ProtectedString name="Source"><![CDATA[local SP = game:GetService("StarterPlayer")
-local Sss = game:GetService("ServerScriptService")
-local module = {}
-
-local ConfigGame = require(Sss.Source.LetterFall.ConfigGame)
-local LetterFall = require(Sss.Source.LetterFall.LetterFall)
-local TargetWord = require(Sss.Source.LetterFall.TargetWord)
-local HandleBrick2 = require(Sss.Source.LetterFall.HandleBrick3)
-
-HandleBrick2.initClickHandler()
-
-function initLetterFall()
-    ConfigGame.configGame()
-    LetterFall.initLetterRack()
-    TargetWord.initWord()
-    -- LetterFall.createBalls()
-end
-
-module.initLetterFall = initLetterFall
-return module
-
-]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-				<Item class="ModuleScript" referent="RBXece6033740054c82a5230fb5c297613b">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">ConfigGame</string>
-						<string name="ScriptGuid">{3e7f2cb1-88c2-4293-aa0a-85f61a5c0ef6}</string>
-						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
-local Utils = require(Sss.Source.LetterFall.Utils)
-
-local CS = game:GetService("CollectionService")
-
-local module = {}
-function configPlayers()
-    local Players = game:GetService("Players")
-    Players.RespawnTime = 0
-
-    local function onCharacterAdded(character)
-        character:WaitForChild("Humanoid").WalkSpeed = 30
-    end
-
-    local function onPlayerAdded(player)
-        player.CharacterAdded:Connect(onCharacterAdded)
-    end
-
-    Players.PlayerAdded:Connect(onPlayerAdded)
-
-end
-
-function setVisibility()
-    Utils.setPropsByTag({tag = "Transparent", props = {Transparency = 1}})
-end
-
-function module.configGame()
-    setVisibility()
-    configPlayers()
-end
-
-return module
-]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-				<Item class="ModuleScript" referent="RBX16bf2aba59174af396adb0b4a9d0cfff">
+				<Item class="ModuleScript" referent="RBX65df95ca18094103a994a15ccf20359a">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">Utils</string>
-						<string name="ScriptGuid">{45f92a97-5fd1-45ec-a679-d4f110d590a3}</string>
+						<string name="ScriptGuid">{229099e2-676d-4ece-ac28-b593384bf5e2}</string>
 						<ProtectedString name="Source"><![CDATA[local module = {}
 local collectionService = game:GetService("CollectionService")
 
@@ -11376,75 +11445,6 @@ module.tableToString = tableToString
 module.hideItemAndChildren = hideItemAndChildren
 module.mergeTables = mergeTables
 module.getDescendantsByName = getDescendantsByName
-
-return module
-]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-				<Item class="ModuleScript" referent="RBX647fef88b6014ba283967a7e77802a81">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">HandleBrick3</string>
-						<string name="ScriptGuid">{94fa4d4a-6d7a-4750-af49-22198bebd73a}</string>
-						<ProtectedString name="Source"><![CDATA[local module = {}
-local Sss = game:GetService("ServerScriptService")
-local LetterFall = require(Sss.Source.LetterFall.LetterFall)
-local TargetWord = require(Sss.Source.LetterFall.TargetWord)
-local Utils = require(Sss.Source.LetterFall.Utils)
-
-local CS = game:GetService("CollectionService")
-
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local remoteEvent = ReplicatedStorage:WaitForChild("ClickBlockRE")
-
-function isDesiredLetter(letter, clickedLetter)
-    local textLabel = Utils.getFirstDescendantByName(clickedLetter, "BlockChar")
-                          .Text
-    return letter.found ~= true and letter.char == textLabel
-end
-
-function isWordComplete(wordLetters)
-    for i, word in ipairs(wordLetters) do
-        if not word.found then
-            -- 
-            return false
-        end
-    end
-    return true
-end
-
-function module.initClickHandler(player, clickedLetter)
-    remoteEvent.OnServerEvent:Connect(handleBrick)
-end
-
-function handleBrick(player, clickedLetter)
-    local wordLetters = LetterFall.wordLetters
-
-    local part = CS:GetTagged("BallPitBottom")
-    if part[1] then part[1]:Destroy() end
-
-    for i, letter in ipairs(wordLetters) do
-        if isDesiredLetter(letter, clickedLetter) then
-            letter.found = true
-
-            LetterFall.colorLetterText({
-                letterBlock = letter.instance,
-                color = Color3.fromRGB(113, 17, 161)
-            })
-
-            clickedLetter:Destroy()
-            local wordComplete = isWordComplete(wordLetters)
-            if wordComplete then
-                LetterFall.lastWordIndex = LetterFall.lastWordIndex + 1
-                TargetWord.initWord()
-            end
-            break
-        end
-    end
-end
 
 return module
 ]]></ProtectedString>

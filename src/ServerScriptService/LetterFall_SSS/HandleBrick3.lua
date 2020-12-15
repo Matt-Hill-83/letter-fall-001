@@ -1,8 +1,8 @@
 local module = {}
 local Sss = game:GetService("ServerScriptService")
-local LetterFall = require(Sss.Source.LetterFall.LetterFall)
-local TargetWord = require(Sss.Source.LetterFall.TargetWord)
-local Utils = require(Sss.Source.LetterFall.Utils)
+local LetterFall = require(Sss.Source.LetterFall_SSS.LetterFall)
+local TargetWord = require(Sss.Source.LetterFall_SSS.TargetWord)
+local Utils = require(Sss.Source.LetterFall_SSS.Utils)
 
 local CS = game:GetService("CollectionService")
 
