@@ -13745,6 +13745,10 @@ function isWordComplete(wordLetters)
     return true
 end
 
+function module.initClickHandler(player, clickedLetter)
+    remoteEvent.OnServerEvent:Connect(handleBrick)
+end
+
 function handleBrick(player, clickedLetter)
     local wordLetters = LetterFall.getWordLetters()
     print('wordLetters' .. ' - start');
@@ -13773,10 +13777,6 @@ function handleBrick(player, clickedLetter)
         end
     end
 end
-print('workspace' .. ' - start');
-print(workspace);
-print('workspace' .. ' - end');
-remoteEvent.OnServerEvent:Connect(handleBrick)
 
 return module
 ]]></ProtectedString>
@@ -15387,8 +15387,9 @@ local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 local ConfigGame = require(Sss.Source.AddRemoteObjects.ConfigGame)
 local LetterFall = require(Sss.Source.LetterFall.LetterFall)
 local TargetWord = require(Sss.Source.TargetWord.TargetWord)
+local HandleBrick2 = require(SP.Source.StarterPlayerScripts.HandleBrick2)
 
--- HandleBrick2.onCreatePart()
+HandleBrick2.initClickHandler()
 
 function addRemoteObjects()
     ConfigGame.configGame()
