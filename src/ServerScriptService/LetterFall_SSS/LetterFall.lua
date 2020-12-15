@@ -102,7 +102,9 @@ function initLetterRack(props)
             newColumnBase.CFrame = letterPositioner[1].CFrame *
                                        CFrame.new(Vector3.new(-z, 0, 0))
         end
-
+        print('newColumnBase' .. ' - start');
+        print(newColumnBase);
+        print('newColumnBase' .. ' - end');
         local letterTemplate = Utils.getFirstDescendantByName(newColumnBase,
                                                               "LetterTemplate")
 
@@ -117,14 +119,14 @@ function initLetterRack(props)
             newLetter.Name = "newLetter-" .. char
             CS:AddTag(newLetter, module.tagNames.LetterBlock)
 
-            local y = newLetter.Size.Y * (rowIndex - 1) * spacingFactor
+            local y = newLetter.Size.Y * (rowIndex) * spacingFactor
             newLetter.CFrame = newLetter.CFrame *
                                    CFrame.new(Vector3.new(0, y, 0))
 
             applyLetterText({letterBlock = newLetter, char = char})
             table.insert(newLetters, newLetter)
         end
-        letterTemplate:Destroy()
+        -- letterTemplate:Destroy()
     end
     -- columnBaseTemplate:Destroy()
 end
