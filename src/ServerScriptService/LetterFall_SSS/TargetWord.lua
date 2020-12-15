@@ -26,6 +26,12 @@ function initWord(props)
     local wordFolder = getWordFolder()
     local word = LetterFall.words[LetterFall.lastWordIndex]
 
+    print('LetterFall.wordLetters' .. ' - start');
+    print(LetterFall.wordLetters);
+    print('LetterFall.wordLetters' .. ' - end');
+
+    -- TODO: need to delete these letters.
+
     for i, letter in ipairs(LetterFall.wordLetters) do
         if letter.instance then letter.instance:Destroy() end
         LetterFall.wordLetters[i] = nil
