@@ -34,9 +34,10 @@ end
 function createBalls(props)
     local ball = CS:GetTagged("FluidBall")
     if ball[1] then
-        for count = 1, 200 do
+        for count = 1, 10 do
             local newBall = ball[1]:Clone()
             newBall.Parent = workspace
+            newBall.CFrame = newBall.CFrame + Vector3.new(0.1, 1, 0.1)
         end
     end
 end
@@ -85,7 +86,7 @@ function initLetterRack(props)
                                                             "LetterFallFolder")
     local letterFolder = getLetterFolder()
 
-    local numRow = 8
+    local numRow = 18
     local numCol = 8
     local letters = {'C', 'A', 'T'}
 
@@ -121,10 +122,6 @@ function initLetterRack(props)
         newColumnBase.Parent = letterFolder
         newColumnBase.Name = "columnBase-" .. colIndex
 
-        local columnAttachment = Utils.getFirstDescendantByName(newColumnBase,
-                                                                "Att-ColumnBase")
-        columnAttachment.Name = columnAttachment.Name .. "-C" .. colIndex
-
         local z = newColumnBase.Size.Z * (colIndex - 1) * spacingFactor
         local letterPositioner = CS:GetTagged("RackLetterBlockPositioner")
 
@@ -132,8 +129,6 @@ function initLetterRack(props)
             newColumnBase.CFrame = letterPositioner[1].CFrame *
                                        CFrame.new(Vector3.new(-z, 0, 0))
         end
-        -- newColumnBase.CFrame = newColumnBase.CFrame *
-        --                            CFrame.new(Vector3.new(-z, 0, 0))
 
         local letterTool = Utils.getFirstDescendantByName(newColumnBase,
                                                           "LetterTool")
@@ -146,12 +141,8 @@ function initLetterRack(props)
             local newLetter = letterTool:Clone()
             newLetter.Parent = newColumnBase
 
-            local letterAttachment = Utils.getFirstDescendantByName(newLetter,
-                                                                    "Att-Handle")
             newLetter.Name = "newLetter-" .. char
             CS:AddTag(newLetter, Constants.tagNames.LetterBlock)
-            letterAttachment.Name = letterAttachment.Name .. "-R" .. rowIndex ..
-                                        "-C" .. colIndex
 
             local y = newLetter.Size.Y * (rowIndex - 1) * spacingFactor
             newLetter.CFrame = newLetter.CFrame *

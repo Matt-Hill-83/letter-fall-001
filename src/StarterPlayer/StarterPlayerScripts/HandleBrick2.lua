@@ -8,7 +8,6 @@ local Constants = require(Sss.Source.Constants.Constants)
 local CS = game:GetService("CollectionService")
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
--- local remoteEvent = ReplicatedStorage:WaitForChild("ClickBlockRE")
 local remoteEvent = ReplicatedStorage:WaitForChild("RemoteEventTest")
 
 function isDesiredLetter(letter, clickedLetter)
