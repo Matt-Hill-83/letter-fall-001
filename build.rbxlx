@@ -9304,7 +9304,7 @@ UserInputService.InputBegan:Connect(onInputBegan)
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">HandleBrick3</string>
-						<string name="ScriptGuid"></string>
+						<string name="ScriptGuid">{7e426978-7631-4867-8fb6-314613c08ee9}</string>
 						<ProtectedString name="Source"><![CDATA[local module = {}
 
 local Sss = game:GetService("ServerScriptService")
@@ -10816,25 +10816,6 @@ local remoteEvent = ReplicatedStorage:WaitForChild("FreezeCameraRE")
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
 		</Item>
-		<Item class="Script" referent="RBX45b36d9ab0a0482682485b64d9dc628c">
-			<Properties>
-				<BinaryString name="AttributesSerialize"></BinaryString>
-				<bool name="Disabled">false</bool>
-				<Content name="LinkedSource"><null></null></Content>
-				<string name="Name">RETest</string>
-				<string name="ScriptGuid">{8479467a-7bbe-410f-a115-56e7d424dd72}</string>
-				<ProtectedString name="Source"><![CDATA[local ReplicatedStorage = game:GetService("ReplicatedStorage")
-
-local remoteEvent = ReplicatedStorage:WaitForChild("RemoteEventTest")
-
-local function onCreatePart(player, partColor, partPos)
-end
-
-remoteEvent.OnServerEvent:Connect(onCreatePart)]]></ProtectedString>
-				<int64 name="SourceAssetId">-1</int64>
-				<BinaryString name="Tags"></BinaryString>
-			</Properties>
-		</Item>
 		<Item class="ModuleScript" referent="11">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
@@ -11101,10 +11082,12 @@ local ConfigGame = require(Sss.Source.LetterFall.ConfigGame)
 local LetterFall = require(Sss.Source.LetterFall.LetterFall)
 local TargetWord = require(Sss.Source.LetterFall.TargetWord)
 local HandleBrick2 = require(Sss.Source.LetterFall.HandleBrick3)
+local BindEventHandlers = require(Sss.Source.LetterFall.BindEventHandlers)
 
 HandleBrick2.initClickHandler()
 
 function initLetterFall()
+    BindEventHandlers.bindClickBlock()
     ConfigGame.configGame()
     LetterFall.initLetterRack()
     TargetWord.initWord()
@@ -11609,6 +11592,27 @@ function handleBrick(player, clickedLetter)
             break
         end
     end
+end
+
+return module
+]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="ModuleScript" referent="RBXcdaee0f6bd7944f2b912ef4f92ae4a5a">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">BindEventHandlers</string>
+						<string name="ScriptGuid">{481fa239-05df-4167-8589-668dc15d5648}</string>
+						<ProtectedString name="Source"><![CDATA[local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local module = {}
+function module.bindClickBlock()
+    local remoteEvent = ReplicatedStorage:WaitForChild("RemoteEventTest")
+    local function onCreatePart(player) end
+    remoteEvent.OnServerEvent:Connect(onCreatePart)
 end
 
 return module
