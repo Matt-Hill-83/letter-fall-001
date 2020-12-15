@@ -42,8 +42,6 @@ function createBalls(props)
     end
 end
 
-function getWordLetters() return module.wordLetters end
-
 function getLetterFolder()
     local letterFallFolder = Utils.getFirstDescendantByName(workspace,
                                                             "LetterFallFolder")
@@ -56,21 +54,6 @@ function getLetterFolder()
     local letterFolder = Utils.getOrCreateFolder(
                              {name = "LetterFolder", parent = runtimeFolder})
     return letterFolder
-end
-
-function getWordFolder()
-    local letterFallFolder = Utils.getFirstDescendantByName(workspace,
-                                                            "LetterFallFolder")
-    local runtimeFolder = Utils.getOrCreateFolder(
-                              {
-            name = "RuntimeFolder",
-            parent = letterFallFolder
-        })
-
-    return (Utils.getOrCreateFolder({
-        name = "WordFolder",
-        parent = runtimeFolder
-    }))
 end
 
 function initLetterRack(props)
@@ -147,9 +130,6 @@ function initLetterRack(props)
     columnBaseTemplate:Destroy()
 end
 
-module.getLetterFolder = getLetterFolder
-module.getWordFolder = getWordFolder
-module.getWordLetters = getWordLetters
 module.colorLetterText = colorLetterText
 module.createBalls = createBalls
 module.initLetterRack = initLetterRack

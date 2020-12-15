@@ -33,7 +33,7 @@ function module.initClickHandler(player, clickedLetter)
 end
 
 function handleBrick(player, clickedLetter)
-    local wordLetters = LetterFall.getWordLetters()
+    local wordLetters = LetterFall.wordLetters
     print('wordLetters' .. ' - start');
     print(wordLetters);
     print('wordLetters' .. ' - end');
@@ -47,7 +47,7 @@ function handleBrick(player, clickedLetter)
 
             LetterFall.colorLetterText({
                 letterBlock = letter.instance,
-                color = Color3.new(255, 0, 191)
+                color = Color3.fromRGB(113, 17, 161)
             })
 
             clickedLetter:Destroy()

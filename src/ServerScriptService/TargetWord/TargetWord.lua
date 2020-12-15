@@ -4,7 +4,7 @@ local Constants = require(Sss.Source.Constants.Constants)
 local CS = game:GetService("CollectionService")
 local LetterFall = require(Sss.Source.LetterFall.LetterFall)
 
-local module = {wordLetters = {}}
+local module = {}
 
 function getWordFolder()
     local letterFallFolder = Utils.getFirstDescendantByName(workspace,
