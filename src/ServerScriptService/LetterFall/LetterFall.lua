@@ -6,8 +6,8 @@ local CS = game:GetService("CollectionService")
 local module = {
     wordLetters = {},
     words = {
-        {'C', 'A', 'T'}, {'B', 'A', 'T'}, {'F', 'A', 'T'}, {'H', 'A', 'T'},
-        {'M', 'A', 'T'}, {'P', 'A', 'T'}, {'R', 'A', 'T'}, {'S', 'A', 'T'}
+        {'C', 'A', 'T'}, {'B', 'A', 'T'}, {'H', 'A', 'T'}, {'M', 'A', 'T'},
+        {'P', 'A', 'T'}, {'R', 'A', 'T'}, {'S', 'A', 'T'}
     },
     lastWordIndex = 1
 }
