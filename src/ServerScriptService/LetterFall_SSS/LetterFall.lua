@@ -85,9 +85,6 @@ function initLetterRack(props)
         return math.ceil(rand)
     end
 
-    -- local columnBaseTemplate = Utils.getFirstDescendantByName(letterFallFolder,
-    --                                                           "ColumnBase")
-
     local columnBaseTemplates = CS:GetTagged("ColumnBaseTemplate")
     local columnBaseTemplate = columnBaseTemplates[1]
 
@@ -127,7 +124,7 @@ function initLetterRack(props)
             applyLetterText({letterBlock = newLetter, char = char})
             table.insert(newLetters, newLetter)
         end
-        -- letterTemplate:Destroy()
+        letterTemplate:Destroy()
     end
     -- columnBaseTemplate:Destroy()
 end

@@ -7705,7 +7705,7 @@ gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gF4=]]></BinaryS
 									<Z>0</Z>
 								</Vector3>
 								<int64 name="SourceAssetId">-1</int64>
-								<BinaryString name="Tags"></BinaryString>
+								<BinaryString name="Tags">Q29sdW1uQmFzZVRlbXBsYXRl</BinaryString>
 								<float name="TopParamA">-0.5</float>
 								<float name="TopParamB">0.5</float>
 								<token name="TopSurface">0</token>
@@ -8970,7 +8970,7 @@ remoteCode.initLetterFall()
 						<Content name="PackageIdSerialize"><url>rbxassetid://6090998203</url></Content>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
-						<int64 name="VersionIdSerialize">9</int64>
+						<int64 name="VersionIdSerialize">11</int64>
 					</Properties>
 				</Item>
 			</Item>
@@ -9273,7 +9273,7 @@ UserInputService.InputBegan:Connect(onInputBegan)
 						<Content name="PackageIdSerialize"><url>rbxassetid://6091761991</url></Content>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
-						<int64 name="VersionIdSerialize">1</int64>
+						<int64 name="VersionIdSerialize">2</int64>
 					</Properties>
 				</Item>
 			</Item>
@@ -10941,11 +10941,10 @@ function initLetterRack(props)
     function genRandom(min, max)
         local rand = min + math.random() * (max - min)
         return math.ceil(rand)
-        -- 
     end
 
-    local columnBaseTemplate = Utils.getFirstDescendantByName(letterFallFolder,
-                                                              "ColumnBase")
+    local columnBaseTemplates = CS:GetTagged("ColumnBaseTemplate")
+    local columnBaseTemplate = columnBaseTemplates[1]
 
     local newLetters = {}
     local spacingFactor = 1.08
@@ -10985,7 +10984,7 @@ function initLetterRack(props)
         end
         letterTemplate:Destroy()
     end
-    columnBaseTemplate:Destroy()
+    -- columnBaseTemplate:Destroy()
 end
 
 module.colorLetterText = colorLetterText
@@ -11471,7 +11470,7 @@ return module
 						<Content name="PackageIdSerialize"><url>rbxassetid://6091760773</url></Content>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
-						<int64 name="VersionIdSerialize">1</int64>
+						<int64 name="VersionIdSerialize">5</int64>
 					</Properties>
 				</Item>
 			</Item>
@@ -11728,6 +11727,27 @@ return module
 							<R>0.380346537</R>
 							<G>0.774901986</G>
 							<B>0.51977098</B>
+						</Color3>
+					</Properties>
+				</Item>
+			</Item>
+			<Item class="Folder" referent="RBX903aec5c3f4e4e40acf4d1b9546891ac">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<string name="Name">ColumnBaseTemplate</string>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+				<Item class="Color3Value" referent="RBX1f91ca58706a4a219271ced37363e88c">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<string name="Name">Color</string>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<Color3 name="Value">
+							<R>0.241535887</R>
+							<G>0.332486987</G>
+							<B>0.599215686</B>
 						</Color3>
 					</Properties>
 				</Item>
