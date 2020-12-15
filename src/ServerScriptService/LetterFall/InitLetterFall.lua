@@ -5,7 +5,8 @@ local module = {}
 local ConfigGame = require(Sss.Source.LetterFall.ConfigGame)
 local LetterFall = require(Sss.Source.LetterFall.LetterFall)
 local TargetWord = require(Sss.Source.LetterFall.TargetWord)
-local HandleBrick2 = require(SP.Source.StarterPlayerScripts.HandleBrick2)
+local HandleBrick2 = require(Sss.Source.LetterFall.HandleBrick3)
+-- local HandleBrick2 = require(SP.Source.StarterPlayerScripts.HandleBrick2)
 
 HandleBrick2.initClickHandler()
 
