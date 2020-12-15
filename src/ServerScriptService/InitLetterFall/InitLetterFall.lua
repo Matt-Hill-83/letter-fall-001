@@ -4,14 +4,14 @@ local module = {}
 
 local Utils = require(Sss.Source.Utils.U001GeneralUtils)
 -- local Constants = require(Sss.Source.Constants.Constants)
-local ConfigGame = require(Sss.Source.AddRemoteObjects.ConfigGame)
+local ConfigGame = require(Sss.Source.InitLetterFall.ConfigGame)
 local LetterFall = require(Sss.Source.LetterFall.LetterFall)
 local TargetWord = require(Sss.Source.TargetWord.TargetWord)
 local HandleBrick2 = require(SP.Source.StarterPlayerScripts.HandleBrick2)
 
 HandleBrick2.initClickHandler()
 
-function addRemoteObjects()
+function initLetterFall()
     ConfigGame.configGame()
     LetterFall.initLetterRack()
     TargetWord.initWord()
@@ -20,6 +20,6 @@ function addRemoteObjects()
     -- 
 end
 
-module.addRemoteObjects = addRemoteObjects
+module.initLetterFall = initLetterFall
 return module
 

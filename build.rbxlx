@@ -8862,8 +8862,8 @@ gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gF4=]]></BinaryS
 						<string name="ScriptGuid">{b240a0d6-584a-4ab9-9877-08ec6e7459f1}</string>
 						<ProtectedString name="Source"><![CDATA[print("Startup Script------------------------------------")
 
-local remoteCode = require(game.ServerScriptService.Source.AddRemoteObjects.InitLetterFall)
-remoteCode.addRemoteObjects()
+local remoteCode = require(game.ServerScriptService.Source.InitLetterFall.InitLetterFall)
+remoteCode.initLetterFall()
 
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
@@ -10965,97 +10965,6 @@ return module
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="ModuleScript" referent="RBXb2edafc5c92842249d778abe6d0f09ab">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">AddRemoteObjects</string>
-					<string name="ScriptGuid">{7dbba969-996f-4c73-9052-4db5bb9b1bd0}</string>
-					<ProtectedString name="Source"><![CDATA[
-]]></ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-				<Item class="ModuleScript" referent="RBXbb531a0746bf41d59fa17f984773d6ad">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">ConfigGame</string>
-						<string name="ScriptGuid">{df773f5a-9a65-47d8-930c-56691cee2174}</string>
-						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
-local Utils = require(Sss.Source.Utils.U001GeneralUtils)
-
-local CS = game:GetService("CollectionService")
-
-local module = {}
-function configPlayers()
-    local Players = game:GetService("Players")
-    Players.RespawnTime = 0
-
-    local function onCharacterAdded(character)
-        character:WaitForChild("Humanoid").WalkSpeed = 30
-    end
-
-    local function onPlayerAdded(player)
-        player.CharacterAdded:Connect(onCharacterAdded)
-    end
-
-    Players.PlayerAdded:Connect(onPlayerAdded)
-
-end
-
-function setVisibility()
-    Utils.setPropsByTag({tag = "Transparent", props = {Transparency = 1}})
-end
-
-function module.configGame()
-    setVisibility()
-    configPlayers()
-end
-
-return module
-]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-				<Item class="ModuleScript" referent="RBX51428ed3f1924ba08c77ddda83f6c4a9">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">InitLetterFall</string>
-						<string name="ScriptGuid">{2b615a66-a8b5-44f5-a0aa-4b0f81680a22}</string>
-						<ProtectedString name="Source"><![CDATA[local SP = game:GetService("StarterPlayer")
-local Sss = game:GetService("ServerScriptService")
-local module = {}
-
-local Utils = require(Sss.Source.Utils.U001GeneralUtils)
--- local Constants = require(Sss.Source.Constants.Constants)
-local ConfigGame = require(Sss.Source.AddRemoteObjects.ConfigGame)
-local LetterFall = require(Sss.Source.LetterFall.LetterFall)
-local TargetWord = require(Sss.Source.TargetWord.TargetWord)
-local HandleBrick2 = require(SP.Source.StarterPlayerScripts.HandleBrick2)
-
-HandleBrick2.initClickHandler()
-
-function addRemoteObjects()
-    ConfigGame.configGame()
-    LetterFall.initLetterRack()
-    TargetWord.initWord()
-    -- LetterFall.createBalls()
-
-    -- 
-end
-
-module.addRemoteObjects = addRemoteObjects
-return module
-
-]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-			</Item>
 			<Item class="ModuleScript" referent="RBX71b348ba80974df89c106e207ddacf7d">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -11305,6 +11214,97 @@ module.initWord = initWord
 module.getWordFolder = getWordFolder
 
 return module
+]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+			</Item>
+			<Item class="ModuleScript" referent="RBX3d9d3144270c4cd698da418f1922e8f9">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">InitLetterFall</string>
+					<string name="ScriptGuid">{370c7c20-c2f4-41ae-a3a1-4a0f460b1f7f}</string>
+					<ProtectedString name="Source"><![CDATA[
+]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+				<Item class="ModuleScript" referent="RBX72de3bebacde44f7939a06951baa7937">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">ConfigGame</string>
+						<string name="ScriptGuid">{91f99c59-7c42-4b28-b74e-fa96d581ddfa}</string>
+						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
+local Utils = require(Sss.Source.Utils.U001GeneralUtils)
+
+local CS = game:GetService("CollectionService")
+
+local module = {}
+function configPlayers()
+    local Players = game:GetService("Players")
+    Players.RespawnTime = 0
+
+    local function onCharacterAdded(character)
+        character:WaitForChild("Humanoid").WalkSpeed = 30
+    end
+
+    local function onPlayerAdded(player)
+        player.CharacterAdded:Connect(onCharacterAdded)
+    end
+
+    Players.PlayerAdded:Connect(onPlayerAdded)
+
+end
+
+function setVisibility()
+    Utils.setPropsByTag({tag = "Transparent", props = {Transparency = 1}})
+end
+
+function module.configGame()
+    setVisibility()
+    configPlayers()
+end
+
+return module
+]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="ModuleScript" referent="RBX9e0eee1afbcb41dc9e4f4d04d4fafc3a">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">InitLetterFall</string>
+						<string name="ScriptGuid">{ac34ca35-ed1c-4890-8ae3-a865637c7213}</string>
+						<ProtectedString name="Source"><![CDATA[local SP = game:GetService("StarterPlayer")
+local Sss = game:GetService("ServerScriptService")
+local module = {}
+
+local Utils = require(Sss.Source.Utils.U001GeneralUtils)
+-- local Constants = require(Sss.Source.Constants.Constants)
+local ConfigGame = require(Sss.Source.InitLetterFall.ConfigGame)
+local LetterFall = require(Sss.Source.LetterFall.LetterFall)
+local TargetWord = require(Sss.Source.TargetWord.TargetWord)
+local HandleBrick2 = require(SP.Source.StarterPlayerScripts.HandleBrick2)
+
+HandleBrick2.initClickHandler()
+
+function initLetterFall()
+    ConfigGame.configGame()
+    LetterFall.initLetterRack()
+    TargetWord.initWord()
+    -- LetterFall.createBalls()
+
+    -- 
+end
+
+module.initLetterFall = initLetterFall
+return module
+
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
